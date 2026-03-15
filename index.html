@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jakub Pešl — European Marketing Leader</title>
+  <meta name="description" content="European Marketing Communications Manager at Panasonic Marketing Europe. Strategic marketing leader blending creativity with analytical precision." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #1D1D1F;
+      --white:   #FFFFFF;
+      --gray-1:  #F5F5F7;
+      --gray-2:  #E8E8ED;
+      --gray-3:  #86868B;
+      --gray-4:  #6E6E73;
+      --accent:  #0071E3;
+      --font:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── NAV ─────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 52px;
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      transition: border-color 0.3s;
+    }
+
+    .nav-logo {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: var(--black);
+      text-decoration: none;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    .nav-cta {
+      background: var(--black) !important;
+      color: var(--white) !important;
+      opacity: 1 !important;
+      padding: 7px 18px;
+      border-radius: 980px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #444 !important; }
+
+    /* ─── HERO ────────────────────────────────── */
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      align-items: center;
+      gap: 72px;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 120px 48px 96px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 65% 30%, rgba(0,113,227,0.05) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Avatar */
+    .hero-avatar-wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      flex-shrink: 0;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.1s forwards;
+    }
+
+    .hero-avatar-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 32px 64px rgba(0,0,0,0.14), 0 0 0 1px rgba(0,0,0,0.04);
+    }
+
+    .hero-avatar {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+      transition: transform 0.6s cubic-bezier(.16,1,.3,1);
+    }
+
+    .hero-avatar-inner:hover .hero-avatar {
+      transform: scale(1.04);
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gray-1);
+      border: 1px solid var(--gray-2);
+      border-radius: 980px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gray-4);
+      letter-spacing: 0.01em;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.25s forwards;
+    }
+    .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #34c759; flex-shrink: 0; }
+
+    .hero-name {
+      font-size: clamp(44px, 6vw, 80px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      color: var(--black);
+      margin-bottom: 8px;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.4s forwards;
+    }
+
+    .hero-degree {
+      font-size: 0.38em;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      vertical-align: bottom;
+      margin-left: 10px;
+      margin-bottom: 0.15em;
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-size: clamp(15px, 1.6vw, 18px);
+      font-weight: 400;
+      color: var(--gray-3);
+      line-height: 1.55;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.55s forwards;
+    }
+    .hero-title strong { color: var(--black); font-weight: 600; }
+
+    .hero-tagline {
+      font-size: clamp(15px, 1.5vw, 17px);
+      font-weight: 400;
+      color: var(--gray-4);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.7s forwards;
+    }
+    .hero-tagline em { font-style: normal; color: var(--accent); font-weight: 500; }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.85s forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--black);
+      color: var(--white);
+      padding: 15px 28px;
+      border-radius: 980px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(.16,1,.3,1);
+    }
+    .btn-primary:hover {
+      background: #333;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      color: var(--accent);
+      padding: 15px 28px;
+      border-radius: 980px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(.16,1,.3,1);
+    }
+    .btn-secondary:hover {
+      background: rgba(0,113,227,0.06);
+      transform: translateY(-2px);
+    }
+
+    .scroll-indicator {
+      position: fixed;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeIn 1s ease 1.4s forwards;
+    }
+    .scroll-indicator span {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, var(--gray-3), transparent);
+      animation: scrollPulse 2.2s ease-in-out 1.4s infinite;
+    }
+
+    /* ─── STAT BAR ────────────────────────────── */
+    .stat-bar {
+      background: var(--black);
+      padding: 48px 24px;
+    }
+    .stat-bar-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+    .stat {
+      text-align: center;
+      padding: 32px 16px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-number {
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 400;
+    }
+    .stat-text {
+      font-size: clamp(28px, 3.5vw, 40px) !important;
+      letter-spacing: -0.02em !important;
+    }
+
+    /* ─── SHARED LAYOUT ──────────────────────── */
+    section { padding: 96px 24px; }
+    .container { max-width: 1080px; margin: 0 auto; }
+
+    .label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--gray-3);
+      max-width: 580px;
+    }
+
+    /* ─── ABOUT ───────────────────────────────── */
+    .about { background: var(--gray-1); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.55fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .about-photo-wrap {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(.16,1,.3,1);
+    }
+
+    .about-photo-wrap:hover .about-photo {
+      transform: scale(1.1);
+    }
+
+    .about-quote {
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: var(--black);
+    }
+    .about-quote em { font-style: normal; color: var(--accent); }
+
+    .about-body {
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--gray-4);
+    }
+    .about-body p + p { margin-top: 18px; }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+    }
+    .pill {
+      background: var(--white);
+      border: 1px solid var(--gray-2);
+      border-radius: 980px;
+      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--black);
+    }
+
+    /* ─── MINDSET ─────────────────────────────── */
+    .mindset {
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .mindset-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .mindset-left {
+      position: relative;
+      z-index: 1;
+    }
+
+    .mindset-quote {
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: var(--black);
+      margin-top: 48px;
+    }
+
+    .mindset-quote em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .mindset-right {
+      position: relative;
+      z-index: 1;
+      padding-top: 16px;
+    }
+
+    .mindset-body {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--gray-4);
+    }
+
+    .mindset-body p + p { margin-top: 24px; }
+
+    .mindset-highlight {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--black);
+      border-left: 3px solid var(--accent);
+      padding-left: 16px;
+      margin-top: 32px;
+      line-height: 1.6;
+    }
+
+    /* ─── VALUES ──────────────────────────────── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 60px;
+    }
+
+    .value-card {
+      background: var(--gray-1);
+      border-radius: 28px;
+      padding: 44px 36px;
+      transition: all 0.45s cubic-bezier(.16,1,.3,1);
+      cursor: default;
+    }
+    .value-card:hover {
+      background: var(--black);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.12);
+    }
+    .value-card:hover .value-icon,
+    .value-card:hover .value-title,
+    .value-card:hover .value-desc { color: var(--white); }
+
+    .value-icon  { font-size: 26px; margin-bottom: 20px; display: block; transition: color 0.4s; }
+    .value-title { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; color: var(--black); transition: color 0.4s; }
+    .value-desc  { font-size: 15px; line-height: 1.65; color: var(--gray-3); transition: color 0.4s; }
+
+    /* ─── EXPERTISE ───────────────────────────── */
+    .expertise { background: var(--black); }
+    .expertise .label { color: rgba(255,255,255,0.35); }
+    .expertise .section-title { color: var(--white); }
+    .expertise .section-sub   { color: rgba(255,255,255,0.45); }
+
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 64px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.07);
+    }
+
+    .exp-item {
+      background: var(--black);
+      padding: 52px 44px;
+      transition: background 0.3s;
+    }
+    .exp-item:hover { background: #111; }
+
+    .exp-num   { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 16px; }
+    .exp-title { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--white); margin-bottom: 12px; }
+    .exp-desc  { font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.42); }
+
+    /* ─── JOURNEY / TIMELINE ─────────────────── */
+    .journey { background: var(--gray-1); }
+
+    .timeline {
+      position: relative;
+      margin-top: 64px;
+      padding-left: 32px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--gray-2);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 56px;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute;
+      left: -36px;
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--gray-1);
+      box-shadow: 0 0 0 3px rgba(0,113,227,0.15);
+    }
+
+    .timeline-period {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .timeline-role {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+
+    .timeline-company {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gray-3);
+      margin-bottom: 16px;
+    }
+
+    .timeline-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--gray-4);
+      max-width: 680px;
+    }
+
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+    .tag {
+      background: var(--white);
+      border: 1px solid var(--gray-2);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gray-4);
+    }
+
+    /* ─── PERSONAL ────────────────────────────── */
+    .personal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 60px;
+    }
+
+    .personal-card {
+      border: 1px solid var(--gray-2);
+      border-radius: 28px;
+      padding: 44px 36px;
+      text-align: center;
+      transition: all 0.35s cubic-bezier(.16,1,.3,1);
+    }
+    .personal-card:hover {
+      border-color: var(--gray-4);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+    }
+
+    .personal-icon  { font-size: 32px; margin-bottom: 14px; display: block; }
+    .personal-title { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .personal-text  { font-size: 15px; color: var(--gray-3); line-height: 1.65; }
+
+    /* ─── CONTACT ─────────────────────────────── */
+    .contact { text-align: center; }
+    .contact .section-sub  { margin: 0 auto; }
+    .contact-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 48px;
+    }
+
+    /* ─── FOOTER ──────────────────────────────── */
+    footer {
+      padding: 36px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--gray-2);
+    }
+    .footer-copy { font-size: 13px; color: var(--gray-3); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--gray-3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+
+    /* ─── ANIMATIONS ──────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0; transform: scaleY(0.4); transform-origin: top; }
+      50%      { opacity: 1; transform: scaleY(1); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.65s cubic-bezier(.16,1,.3,1), transform 0.65s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.08s; }
+    .d2 { transition-delay: 0.16s; }
+    .d3 { transition-delay: 0.24s; }
+    .d4 { transition-delay: 0.32s; }
+
+    /* ─── RESPONSIVE ──────────────────────────── */
+    .scroll-indicator.hidden { opacity: 0 !important; pointer-events: none; }
+
+    /* ─── LEARNING ─────────────────────────────── */
+    .learning { background: var(--gray-1); padding-top: 80px; padding-bottom: 80px; }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 40px;
+    }
+
+    .course-card {
+      background: var(--white);
+      border: 1px solid var(--gray-2);
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+      transition: all 0.3s cubic-bezier(.16,1,.3,1);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .course-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(0,113,227,0.08);
+    }
+
+    .course-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.4;
+    }
+
+    .course-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      section { padding: 80px 20px; }
+      .hero { grid-template-columns: 1fr; text-align: center; padding: 100px 24px 80px; gap: 40px; justify-items: center; }
+      .hero-avatar-wrap { max-width: 260px; }
+      .hero-actions { justify-content: center; }
+      .mindset-inner { grid-template-columns: 1fr; gap: 0; }
+      .mindset-quote { margin-top: 24px; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .exp-grid { grid-template-columns: 1fr; }
+      .personal-grid { grid-template-columns: 1fr; }
+      .courses-grid { grid-template-columns: 1fr 1fr; }
+      .stat-bar-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .stat:nth-child(2), .stat:last-child { border-bottom: none; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .courses-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══════════════════════════════════ -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">Jakub Pešl</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/jakub-pe%C5%A1l" target="_blank" class="nav-cta">LinkedIn ↗</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══ HERO ══════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-avatar-wrap">
+      <div class="hero-avatar-inner">
+        <img src="MicrosoftTeams-image.jpg" alt="Jakub Pešl" class="hero-avatar" />
+      </div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        European Marketing Communications Manager · Panasonic
+      </div>
+      <h1 class="hero-name">Jakub Pešl<span class="hero-degree">, MBA</span></h1>
+      <p class="hero-title">
+        Marketing Leader · Wiesbaden / Prague<br />
+        <strong>Panasonic Marketing Europe</strong>
+      </p>
+      <p class="hero-tagline">
+        Life is like <em>LEGO</em> — only when all the pieces fit together
+        can the result be perfect.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Let's connect →</a>
+        <a href="#about" class="btn-secondary">Learn more</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══ STAT BAR ═══════════════════════════════ -->
+  <div class="stat-bar">
+    <div class="stat-bar-inner">
+      <div class="stat reveal">
+        <div class="stat-number" data-target="15" data-suffix="+">0</div>
+        <div class="stat-label">Years at Panasonic</div>
+      </div>
+      <div class="stat reveal d1">
+        <div class="stat-number" data-target="30" data-suffix="+">0</div>
+        <div class="stat-label">European Markets</div>
+      </div>
+      <div class="stat reveal d2">
+        <div class="stat-number" data-target="5" data-suffix="+">0</div>
+        <div class="stat-label">Global Trade Shows &amp; Events — CES, IFA &amp; more</div>
+      </div>
+      <div class="stat reveal d3">
+        <div class="stat-number" data-target="20" data-suffix="+">0</div>
+        <div class="stat-label">Courses &amp; Certifications</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ABOUT ══════════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="reveal">
+          <div class="about-photo-wrap">
+            <img src="JakubP.png" alt="Jakub Pešl — Professional" class="about-photo" />
+          </div>
+        </div>
+        <div class="reveal d2">
+          <p class="label">Philosophy</p>
+          <h2 class="about-quote" style="margin-bottom:24px;">
+            Strategy meets <em>creativity</em>.<br />
+            Precision meets <em>humanity</em>.
+          </h2>
+          <div class="about-body">
+            <p>Results-driven and strategic marketing leader with a strong European perspective, blending creativity with analytical precision to deliver impactful communication and trade marketing strategies.</p>
+            <p>An empathetic team player who values innovation, collaboration, and continuous growth — both professionally and personally. I look for ways to make things work, not excuses for why they can't.</p>
+            <p>Fair play, inspiring people, and a passion for tech and travel shape everything I do — inside and outside the office.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MINDSET ════════════════════════════════ -->
+  <section class="mindset" id="mindset">
+    <div class="container">
+      <div class="mindset-inner">
+        <div class="mindset-left reveal">
+          <p class="label">Mindset</p>
+          <h2 class="mindset-quote">
+            Marketing is my daily <em>challenge</em> — and my daily <em>passion</em>.
+          </h2>
+        </div>
+        <div class="mindset-right reveal d2">
+          <div class="mindset-body">
+            <p>I enjoy moving things forward, finding relevant and effective solutions, and communicating with new people — from whom I try to take only the best. I always keep in mind that a job well done positively impacts everyone around.</p>
+            <p>In my professional life, I am grateful for the opportunity to develop internationally and gain a multicultural perspective — and for the chance to lead and cooperate with a team of successful and creative people.</p>
+          </div>
+          <span class="mindset-highlight">
+            "I look for ways to make things work, not excuses for why they can't."
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VALUES ═════════════════════════════════ -->
+  <section id="values">
+    <div class="container">
+      <p class="label reveal">Values</p>
+      <h2 class="section-title reveal d1">What drives me forward</h2>
+      <div class="values-grid">
+        <div class="value-card reveal d1">
+          <span class="value-icon">⚖️</span>
+          <h3 class="value-title">Fair Play</h3>
+          <p class="value-desc">Integrity is non-negotiable. The best results come from honest collaboration and mutual respect — in business and in life.</p>
+        </div>
+        <div class="value-card reveal d2">
+          <span class="value-icon">💡</span>
+          <h3 class="value-title">Innovation First</h3>
+          <p class="value-desc">I look for ways to make things work instead of excuses for why they can't. Every challenge is an opportunity to think differently.</p>
+        </div>
+        <div class="value-card reveal d3">
+          <span class="value-icon">🚀</span>
+          <h3 class="value-title">Inspiring Growth</h3>
+          <p class="value-desc">People who push boundaries and uplift others are my kind of people. Growth — professional and personal — is the only direction that matters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EXPERTISE ══════════════════════════════ -->
+  <section class="expertise" id="expertise">
+    <div class="container">
+      <p class="label reveal">Expertise</p>
+      <h2 class="section-title reveal d1">Built across Europe.<br />Delivered with precision.</h2>
+      <p class="section-sub reveal d2">
+        End-to-end marketing communications management — from global strategy
+        set in Japan to local execution across 30+ European markets.
+      </p>
+      <div class="exp-grid">
+        <div class="exp-item reveal d1">
+          <p class="exp-num">01</p>
+          <h3 class="exp-title">Marketing Communications</h3>
+          <p class="exp-desc">Continental asset creation, integrated campaign management, and brand strategy — designed globally, executed locally with consistency and impact.</p>
+        </div>
+        <div class="exp-item reveal d2">
+          <p class="exp-num">02</p>
+          <h3 class="exp-title">Trade Marketing</h3>
+          <p class="exp-desc">Bridging brand strategy and retail reality. POS, sell-in tools, merchandising, and partner programs that move products off shelves across Europe.</p>
+        </div>
+        <div class="exp-item reveal d2">
+          <p class="exp-num">03</p>
+          <h3 class="exp-title">P&amp;L &amp; Budget Management</h3>
+          <p class="exp-desc">Full ownership of marketing budgets with ROI focus. Structured planning, rigorous control, and transparent reporting to senior management.</p>
+        </div>
+        <div class="exp-item reveal d3">
+          <p class="exp-num">04</p>
+          <h3 class="exp-title">Global Events &amp; PR</h3>
+          <p class="exp-desc">Proud part of the organisation team for CES and IFA — the world's largest electronics trade shows. High-stakes execution, flawlessly delivered.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ JOURNEY / TIMELINE ═════════════════════ -->
+  <section class="journey" id="journey">
+    <div class="container">
+      <p class="label reveal">Career</p>
+      <h2 class="section-title reveal d1">The journey so far</h2>
+      <div class="timeline">
+
+        <div class="timeline-item reveal d1">
+          <div class="timeline-dot"></div>
+          <p class="timeline-period">Current Position · Wiesbaden, DE</p>
+          <h3 class="timeline-role">European Marketing Communications Manager</h3>
+          <p class="timeline-company">Panasonic Marketing Europe</p>
+          <p class="timeline-desc">
+            Central European role with full continental responsibility. Managing go-to-market strategies for Panasonic CE across Europe — from master strategy development and campaign execution to direct collaboration with global HQ in Japan. Leading cross-country communication, PR, global events (CES &amp; IFA), and marketing team development.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">European Go-to-Market</span>
+            <span class="tag">Campaign Management</span>
+            <span class="tag">Global HQ Liaison</span>
+            <span class="tag">CES &amp; IFA</span>
+            <span class="tag">P&amp;L</span>
+            <span class="tag">Team Lead</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal d2">
+          <div class="timeline-dot"></div>
+          <p class="timeline-period">Previous Role · Prague, CZ</p>
+          <h3 class="timeline-role">Trade &amp; Marketing Communications Manager</h3>
+          <p class="timeline-company">Panasonic Marketing Europe GmbH, Czech Branch</p>
+          <p class="timeline-desc">
+            Full ownership of marketing communications, trade marketing, and merchandising for the Czech market. Led Training &amp; Promotion team, managed ATL and BTL campaigns across B2E, B2B, and B2C. Handled agency selection and management, budget control, PR events, and cross-country active communication within the European network.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Trade Marketing</span>
+            <span class="tag">ATL / BTL</span>
+            <span class="tag">B2B · B2C · B2E</span>
+            <span class="tag">Agency Management</span>
+            <span class="tag">Merchandising</span>
+            <span class="tag">Recruitment</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal d3">
+          <div class="timeline-dot"></div>
+          <p class="timeline-period">Early Career · Prague, CZ</p>
+          <h3 class="timeline-role">Trade Marketing Manager</h3>
+          <p class="timeline-company">Panasonic Marketing Europe GmbH, Czech Branch</p>
+          <p class="timeline-desc">
+            Leading local Trade Marketing, Merchandising, and Training &amp; Promotion team. Responsible for CE ATL and BTL marketing communication across B2E, B2B, and B2C channels. Created and executed sales promotion plans for individual CE product categories, organised internal and external training, PR events, and cross-country communication. Managed creative and advertising agency relationships, implemented effective online trade systems, and owned the marketing budget.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Trade Marketing</span>
+            <span class="tag">Merchandising</span>
+            <span class="tag">Training &amp; Promotion</span>
+            <span class="tag">ATL / BTL</span>
+            <span class="tag">Online Trade Systems</span>
+            <span class="tag">Agency Management</span>
+            <span class="tag">Budget Management</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LEARNING ════════════════════════════════ -->
+  <section class="learning" id="learning">
+    <div class="container">
+      <p class="label reveal">Continuous Development</p>
+      <h2 class="section-title reveal d1">Learning never stops</h2>
+      <p class="section-sub reveal d2">Ongoing professional development — from leadership and communication to AI and project management.</p>
+      <div class="courses-grid">
+        <div class="course-card reveal d1">
+          <span class="course-icon">🤖</span>
+          <p class="course-name">AI in Marketing</p>
+        </div>
+        <div class="course-card reveal d2">
+          <span class="course-icon">🗣️</span>
+          <p class="course-name">Communication Skills I – III</p>
+        </div>
+        <div class="course-card reveal d3">
+          <span class="course-icon">👔</span>
+          <p class="course-name">Communication Skills for Managers</p>
+        </div>
+        <div class="course-card reveal d1">
+          <span class="course-icon">📱</span>
+          <p class="course-name">Facebook &amp; Corporate Communication</p>
+        </div>
+        <div class="course-card reveal d2">
+          <span class="course-icon">🤝</span>
+          <p class="course-name">Team Communication</p>
+        </div>
+        <div class="course-card reveal d3">
+          <span class="course-icon">📣</span>
+          <p class="course-name">Marketing Communication</p>
+        </div>
+        <div class="course-card reveal d1">
+          <span class="course-icon">🛍️</span>
+          <p class="course-name">Merchandising &amp; Instore Communication</p>
+        </div>
+        <div class="course-card reveal d2">
+          <span class="course-icon">🧭</span>
+          <p class="course-name">People Leadership</p>
+        </div>
+        <div class="course-card reveal d3">
+          <span class="course-icon">📋</span>
+          <p class="course-name">Project Management</p>
+        </div>
+        <div class="course-card reveal d1">
+          <span class="course-icon">💼</span>
+          <p class="course-name">Customer Relationship Development</p>
+        </div>
+        <div class="course-card reveal d2">
+          <span class="course-icon">💡</span>
+          <p class="course-name">Storytelling with Insight</p>
+        </div>
+        <div class="course-card reveal d3">
+          <span class="course-icon">⏱️</span>
+          <p class="course-name">Stress &amp; Time Management</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PERSONAL ═══════════════════════════════ -->
+  <section id="personal">
+    <div class="container">
+      <p class="label reveal">Beyond the office</p>
+      <h2 class="section-title reveal d1">The whole picture</h2>
+      <p class="section-sub reveal d2">Work is only one piece of the LEGO set.</p>
+      <div class="personal-grid">
+        <div class="personal-card reveal d1">
+          <span class="personal-icon">💻</span>
+          <h3 class="personal-title">Tech Explorer</h3>
+          <p class="personal-text">Always chasing the next innovation. From AI to consumer gadgets — if it's new and interesting, I've probably already tried it.</p>
+        </div>
+        <div class="personal-card reveal d2">
+          <span class="personal-icon">🏃</span>
+          <h3 class="personal-title">Active Life</h3>
+          <p class="personal-text">Sport is my reset button. Movement keeps the mind sharp and the perspective fresh. Balance is everything.</p>
+        </div>
+        <div class="personal-card reveal d3">
+          <span class="personal-icon">🌍</span>
+          <h3 class="personal-title">Family &amp; Travel</h3>
+          <p class="personal-text">Exploring Europe with family is the best kind of research. New cultures, new perspectives — broadening the lens through which I see everything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="label reveal">Let's connect</p>
+      <h2 class="section-title reveal d1">Ready to build<br />something great?</h2>
+      <p class="section-sub reveal d2">
+        Whether you have a project in mind, a question, or just want to connect —
+        I'm always open to conversations that lead somewhere interesting.
+      </p>
+      <div class="contact-actions reveal d3">
+        <a href="https://www.linkedin.com/in/jakub-pe%C5%A1l" target="_blank" class="btn-primary">
+          Connect on LinkedIn →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═════════════════════════════════ -->
+  <footer>
+    <p class="footer-copy">© 2026 Jakub Pešl</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/jakub-pe%C5%A1l" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    // ── Scroll reveal
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Nav shadow + scroll indicator hide
+    const nav = document.getElementById('nav');
+    const scrollInd = document.querySelector('.scroll-indicator');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 40 ? '0 1px 0 rgba(0,0,0,0.1)' : 'none';
+      if (scrollInd) scrollInd.classList.toggle('hidden', window.scrollY > 80);
+    }, { passive: true });
+
+    // ── Counter animation
+    const counters = document.querySelectorAll('[data-target]');
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = +el.dataset.target;
+        const suffix = el.dataset.suffix || '';
+        const duration = 1800;
+        const start = performance.now();
+        // subtle scale pop on the stat block
+        const statBlock = el.closest('.stat');
+        if (statBlock) {
+          statBlock.style.transition = 'transform 0.4s cubic-bezier(.16,1,.3,1)';
+          statBlock.style.transform = 'scale(1.04)';
+          setTimeout(() => { statBlock.style.transform = 'scale(1)'; }, 400);
+        }
+        const tick = now => {
+          const t = Math.min((now - start) / duration, 1);
+          // ease out quart — fast start, gentle finish
+          const ease = 1 - Math.pow(1 - t, 4);
+          el.textContent = Math.round(ease * target) + suffix;
+          if (t < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(el => counterObserver.observe(el));
+  </script>
+
+</body>
+</html>
