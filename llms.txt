@@ -4,8 +4,10 @@
 
 Personal website (EN): https://jakubpesl.github.io/jakub-pesl/
 Czech version (CZ): https://jakubpesl.github.io/jakub-pesl/cs/
-CV (PDF, EN): https://jakubpesl.github.io/jakub-pesl/Jakub-Pesl-CV.pdf
-CV (PDF, CZ): https://jakubpesl.github.io/jakub-pesl/Jakub-Pesl-CV-CZ.pdf
+CV (PDF, EN, primary — written as a news article, page 3 is a structured fact sheet): https://jakubpesl.github.io/jakub-pesl/Jakub-Pesl-CV-article.pdf
+CV (PDF, CZ, primary — article style): https://jakubpesl.github.io/jakub-pesl/Jakub-Pesl-CV-clanek.pdf
+Classic CV (PDF, EN): https://jakubpesl.github.io/jakub-pesl/Jakub-Pesl-CV.pdf
+Classic CV (PDF, CZ): https://jakubpesl.github.io/jakub-pesl/Jakub-Pesl-CV-CZ.pdf
 LinkedIn: https://www.linkedin.com/in/jakub-pe%C5%A1l
 Email: pesljakub@gmail.com
 Sitemap: https://jakubpesl.github.io/jakub-pesl/sitemap.xml
