@@ -46,12 +46,12 @@
   .nav span { opacity: 0.72; }
   .nav .on { opacity: 1; border-bottom: 0.6mm solid var(--hot); padding-bottom: 0.4mm; }
   .ticker { display: flex; align-items: center; gap: 3mm; margin-top: 2.4mm; font-size: 7.6pt; color: var(--body); }
-  .ticker b { background: var(--hot); color: var(--ink); font-size: 6.6pt; letter-spacing: 0.08em; padding: 0.6mm 2mm; border-radius: 1mm; }
+  .ticker b { background: var(--hot); color: var(--ink); font-size: 6.6pt; letter-spacing: 0.04em; padding: 0.6mm 2mm; border-radius: 1mm; }
 
   /* ── Article layout ── */
   .grid { display: grid; grid-template-columns: 1fr 55mm; gap: 7mm; margin-top: 5mm; flex: 1; min-height: 0; }
   .meta { display: flex; align-items: center; gap: 2.4mm; font-size: 7.2pt; color: var(--muted); }
-  .rubric { color: var(--accent); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .rubric { color: var(--accent); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
   h1 { font-family: var(--serif); font-size: 21pt; line-height: 1.08; letter-spacing: -0.02em; font-weight: 800; margin: 2.2mm 0 3mm; }
   .perex { font-family: var(--serif); font-size: 10pt; line-height: 1.5; font-weight: 600; color: var(--ink); }
   .byline { display: flex; align-items: center; gap: 2.4mm; margin: 2.6mm 0; font-size: 7.4pt; color: var(--muted); }
@@ -70,7 +70,7 @@
   /* ── Sidebar ── */
   .side { display: flex; flex-direction: column; gap: 3.4mm; }
   .box { background: var(--soft); border-radius: 2.4mm; padding: 3.6mm 3.8mm; }
-  .box h3 { font-size: 7pt; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); margin-bottom: 2.4mm; display: flex; align-items: center; gap: 1.6mm; }
+  .box h3 { font-size: 7pt; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand); margin-bottom: 2.4mm; display: flex; align-items: center; gap: 1.6mm; }
   .box h3::before { content: ''; width: 1.6mm; height: 1.6mm; background: var(--hot); border-radius: 0.3mm; }
   .num { display: grid; grid-template-columns: auto 1fr; column-gap: 2.6mm; row-gap: 2mm; align-items: baseline; }
   .num b { font-family: var(--serif); font-size: 17pt; font-weight: 800; color: var(--ink); letter-spacing: -0.03em; line-height: 1; }
@@ -88,7 +88,7 @@
   .contact a { color: var(--accent); font-weight: 600; }
 
   /* ── Page 2 ── */
-  .sec { display: flex; align-items: center; gap: 3mm; margin: 5mm 0 3.4mm; font-size: 8pt; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); }
+  .sec { display: flex; align-items: center; gap: 3mm; margin: 5mm 0 3.4mm; font-size: 8pt; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand); }
   .sec::after { content: ''; flex: 1; height: 0.5mm; background: var(--brand); }
   .sec:first-of-type { margin-top: 4mm; }
   .teasers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4.4mm 4.4mm; }
@@ -106,7 +106,7 @@
   .briefs b { display: block; font-family: var(--serif); font-size: 9.6pt; font-weight: 800; color: var(--ink); line-height: 1.25; margin: 0.4mm 0 0.6mm; }
   .briefs p { font-size: 7.7pt; color: var(--body); line-height: 1.45; }
   .now { background: var(--brand); color: #fff; border-radius: 2.4mm; padding: 4mm 4.4mm; }
-  .now h3 { font-size: 7pt; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--hot); margin-bottom: 2.4mm; }
+  .now h3 { font-size: 7pt; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--hot); margin-bottom: 2.4mm; }
   .now ul { list-style: none; }
   .now li { font-size: 8pt; line-height: 1.45; color: rgba(255,255,255,0.86); padding: 1.3mm 0; border-bottom: 0.25mm solid rgba(255,255,255,0.14); }
   .now li:last-child { border-bottom: 0; }
@@ -117,6 +117,25 @@
   footer .logo { font-size: 13pt; }
   footer p { max-width: 120mm; text-align: right; }
   footer a { color: var(--accent); font-weight: 600; }
+
+  /* ── Page 3: candidate fact sheet (structured facts for recruiters & AI agents) ── */
+  .p3 { display: grid; grid-template-columns: 1fr 58mm; gap: 7mm; flex: 1; min-height: 0; }
+  .facts { display: grid; grid-template-columns: 30mm 1fr; column-gap: 3.6mm; row-gap: 1.7mm; font-size: 8.1pt; line-height: 1.42; }
+  .facts dt { font-weight: 700; color: var(--ink); }
+  .facts dd { color: var(--body); }
+  .facts dd b { color: var(--ink); font-weight: 600; }
+  .career { width: 100%; border-collapse: collapse; font-size: 7.9pt; line-height: 1.4; }
+  .career td { padding: 1.5mm 0; border-bottom: 0.25mm solid var(--line); vertical-align: top; color: var(--body); }
+  .career tr:last-child td { border-bottom: 0; }
+  .career td:first-child { width: 31mm; font-weight: 700; color: var(--accent); white-space: nowrap; padding-right: 3mm; }
+  .career b { display: block; color: var(--ink); font-weight: 700; }
+  .grp + .grp { margin-top: 2mm; }
+  .grp b { display: block; font-size: 7.5pt; font-weight: 700; color: var(--ink); margin-bottom: 0.4mm; }
+  .grp p { font-size: 7.3pt; color: var(--body); line-height: 1.4; }
+  .vals li { font-size: 7.6pt; line-height: 1.42; color: var(--body); list-style: none; padding: 1.1mm 0; border-bottom: 0.25mm solid var(--line); }
+  .vals li:last-child { border-bottom: 0; }
+  .vals b { color: var(--ink); }
+  .p3 .side .box { padding: 3.2mm 3.6mm; }
 </style>
 </head>
 <body>
@@ -279,6 +298,70 @@
   <footer>
     <div class="logo">Pešlo<span>vinky</span><small>.cz</small></div>
     <p>Pešlovinky.cz je životopis Jakuba Pešla ve stylu zpravodajského článku, nikoli skutečné médium. Všechny údaje vycházejí z&nbsp;jeho praxe. Klasické CV a&nbsp;další projekty: <a href="https://jakubpesl.github.io/jakub-pesl/cs/">jakubpesl.github.io/jakub-pesl/cs</a> · profil pro AI asistenty: <a href="https://jakubpesl.github.io/jakub-pesl/llms.txt">llms.txt</a></p>
+  </footer>
+</section>
+
+<!-- ═══════════════ PAGE 3 — fact sheet ═══════════════ -->
+<section class="page">
+  <div class="topbar"><span><b>Pešlovinky.cz</b> · Speciální vydání · Kariéra</span><span>Strana 3 · Fakta pro personalisty a&nbsp;AI asistenty</span></div>
+
+  <h2 class="sec">Karta kandidáta</h2>
+  <div class="p3">
+    <div>
+      <dl class="facts">
+        <dt>Jméno</dt><dd><b>Jakub Pešl, MBA</b></dd>
+        <dt>Současná pozice</dt><dd>European Marketing Communications Manager, Panasonic Marketing Europe GmbH (od dubna 2021)</dd>
+        <dt>Úroveň</dt><dd><b>Manažer</b> — evropský záběr spojený s&nbsp;praktickou realizací</dd>
+        <dt>Lokalita</dt><dd>Praha · hybridně s&nbsp;Wiesbadenem (Německo)</dd>
+        <dt>Praxe</dt><dd>19 let v&nbsp;Panasonicu (od 2007); celkem 20 let (od 2006)</dd>
+        <dt>Geografický záběr</dt><dd>20+ evropských trhů; aktuálně detailně <b>DACH, Norsko a&nbsp;Nizozemsko</b>; dříve CZ, SK, HU, RO a&nbsp;BG</dd>
+        <dt>Tým a&nbsp;partneři</dt><dd>Vede <b>5členný tým v&nbsp;CEEG</b> (retail a&nbsp;trade marketing); předává strategii marketingovým týmům v&nbsp;<b>6 hlavních evropských kancelářích</b>; spolupracuje s&nbsp;<b>8–10 specializovanými agenturami</b>, globálním HQ v&nbsp;Japonsku a&nbsp;evropskými LSO</dd>
+        <dt>Klíčová čísla</dt><dd><b>500 mil. impresí</b> (Fire TV × Amazon, 6 zemí) · 200+ produktových videí ročně · každoročně CES a&nbsp;IFA · čtyři generace Technics TWS (EAH-AZ60, AZ60M2, AZ80, AZ100) · velké projekty s&nbsp;relativně nízkým rozpočtem</dd>
+        <dt>Jazyky</dt><dd>čeština (rodilý mluvčí) · angličtina (C1–C2) · němčina (základy) — <b>pracovním jazykem je angličtina</b>, i&nbsp;pro DACH, Norsko a&nbsp;Nizozemsko</dd>
+        <dt>Vzdělání</dt><dd>MBA, Marketing &amp; PR — British Business School (BBS), Praha, 2024–2025 · Studium angličtiny, MAVO s.r.o., 2003–2004 · Střední umělecko-průmyslová škola, Praha 5, 1999–2003</dd>
+        <dt>Ocenění</dt><dd>Bronze Individual Award, Panasonic CEE — top 3 z&nbsp;~150 zaměstnanců ze 17 zemí</dd>
+        <dt>Obor</dt><dd>Spotřební elektronika — TV, audio (Technics, party reproduktory), fotoaparáty (LUMIX)</dd>
+        <dt>Ostatní</dt><dd>Řidičský průkaz sk. B · vůdce rekreačního plavidla (CMS)</dd>
+      </dl>
+
+      <h2 class="sec">Kariéra v&nbsp;datech</h2>
+      <table class="career">
+        <tr><td>dub 2021 – dosud</td><td><b>European Marketing Communications Manager</b>Panasonic Marketing Europe GmbH · Praha / Wiesbaden (hybridně)</td></tr>
+        <tr><td>2019 – led 2021</td><td><b>Trade &amp; Marketing Communications Manager</b>Panasonic Marketing Europe GmbH, česká pobočka · Praha</td></tr>
+        <tr><td>dub 2011 – 2019</td><td><b>Trade Marketing Manager</b>Panasonic Marketing Europe GmbH, česká pobočka · CZ, SK, HU; 2011–2013 i&nbsp;RO a&nbsp;BG (Regional Trade Marketing Manager)</td></tr>
+        <tr><td>zář 2007 – bře 2011</td><td><b>Head of Call Centre</b>Panasonic Marketing Europe GmbH, česká pobočka · zákaznické oddělení pro CZ a&nbsp;SK od nuly</td></tr>
+        <tr><td>led 2006 – zář 2007</td><td><b>Help Desk &amp; Customer Support Supervisor</b>České Radiokomunikace a.s. · Praha</td></tr>
+      </table>
+    </div>
+
+    <aside class="side">
+      <div class="box">
+        <h3>Klíčové kompetence</h3>
+        <div class="grp"><b>Marketingová strategie</b><p>Evropská go-to-market (GTM) strategie, marketingová komunikace, produktový marketing, uvádění produktů, tvorba a&nbsp;řízení kampaní, ATL / BTL, brand komunikace.</p></div>
+        <div class="grp"><b>Retail a&nbsp;trade</b><p>Trade marketing, merchandising, POP / POS, podpora sell-in a&nbsp;sell-out, aktivace retailových partnerů, akce pro dealery.</p></div>
+        <div class="grp"><b>Obchod a&nbsp;finance</b><p>P&amp;L, multikanálový marketingový rozpočet, ROI reporting, výběr a&nbsp;řízení agentur.</p></div>
+        <div class="grp"><b>Eventy a&nbsp;partnerství</b><p>CES, IFA, influencer a&nbsp;ambasadorské programy, partnerství značek (Activision Blizzard, Amazon).</p></div>
+        <div class="grp"><b>Vedení</b><p>Vedení týmu, mezinárodní spolupráce, koordinace s&nbsp;HQ (Japonsko) a&nbsp;LSO, rozvoj lidí.</p></div>
+        <div class="grp"><b>AI a&nbsp;digitál</b><p>AI agenti a&nbsp;automatizace, AI v&nbsp;marketingu, transformace procesů, stavění aplikací s&nbsp;AI.</p></div>
+      </div>
+      <div class="box">
+        <h3>Jak pracuji</h3>
+        <ul class="vals">
+          <li><b>Fair play</b> — co slíbím, to udělám.</li>
+          <li><b>Tah na branku</b> — omezení a&nbsp;změny beru jako normální stav.</li>
+          <li><b>Rozvoj lidí</b> — cílem je tým, který to zvládne i&nbsp;beze mě.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Vybrané kurzy</h3>
+        <p style="font-size:7.3pt;line-height:1.45;color:var(--body)">vibecodingformarketers.com (AI), AI v&nbsp;marketingu a&nbsp;AI First, Storytelling with Insight, vedení lidí, komunikační dovednosti pro manažery I–III, projektové řízení a&nbsp;Agile, vyjednávání, merchandising a&nbsp;komunikace v&nbsp;prodejně.</p>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="logo">Pešlo<span>vinky</span><small>.cz</small></div>
+    <p>Kontakt: <a href="mailto:pesljakub@gmail.com">pesljakub@gmail.com</a> · <a href="https://www.linkedin.com/in/jakub-pe%C5%A1l">linkedin.com/in/jakub-pešl</a> · web <a href="https://jakubpesl.github.io/jakub-pesl/cs/">jakubpesl.github.io/jakub-pesl/cs</a> · textový profil pro AI asistenty: <a href="https://jakubpesl.github.io/jakub-pesl/llms.txt">llms.txt</a>. Pešlovinky.cz je životopis ve stylu článku, nikoli skutečné médium.</p>
   </footer>
 </section>
 
