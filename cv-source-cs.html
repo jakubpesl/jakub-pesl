@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<title>Jakub Pešl, MBA — životopis</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<!--
+  Source of Jakub-Pesl-CV-CZ.pdf (Czech version of cv-source.html). Two fixed A4 pages, each with its own sidebar,
+  so the layout never depends on how the browser splits content across pages.
+  Render: Chromium print to PDF, A4, margins 0, background graphics on.
+-->
+<style>
+  @page { size: A4; margin: 0; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:    #1D1D1F;
+    --body:   #3A3A3C;
+    --muted:  #707073;
+    --line:   #E8E8ED;
+    --side:   #F5F5F7;
+    --accent: #0071E3;
+    --tint:   rgba(0,113,227,0.08);
+  }
+
+  html, body { background: #fff; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--ink);
+    font-size: 8.9pt;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    display: grid;
+    grid-template-columns: 66mm 1fr;
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+
+  /* ── Sidebar ─────────────────────────────── */
+  .side {
+    background: var(--side);
+    padding: 14mm 8mm 12mm 10mm;
+    display: flex;
+    flex-direction: column;
+    gap: 6.5mm;
+  }
+  .side h3 {
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2.6mm;
+  }
+
+  .photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 5mm;
+    overflow: hidden;
+    background: #E8E8ED;
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; }
+
+  .contact { list-style: none; display: flex; flex-direction: column; gap: 1.8mm; }
+  .contact li { display: flex; align-items: center; gap: 2.4mm; font-size: 8.3pt; color: var(--body); }
+  .ico {
+    width: 5.6mm; height: 5.6mm; flex-shrink: 0;
+    border-radius: 1.6mm;
+    background: var(--tint);
+    color: var(--accent);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .ico svg { width: 3.2mm; height: 3.2mm; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .figures { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; }
+  .fig {
+    background: #fff;
+    border-radius: 3mm;
+    padding: 2.6mm 3mm 2.4mm;
+  }
+  .fig b { display: block; font-size: 15pt; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; }
+  .fig span { font-size: 6.9pt; color: var(--muted); line-height: 1.3; display: block; margin-top: 0.6mm; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 1.4mm; }
+  .tag {
+    font-size: 7.4pt;
+    font-weight: 500;
+    color: var(--body);
+    background: #fff;
+    border: 0.25mm solid var(--line);
+    border-radius: 10mm;
+    padding: 0.8mm 2.4mm;
+  }
+
+  .kv { font-size: 8.1pt; color: var(--body); line-height: 1.45; }
+  .kv + .kv { margin-top: 2.2mm; }
+  .kv b { color: var(--ink); font-weight: 600; display: block; }
+  .kv i { font-style: normal; color: var(--muted); }
+
+  .lang { display: grid; grid-template-columns: auto 1fr; column-gap: 3mm; row-gap: 1.3mm; font-size: 8.1pt; }
+  .lang b { font-weight: 600; }
+  .lang span { color: var(--muted); }
+
+  .award {
+    background: #fff;
+    border-radius: 3mm;
+    padding: 3mm 3.2mm;
+    display: flex;
+    gap: 2.6mm;
+    align-items: flex-start;
+  }
+  .award .ico { background: rgba(181,120,47,0.12); color: #B5782F; }
+  .award p { font-size: 7.8pt; color: var(--body); line-height: 1.45; }
+  .award strong { display: block; font-size: 8.4pt; color: var(--ink); }
+
+  .list { list-style: none; font-size: 8pt; color: var(--body); }
+  .list li { position: relative; padding-left: 3mm; margin-bottom: 1mm; line-height: 1.4; }
+  .list li::before { content: ''; position: absolute; left: 0; top: 1.6mm; width: 1.1mm; height: 1.1mm; border-radius: 50%; background: var(--accent); opacity: 0.7; }
+
+  .side-foot { margin-top: auto; font-size: 7pt; color: var(--muted); }
+
+  /* ── Main ────────────────────────────────── */
+  .main { padding: 14mm 13mm 12mm 11mm; display: flex; flex-direction: column; }
+
+  .name {
+    font-size: 27pt;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    word-spacing: 0.06em;   /* keeps "Jakub Pešl" two words when text is extracted (ATS) */
+    line-height: 1;
+  }
+  .name small { font-size: 0.42em; font-weight: 700; color: var(--accent); letter-spacing: 0.04em; margin-left: 1.5mm; vertical-align: 0.35em; }
+  .title { font-size: 12pt; font-weight: 600; letter-spacing: -0.02em; margin-top: 2.4mm; }
+  .company { font-size: 8.6pt; color: var(--muted); margin-top: 1mm; }
+
+  .profile {
+    margin-top: 6mm;
+    font-size: 9.2pt;
+    line-height: 1.62;
+    color: var(--body);
+  }
+  .profile em { font-style: normal; color: var(--accent); font-weight: 600; }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    font-size: 7.4pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 7mm 0 4mm;
+  }
+  h2::after { content: ''; flex: 1; height: 0.25mm; background: var(--line); }
+  .main > h2:first-child { margin-top: 0; }
+
+  /* Timeline */
+  .job { position: relative; padding-left: 5mm; padding-bottom: 4.6mm; break-inside: avoid; }
+  .job::before { content: ''; position: absolute; left: 0.7mm; top: 2mm; bottom: -1mm; width: 0.25mm; background: var(--line); }
+  .job:last-of-type::before { bottom: 2mm; }
+  .job::after {
+    content: '';
+    position: absolute; left: 0; top: 1.3mm;
+    width: 1.7mm; height: 1.7mm; border-radius: 50%;
+    background: #C7C7CC;
+  }
+  .job.now::after { background: var(--accent); box-shadow: 0 0 0 0.8mm var(--tint); }
+
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+  .job-title { font-size: 10.2pt; font-weight: 700; letter-spacing: -0.02em; }
+  .job-date { font-size: 7.4pt; font-weight: 600; color: var(--accent); white-space: nowrap; letter-spacing: 0.02em; }
+  .job-co { font-size: 8.2pt; color: var(--muted); margin: 0.4mm 0 1.8mm; }
+
+  ul.bul { list-style: none; }
+  ul.bul li { position: relative; padding-left: 3.2mm; margin-bottom: 0.9mm; font-size: 8.7pt; line-height: 1.45; color: var(--body); }
+  ul.bul li::before { content: ''; position: absolute; left: 0; top: 1.75mm; width: 1.1mm; height: 1.1mm; border-radius: 50%; background: #C7C7CC; }
+
+  .win {
+    margin-top: 2mm;
+    padding: 2.2mm 3mm;
+    background: var(--side);
+    border-radius: 2.4mm;
+    font-size: 8.3pt;
+    line-height: 1.5;
+    color: var(--body);
+  }
+  .win strong { color: var(--ink); font-weight: 600; }
+
+  /* Selected projects — small bento */
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4mm; }
+  .proj {
+    border: 0.25mm solid var(--line);
+    border-radius: 3mm;
+    padding: 3mm 3.4mm 3.2mm;
+    break-inside: avoid;
+  }
+  .proj h4 { font-size: 8.8pt; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 1.2mm; display: flex; align-items: center; gap: 1.8mm; }
+  .proj h4 i { font-style: normal; font-size: 6.6pt; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; }
+  .proj p { font-size: 7.9pt; line-height: 1.45; color: var(--body); }
+  .proj p + p { margin-top: 0.8mm; }
+  .proj b { font-weight: 600; color: var(--ink); }
+
+  .quote {
+    margin-top: auto;
+    background: var(--ink);
+    color: #F5F5F7;
+    border-radius: 4mm;
+    padding: 5mm 6mm;
+    position: relative;
+  }
+  .quote::before {
+    content: '“';
+    position: absolute; top: 1mm; left: 4.6mm;
+    font-family: Georgia, serif; font-size: 30pt; color: #2997FF; line-height: 1;
+  }
+  .quote p { font-size: 9.6pt; font-weight: 500; line-height: 1.5; letter-spacing: -0.01em; padding-left: 6mm; }
+  .quote span { display: block; margin-top: 2mm; padding-left: 6mm; font-size: 7.8pt; color: rgba(255,255,255,0.6); }
+  .quote span b { color: #fff; font-weight: 600; }
+
+  /* ── Page 3: structured profile for recruiters and AI screening ── */
+  .kvt { display: grid; grid-template-columns: 31mm 1fr; column-gap: 4mm; row-gap: 1.9mm; font-size: 8.5pt; line-height: 1.45; }
+  .kvt dt { font-weight: 600; color: var(--ink); }
+  .kvt dd { color: var(--body); }
+  .grp + .grp { margin-top: 2.6mm; }
+  .grp b { display: block; font-size: 7.6pt; font-weight: 700; color: var(--ink); margin-bottom: 0.6mm; }
+  .grp p { font-size: 7.7pt; color: var(--body); line-height: 1.45; }
+  .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4mm; }
+  .values .proj p { font-size: 7.9pt; }
+  .note {
+    margin-top: auto;
+    border: 0.25mm solid var(--line);
+    border-radius: 3mm;
+    padding: 3.4mm 4mm;
+    font-size: 8.1pt; line-height: 1.5; color: var(--body);
+  }
+  .note b { color: var(--ink); font-weight: 600; }
+  .note a { color: var(--accent); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+</svg>
+
+<!-- ═══════════════ PAGE 1 ═══════════════ -->
+<section class="page">
+  <aside class="side">
+    <div class="photo"><img src="img/cv-photo.jpg" alt="Jakub Pešl" /></div>
+
+    <div>
+      <h3>Kontakt</h3>
+      <ul class="contact">
+        <li><span class="ico"><svg><use href="#i-mail"/></svg></span><a href="mailto:pesljakub@gmail.com">pesljakub@gmail.com</a></li>
+        <li><span class="ico"><svg><use href="#i-link"/></svg></span><a href="https://www.linkedin.com/in/jakub-pe%C5%A1l">linkedin.com/in/jakub-pešl</a></li>
+        <li><span class="ico"><svg><use href="#i-globe"/></svg></span><a href="https://jakubpesl.github.io/jakub-pesl/cs/">jakubpesl.github.io</a></li>
+        <li><span class="ico"><svg><use href="#i-pin"/></svg></span>Praha · Wiesbaden, DE</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>V&nbsp;kostce</h3>
+      <div class="figures">
+        <div class="fig"><b>19</b><span>let v&nbsp;Panasonicu</span></div>
+        <div class="fig"><b>20+</b><span>evropských trhů</span></div>
+        <div class="fig"><b>5+</b><span>světových veletrhů a&nbsp;akcí — CES, IFA a&nbsp;další</span></div>
+        <div class="fig"><b>20+</b><span>kurzů a&nbsp;certifikací</span></div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Klíčové kompetence</h3>
+      <div class="tags">
+        <span class="tag">Evropský GTM</span>
+        <span class="tag">Produktový marketing</span>
+        <span class="tag">Tvorba kampaní</span>
+        <span class="tag">Trade marketing</span>
+        <span class="tag">Brand komunikace</span>
+        <span class="tag">P&amp;L a&nbsp;rozpočet</span>
+        <span class="tag">Reporting ROI</span>
+        <span class="tag">Řízení agentur</span>
+        <span class="tag">Event marketing</span>
+        <span class="tag">Spolupráce s&nbsp;HQ a&nbsp;LSO</span>
+        <span class="tag">Vedení týmu</span>
+        <span class="tag">AI agenti a&nbsp;automatizace</span>
+      </div>
+    </div>
+
+    <div>
+      <h3>Jazyky</h3>
+      <div class="lang">
+        <b>Čeština</b><span>rodilý mluvčí</span>
+        <b>Angličtina</b><span>C1–C2, denně v&nbsp;mezinárodním prostředí</span>
+        <b>Němčina</b><span>základy</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <h1 class="name">Jakub Pešl<small>, MBA</small></h1>
+    <p class="title">European Marketing Communications Manager</p>
+    <p class="company">Panasonic Marketing Europe GmbH</p>
+
+    <p class="profile">
+      Lídr marketingové komunikace s&nbsp;<em>19 lety v&nbsp;Panasonicu</em> a&nbsp;evropskou působností. Propojuji strategii
+      dohodnutou s&nbsp;globálním vedením v&nbsp;Japonsku s&nbsp;realizací na každém jednotlivém trhu — tvorba kampaní, go-to-market
+      komunikace, retail a&nbsp;trade marketing a&nbsp;P&amp;L, které za tím stojí. Zkušenosti z&nbsp;<em>20+ evropských trhů</em>,
+      z&nbsp;veletrhů CES a&nbsp;IFA a&nbsp;z vedení mezinárodních i&nbsp;lokálních týmů.
+    </p>
+
+    <h2>Praxe</h2>
+
+    <div class="job now">
+      <div class="job-head">
+        <p class="job-title">European Marketing Communications Manager</p>
+        <span class="job-date">DUB 2021 – DOSUD</span>
+      </div>
+      <p class="job-co">Panasonic Marketing Europe GmbH · Praha / Wiesbaden, DE (hybridně)</p>
+      <ul class="bul">
+        <li>Panevropská master strategie marketingové komunikace a&nbsp;materiály, na kterých stojí evropské trhy.</li>
+        <li>Aktuálně: marketing pro <b>DACH, Norsko a&nbsp;Nizozemsko</b> včetně P&amp;L a&nbsp;přenosu best practices.</li>
+        <li>Kompletní řízení evropských kampaní včetně nastavení P&amp;L, odpovědnosti za rozpočet a&nbsp;vyhodnocení ROI.</li>
+        <li>Přímá koordinace s&nbsp;globálním vedením v&nbsp;Japonsku; metodické vedení a&nbsp;podpora národních obchodních organizací (LSO); vedení týmu, agentur a&nbsp;dodavatelů.</li>
+        <li>Globální akce — vedení sekce Consumer na CES; category owner haly Panasonic na IFA.</li>
+      </ul>
+      <p class="win">
+        <strong>Klíčové výsledky:</strong> Koordinace uvedení produktových kampaní ve 20+ evropských zemích ·
+        TV partnerství s&nbsp;Activision Blizzard a&nbsp;Amazon, následně využitá globálně ·
+        200+ produktových videí ročně pro globální využití · Systém řízení marketingových investic a&nbsp;reportingu ROI.
+      </p>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <p class="job-title">Trade &amp; Marketing Communications Manager</p>
+        <span class="job-date">2019 – LED 2021</span>
+      </div>
+      <p class="job-co">Panasonic Marketing Europe GmbH, česká pobočka · Praha</p>
+      <ul class="bul">
+        <li>Plná odpovědnost za marketingovou komunikaci, trade marketing a&nbsp;merchandising pro český trh.</li>
+        <li>Vedení týmu Training &amp; Promotion; ATL a&nbsp;BTL kampaně v&nbsp;segmentech B2C, B2B a&nbsp;B2E.</li>
+        <li>Výběr a&nbsp;řízení agentur, PR akce, kontrola rozpočtu a&nbsp;reporting vedení.</li>
+      </ul>
+      <p class="win">
+        <strong>Klíčové výsledky:</strong> Integrovaný koncept podpory sell-outu pro klíčové retailové partnery v&nbsp;CEE ·
+        Výběrová řízení agentur, která měřitelně zvýšila kvalitu a&nbsp;rychlost kampaní.
+      </p>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <p class="job-title">Trade Marketing Manager</p>
+        <span class="job-date">DUB 2011 – 2019</span>
+      </div>
+      <p class="job-co">Panasonic Marketing Europe GmbH, česká pobočka · Praha</p>
+      <ul class="bul">
+        <li>Trade marketing, merchandising a&nbsp;Training &amp; Promotion pro CZ, SK a&nbsp;HU — v&nbsp;roli Regional Trade Marketing Manager navíc RO a&nbsp;BG (2011–2013).</li>
+        <li>ATL/BTL komunikace spotřební elektroniky, POP/POS, školení a&nbsp;PR akce; plánování rozpočtu a&nbsp;odpovědnost za ROI.</li>
+      </ul>
+      <p class="win"><strong>Klíčové výsledky:</strong> Trade marketing na pěti trzích CEE současně · Online trade systémy jako digitální sell-in nástroj pro retailové partnery.</p>
+    </div>
+  </main>
+</section>
+
+<!-- ═══════════════ PAGE 2 ═══════════════ -->
+<section class="page">
+  <aside class="side">
+    <div>
+      <h3>Ocenění</h3>
+      <div class="award">
+        <span class="ico"><svg><use href="#i-award"/></svg></span>
+        <p><strong>Bronze Individual Award</strong>Panasonic CEE — top 3 z&nbsp;~150 zaměstnanců ze 17 zemí, za výjimečné výsledky a&nbsp;přínos.</p>
+      </div>
+    </div>
+
+    <div>
+      <h3>Vzdělání</h3>
+      <p class="kv"><b>Master of Business Administration</b>British Business School (BBS), Praha<br /><i>kvě 2024 – čvc 2025 · Marketing &amp; PR, strategické vedení, brand management</i></p>
+      <p class="kv"><b>Studium angličtiny</b>MAVO s.r.o. <i>· 2003 – 2004</i></p>
+      <p class="kv"><b>Střední umělecko-průmyslová škola</b>Praha 5 <i>· 1999 – 2003</i></p>
+    </div>
+
+    <div>
+      <h3>Kurzy a&nbsp;certifikace</h3>
+      <ul class="list">
+        <li>vibecodingformarketers.com — kurz AI</li>
+        <li>AI v&nbsp;marketingu a&nbsp;AI First</li>
+        <li>Storytelling with Insight</li>
+        <li>Marketingová komunikace a&nbsp;brand strategie</li>
+        <li>Merchandising a&nbsp;komunikace v&nbsp;prodejně</li>
+        <li>Vedení lidí</li>
+        <li>Komunikační dovednosti pro manažery (I–III)</li>
+        <li>Týmová komunikace</li>
+        <li>Projektové řízení a&nbsp;Agile</li>
+        <li>Vyjednávání</li>
+        <li>Rozvoj vztahů se zákazníky</li>
+        <li>Facebook a&nbsp;firemní komunikace</li>
+        <li>Zvládání stresu a&nbsp;time management</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Ostatní</h3>
+      <p class="kv">Řidičský průkaz sk. B<br />Vůdce rekreačního plavidla (CMS)</p>
+    </div>
+
+    <p class="side-foot">Jakub Pešl, MBA · životopis · 2026</p>
+  </aside>
+
+  <main class="main">
+    <h2>Praxe — pokračování</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <p class="job-title">Head of Call Centre</p>
+        <span class="job-date">ZÁŘ 2007 – BŘE 2011</span>
+      </div>
+      <p class="job-co">Panasonic Marketing Europe GmbH, česká pobočka · Praha</p>
+      <ul class="bul">
+        <li>Od nuly vybudované a&nbsp;vedené interní zákaznické oddělení pro český a&nbsp;slovenský trh — s&nbsp;vysokou spokojeností zákazníků.</li>
+        <li>Procesní podpora interní komunikace; online systémy a&nbsp;interaktivní znalostní báze.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <p class="job-title">Help Desk &amp; Customer Support Supervisor</p>
+        <span class="job-date">LED 2006 – ZÁŘ 2007</span>
+      </div>
+      <p class="job-co">České Radiokomunikace a.s. · Praha</p>
+      <ul class="bul">
+        <li>Dohled nad páteřní sítí a&nbsp;vedení týmu operátorů; standardizace procesů podpory, která zkrátila dobu řešení případů.</li>
+      </ul>
+    </div>
+
+    <h2>Vybrané projekty</h2>
+    <div class="projects">
+      <div class="proj">
+        <h4><i>01</i>TV</h4>
+        <p>Evropská <b>GTM strategie pro TV portfolio</b> a&nbsp;aktivace herní TV strategie v&nbsp;Evropě.</p>
+        <p>Partnerství s&nbsp;<b>Activision Blizzard</b> a&nbsp;<b>Amazon</b> — evropská komunikace následně využitá globálně.</p>
+        <p><b>200+ produktových videí</b> ročně pro globální využití.</p>
+      </div>
+      <div class="proj">
+        <h4><i>02</i>Technics</h4>
+        <p><b>Evropská strategie Technics TWS</b> a&nbsp;aktivace kampaní, 2023–2025.</p>
+        <p>Produkční tým <b>globálních eventů Technics TWS</b> 2023, 2024, 2025.</p>
+        <p>Česká aktivace s&nbsp;<b>Ondřejem Brzobohatým</b> — „Bohatý zvuk, luxusní design“.</p>
+      </div>
+      <div class="proj">
+        <h4><i>03</i>LUMIX</h4>
+        <p><b>LUMIX Stories</b> — influencerský a&nbsp;ambasadorský program postavený na autentickém storytellingu, který ukazuje, co fotoaparáty opravdu umí.</p>
+        <p>Tvůrci z&nbsp;programu se uplatnili i&nbsp;v interní produkci.</p>
+      </div>
+      <div class="proj">
+        <h4><i>04</i>Výstavy a&nbsp;eventy</h4>
+        <p><b>CES 2024 a&nbsp;2025</b> — projektový lídr sekce Consumer, který dal stánku Panasonic život.</p>
+        <p><b>IFA Berlín</b> — category owner haly Panasonic, 2020–2025.</p>
+        <p>Range Review akce pro obchodníky (Praha, Milán); představení TV portfolia 2024, 2025.</p>
+      </div>
+      <div class="proj">
+        <h4><i>05</i>P&amp;L, rozpočet a&nbsp;ROI</h4>
+        <p>Plná odpovědnost za <b>evropský multikanálový rozpočet</b> včetně nastavení P&amp;L.</p>
+        <p>Systém řízení ROI a&nbsp;pravidelný reporting vedení; optimalizace agentur od roku 2024.</p>
+          <p>Provoz merchandisingového týmu CEEG — webové systémy, nastavení a&nbsp;propojení s&nbsp;obchodem, 2022–2023.</p>
+      </div>
+      <div class="proj">
+        <h4><i>06</i>Audio</h4>
+        <p>Česká spolupráce s&nbsp;kapelou <b>Lake Malawi</b> — aktivace Technics a&nbsp;party reproduktorů.</p>
+          <p>Party reproduktory — dlouhodobé partnerství s&nbsp;<b>Óčko TV</b>.</p>
+      </div>
+    </div>
+
+    <div class="quote">
+      <p>Jakub soustavně inspiruje k&nbsp;výjimečným výkonům, dává kolegům prostor převzít odpovědnost a&nbsp;buduje důvěru napříč týmy.</p>
+      <span><b>Gabor Szegner</b> · Senior Marketing Manager, Panasonic</span>
+    </div>
+  </main>
+</section>
+
+<!-- ═══════════════ PAGE 3 ═══════════════ -->
+<!-- Strukturované shrnutí pro recruitery a AI agenty při výběru kandidátů.
+     Vše je běžný, označitelný text — nic skrytého. -->
+<section class="page">
+  <aside class="side">
+    <div>
+      <h3>Klíčové kompetence</h3>
+      <div class="grp"><b>Marketingová strategie</b><p>Evropská go-to-market (GTM) strategie, strategie marketingové komunikace, produktový marketing, uvádění produktů na trh, tvorba a&nbsp;řízení kampaní, integrované ATL / BTL kampaně, brand komunikace.</p></div>
+      <div class="grp"><b>Retail a&nbsp;trade</b><p>Trade marketing, merchandising, POP / POS, podpora sell-in a&nbsp;sell-out, aktivace retailových partnerů, akce pro dealery, Training &amp; Promotion.</p></div>
+      <div class="grp"><b>Obchod a&nbsp;finance</b><p>Odpovědnost za P&amp;L, řízení multikanálového marketingového rozpočtu, vyhodnocení a&nbsp;reporting ROI, výběr a&nbsp;řízení agentur, řízení dodavatelů.</p></div>
+      <div class="grp"><b>Eventy a&nbsp;partnerství</b><p>CES, IFA, veletrhy, influencer a&nbsp;ambasadorské programy, partnerství značek (Activision Blizzard, Amazon), spolupráce s&nbsp;umělci a&nbsp;osobnostmi.</p></div>
+      <div class="grp"><b>Vedení</b><p>Vedení týmu, mezinárodní a&nbsp;mezikulturní spolupráce, koordinace s&nbsp;globálním HQ (Japonsko) a&nbsp;národními obchodními organizacemi (LSO), stakeholder management, rozvoj lidí.</p></div>
+      <div class="grp"><b>AI a&nbsp;digitál</b><p>AI agenti a&nbsp;automatizace procesů, AI v&nbsp;marketingu, transformace pracovních procesů v&nbsp;korporaci, stavění aplikací s&nbsp;AI (vibe coding), online trade systémy, znalostní báze.</p></div>
+    </div>
+
+    <div>
+      <h3>Obor</h3>
+      <p class="kv">Spotřební elektronika — TV, audio (Technics, party reproduktory), fotoaparáty (LUMIX)</p>
+    </div>
+
+    <p class="side-foot">Jakub Pešl, MBA · životopis · 2026</p>
+  </aside>
+
+  <main class="main">
+    <h2>Profil v&nbsp;kostce</h2>
+    <dl class="kvt">
+      <dt>Jméno</dt><dd>Jakub Pešl, MBA</dd>
+      <dt>Současná pozice</dt><dd>European Marketing Communications Manager, Panasonic Marketing Europe GmbH (od dubna 2021)</dd>
+      <dt>Lokalita</dt><dd>Praha · hybridně s&nbsp;Wiesbadenem (Německo)</dd>
+      <dt>Praxe</dt><dd>19 let v&nbsp;Panasonicu (od 2007); celkem 20 let (od 2006)</dd>
+      <dt>Geografický záběr</dt><dd>20+ evropských trhů; aktuálně detailně DACH, Norsko a&nbsp;Nizozemsko; dříve CZ, SK, HU, RO a&nbsp;BG</dd>
+      <dt>Tým a&nbsp;partneři</dt><dd>Vede marketingový tým spolu s&nbsp;externími agenturami a&nbsp;dodavateli; denně spolupracuje s&nbsp;globálním HQ v&nbsp;Japonsku a&nbsp;evropskými LSO</dd>
+      <dt>Vzdělání</dt><dd>MBA, Marketing &amp; PR — British Business School (BBS), Praha, 2025</dd>
+      <dt>Jazyky</dt><dd>čeština (rodilý mluvčí) · angličtina (C1–C2) · němčina (základy)</dd>
+      <dt>Ocenění</dt><dd>Bronze Individual Award, Panasonic CEE — top 3 z&nbsp;~150 zaměstnanců ze 17 zemí</dd>
+    </dl>
+
+    <h2>Čím teď žiju · listopad 2026</h2>
+    <ul class="bul">
+      <li>Detailní péče o&nbsp;marketing pro <b>DACH, Norsko a&nbsp;Nizozemsko</b> včetně P&amp;L a&nbsp;přenos osvědčených postupů z&nbsp;ostatních evropských regionů.</li>
+      <li><b>Automatizace pomocí AI agentů</b> a&nbsp;transformace pracovních procesů uvnitř velké korporace.</li>
+      <li><b>Stavění vlastních aplikací s&nbsp;AI</b> — včetně tohoto životopisu a&nbsp;osobního webu. Fascinuje mě, že se tyto dovednosti stávají dostupné každému.</li>
+      <li>Sleduji témata cestování, technologií a&nbsp;investování.</li>
+    </ul>
+
+    <h2>Jak pracuji</h2>
+    <div class="values">
+      <div class="proj"><h4>Fair play</h4><p>Řeknu, co udělám, a&nbsp;pak to udělám. Dlouhodobé vztahy s&nbsp;agenturami, retailem i&nbsp;týmy stojí na tom, ne na tlaku.</p></div>
+      <div class="proj"><h4>Tah na branku</h4><p>Rozpočty, termíny, 20+ trhů. Omezení a&nbsp;neustálé změny beru jako normální stav — s&nbsp;efektivitou, dopadem a&nbsp;kreativitou.</p></div>
+      <div class="proj"><h4>Rozvoj lidí</h4><p>Většinu toho, co umím, mě naučili lidé, se kterými jsem pracoval. Cílem je tým, který to zvládne i&nbsp;beze mě.</p></div>
+    </div>
+
+    <h2>Mimo kancelář</h2>
+    <ul class="bul">
+      <li><b>Tech nadšenec</b> — poslední dobou AI nástroje, spotřební elektronika vždycky.</li>
+      <li><b>Aktivní život</b> — windsurfing, hory a&nbsp;pravidelný sport jako reset.</li>
+      <li><b>Rodina a&nbsp;cestování</b> — cestování po Evropě s&nbsp;rodinou; nejlepší průzkum trhu, jaký existuje.</li>
+    </ul>
+
+    <p class="note">
+      <b>Více online:</b> projekty, fotky a&nbsp;reference na <a href="https://jakubpesl.github.io/jakub-pesl/cs/">jakubpesl.github.io/jakub-pesl/cs</a>.
+      Textový profil pro AI asistenty je na <a href="https://jakubpesl.github.io/jakub-pesl/llms.txt">jakubpesl.github.io/jakub-pesl/llms.txt</a>.
+    </p>
+  </main>
+</section>
+
+</body>
+</html>

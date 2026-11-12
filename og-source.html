@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1200px; height: 630px;
+    background: #0E0E10;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .glow {
+    position: absolute;
+    width: 900px; height: 900px;
+    right: -180px; top: -280px;
+    background: radial-gradient(circle, rgba(0,113,227,0.28) 0%, transparent 62%);
+  }
+  .left { padding: 0 0 0 76px; width: 700px; position: relative; z-index: 2; }
+  .mark {
+    width: 54px; height: 54px; border-radius: 15px; background: #0071E3;
+    font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 30px;
+  }
+  h1 { font-size: 66px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin-bottom: 14px; }
+  h1 span { color: #2997FF; font-size: 27px; font-weight: 700; letter-spacing: 0.03em; vertical-align: 11px; margin-left: 8px; }
+  .role { font-size: 27px; font-weight: 600; letter-spacing: -0.02em; color: #fff; margin-bottom: 10px; }
+  .co { font-size: 19px; color: rgba(255,255,255,0.5); margin-bottom: 34px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 9px; max-width: 620px; }
+  .chip {
+    font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; padding: 7px 16px;
+    background: rgba(255,255,255,0.05);
+  }
+  .photo {
+    position: absolute; right: 72px; top: 50%; transform: translateY(-50%);
+    width: 332px; height: 415px; border-radius: 26px; overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.1);
+    z-index: 2;
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="left">
+    <div class="mark">JP</div>
+    <h1>Jakub Pešl<span>MBA</span></h1>
+    <p class="role">European Marketing Communications Manager</p>
+    <p class="co">Panasonic Marketing Europe · 19 years · 20+ European markets</p>
+    <div class="chips">
+      <span class="chip">European GTM</span>
+      <span class="chip">Campaign development</span>
+      <span class="chip">Trade marketing</span>
+      <span class="chip">CES / IFA</span>
+    </div>
+  </div>
+  <div class="photo"><img src="JakubP.png" alt="" /></div>
+</body>
+</html>

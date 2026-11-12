@@ -13,24 +13,66 @@
   </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230071E3'/><text x='50%25' y='54%25' font-family='Inter,system-ui,sans-serif' font-size='13' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'>JP</text></svg>" />
   <title>Jakub Pešl — European Marketing Communications Manager</title>
-  <meta name="description" content="European Marketing Communications Manager at Panasonic Marketing Europe. Strategic marketing leader blending creativity with analytical precision." />
+  <meta name="description" content="European Marketing Communications Manager at Panasonic Marketing Europe — go-to-market communication, campaign development and trade marketing across 20+ European markets." />
+
+  <link rel="alternate" hreflang="en" href="https://jakubpesl.github.io/jakub-pesl/" />
+  <link rel="alternate" hreflang="cs" href="https://jakubpesl.github.io/jakub-pesl/cs/" />
+  <link rel="alternate" type="text/plain" title="Profile for AI assistants" href="https://jakubpesl.github.io/jakub-pesl/llms.txt" />
+  <link rel="alternate" hreflang="x-default" href="https://jakubpesl.github.io/jakub-pesl/" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="profile" />
   <meta property="og:url"         content="https://jakubpesl.github.io/jakub-pesl/" />
   <meta property="og:title"       content="Jakub Pešl — European Marketing Communications Manager" />
-  <meta property="og:description" content="Strategic marketing leader at Panasonic Marketing Europe. 15+ years, 30+ European markets, CES & IFA." />
-  <meta property="og:image"       content="https://jakubpesl.github.io/jakub-pesl/JakubP.png" />
+  <meta property="og:description" content="Go-to-market communication, campaigns and trade marketing across 20+ European markets. 19 years at Panasonic. CES & IFA." />
+  <meta property="og:image"       content="https://jakubpesl.github.io/jakub-pesl/og.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"    content="Jakub Pešl, MBA — European Marketing Communications Manager at Panasonic Marketing Europe" />
   <meta property="og:locale"      content="en_US" />
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Jakub Pešl — European Marketing Communications Manager" />
-  <meta name="twitter:description" content="Strategic marketing leader at Panasonic Marketing Europe. 15+ years, 30+ European markets, CES & IFA." />
-  <meta name="twitter:image"       content="https://jakubpesl.github.io/jakub-pesl/JakubP.png" />
+  <meta name="twitter:description" content="Go-to-market communication, campaigns and trade marketing across 20+ European markets. 19 years at Panasonic. CES & IFA." />
+  <meta name="twitter:image"       content="https://jakubpesl.github.io/jakub-pesl/og.png" />
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jakub Pešl",
+    "jobTitle": "European Marketing Communications Manager",
+    "url": "https://jakubpesl.github.io/jakub-pesl/",
+    "image": "https://jakubpesl.github.io/jakub-pesl/JakubP.png",
+    "email": "mailto:pesljakub@gmail.com",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Panasonic Marketing Europe"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "British Business School"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Prague",
+      "addressCountry": "CZ"
+    },
+    "knowsAbout": [
+      "Marketing Communications",
+      "Go-to-Market Strategy",
+      "Trade Marketing",
+      "Brand Communication",
+      "Event Marketing"
+    ],
+    "sameAs": ["https://www.linkedin.com/in/jakub-pe%C5%A1l"]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -57,12 +99,16 @@
     }
 
     /* ─── NAV ─────────────────────────────────── */
+    /* Height lives in a custom property so the mobile dropdown and the
+       anchor scroll offset follow the bar when it shrinks on scroll. */
+    :root { --nav-h: 74px; }
+
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      height: 52px;
-      padding: 0 48px;
+      height: var(--nav-h);
+      padding: 0 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -70,65 +116,143 @@
       backdrop-filter: saturate(180%) blur(20px);
       -webkit-backdrop-filter: saturate(180%) blur(20px);
       border-bottom: 1px solid rgba(0,0,0,0.08);
-      transition: border-color 0.3s;
+      transition: height 0.35s cubic-bezier(.16,1,.3,1), border-color 0.3s, background 0.3s;
+    }
+    nav.scrolled { --nav-h: 58px; }
+
+    /* ── Logo lockup: monogram + name + role ── */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      flex-shrink: 0;
     }
 
-    .nav-logo {
-      font-size: 17px;
+    .nav-mark {
+      width: 32px; height: 32px;
+      border-radius: 9px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s cubic-bezier(.16,1,.3,1);
+    }
+    .nav-logo:hover .nav-mark { transform: rotate(-6deg) scale(1.06); }
+
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+
+    .nav-logo-name {
+      font-size: 16px;
       font-weight: 600;
       letter-spacing: -0.025em;
       color: var(--black);
-      text-decoration: none;
     }
 
+    .nav-logo-role {
+      font-size: 11.5px;
+      font-weight: 400;
+      color: var(--gray-3);
+      letter-spacing: 0.01em;
+      max-height: 16px;
+      opacity: 1;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(.16,1,.3,1), opacity 0.25s;
+    }
+    nav.scrolled .nav-logo-role { max-height: 0; opacity: 0; }
+
+    /* ── Links: centred, so the bar doesn't read as two islands ── */
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 34px;
       list-style: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .nav-links a {
-      font-size: 14px;
+      position: relative;
+      font-size: 14.5px;
+      font-weight: 500;
       color: var(--black);
       text-decoration: none;
-      opacity: 0.75;
+      opacity: 0.7;
+      padding: 6px 0;
       transition: opacity 0.2s;
     }
 
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s cubic-bezier(.16,1,.3,1);
+    }
     .nav-links a:hover { opacity: 1; }
+    .nav-links a:hover::after,
+    .nav-links a.nav-active::after { transform: scaleX(1); }
+    .nav-links .nav-cta::after { display: none; }
+
+    .nav-cv {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--black);
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid var(--gray-2);
+      border-radius: 980px;
+      white-space: nowrap;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .nav-cv:hover { border-color: var(--gray-4); background: var(--gray-1); }
 
     .nav-cta {
       background: var(--black) !important;
       color: var(--white) !important;
       opacity: 1 !important;
-      padding: 7px 18px;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 9px 20px;
       border-radius: 980px;
       font-size: 14px;
       font-weight: 500;
-      transition: background 0.2s !important;
+      transition: background 0.2s, transform 0.2s !important;
     }
-    .nav-cta:hover { background: #444 !important; }
+    .nav-cta:hover { background: #444 !important; transform: translateY(-1px); }
 
     /* ─── HERO ────────────────────────────────── */
+    /* Leaves a clean strip of the dark stat band peeking above the fold —
+       it does the job a "scroll" hint would. The strip stays shorter than
+       the band's top padding so no numbers are cut in half. Content height
+       wins on short screens. */
     .hero {
-      min-height: 100svh;
+      min-height: calc(100svh - 72px);
       display: grid;
-      grid-template-columns: 340px 1fr;
+      grid-template-columns: 420px 1fr;
       align-items: center;
-      gap: 72px;
-      max-width: 1080px;
+      gap: 80px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 120px 48px 96px;
+      padding: 124px 48px 64px;
       position: relative;
-      overflow: hidden;
     }
 
     .hero::after {
       content: '';
       position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 65% 30%, rgba(0,113,227,0.05) 0%, transparent 65%);
+      inset: -10% -20%;
+      background: radial-gradient(ellipse 70% 55% at 62% 32%, rgba(0,113,227,0.07) 0%, transparent 62%);
       pointer-events: none;
       z-index: 0;
     }
@@ -143,19 +267,34 @@
       animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.1s forwards;
     }
 
+    /* Photo and credential card stack vertically; the accent plate is scoped
+       to the photo only so it can't bleed behind the card below it. */
+    .hero-photo-stack { position: relative; }
+
+    /* Accent plate offset behind the photo — gives the column depth
+       instead of a single flat rectangle floating in white space. */
+    .hero-photo-stack::before {
+      content: '';
+      position: absolute;
+      inset: 24px -20px -24px 20px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(0,113,227,0.16), rgba(0,113,227,0.02));
+      z-index: 1;
+    }
+
     .hero-avatar-inner {
       position: relative;
       z-index: 2;
-      width: 75%;
+      width: 100%;
       margin: 0 auto;
-      border-radius: 24px;
+      border-radius: 26px;
       overflow: hidden;
-      box-shadow: 0 32px 64px rgba(0,0,0,0.14), 0 0 0 1px rgba(0,0,0,0.04);
+      box-shadow: 0 32px 64px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
     }
 
     .hero-avatar {
       width: 100%;
-      aspect-ratio: 3/4;
+      aspect-ratio: 4/5;
       object-fit: cover;
       object-position: center 15%;
       display: block;
@@ -166,23 +305,54 @@
       transform: scale(1.04);
     }
 
+    /* Credential card sits under the photo — never over the face */
+    .hero-award {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 34px;
+      padding: 15px 18px;
+      background: var(--white);
+      border: 1px solid var(--gray-2);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 1s forwards;
+    }
+    .hero-award-icon {
+      width: 40px; height: 40px; border-radius: 12px; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #B5782F; background: rgba(181,120,47,0.12);   /* bronze */
+    }
+    .hero-award-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--black);
+      margin-bottom: 2px;
+    }
+    .hero-award-sub {
+      font-size: 11.5px;
+      line-height: 1.45;
+      color: var(--gray-3);
+    }
+
     .hero-content { position: relative; z-index: 1; }
 
+    /* Quiet status line under the CTAs — kept away from the name */
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: var(--gray-1);
-      border: 1px solid var(--gray-2);
-      border-radius: 980px;
-      padding: 6px 16px;
-      font-size: 12px;
+      gap: 9px;
+      margin-top: 30px;
+      font-size: 13px;
       font-weight: 500;
-      color: var(--gray-4);
+      color: var(--gray-3);
       letter-spacing: 0.01em;
-      margin-bottom: 24px;
       opacity: 0;
-      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.25s forwards;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 1s forwards;
     }
     .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #34c759; flex-shrink: 0; }
 
@@ -210,11 +380,12 @@
     }
 
     .hero-title {
-      font-size: clamp(15px, 1.6vw, 18px);
-      font-weight: 400;
-      color: var(--gray-3);
-      line-height: 1.55;
-      margin-bottom: 24px;
+      font-size: clamp(19px, 2.1vw, 25px);
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 14px;
       opacity: 0;
       animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.55s forwards;
     }
@@ -226,11 +397,33 @@
       color: var(--gray-4);
       max-width: 520px;
       line-height: 1.7;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
       opacity: 0;
       animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.7s forwards;
     }
     .hero-tagline em { font-style: normal; color: var(--accent); font-weight: 500; }
+
+    /* Keyword strip — quick scan of scope, no numbers (those live in the stat bar) */
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      max-width: 540px;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.78s forwards;
+    }
+    .hero-meta li {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--gray-4);
+      background: var(--gray-1);
+      border: 1px solid var(--gray-2);
+      border-radius: 980px;
+      padding: 5px 13px;
+      white-space: nowrap;
+    }
 
     .hero-actions {
       display: flex;
@@ -277,35 +470,10 @@
       transform: translateY(-2px);
     }
 
-    .scroll-indicator {
-      position: fixed;
-      bottom: 36px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      opacity: 0;
-      animation: fadeIn 1s ease 1.4s forwards;
-    }
-    .scroll-indicator span {
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gray-3);
-    }
-    .scroll-line {
-      width: 1px;
-      height: 36px;
-      background: linear-gradient(to bottom, var(--gray-3), transparent);
-      animation: scrollPulse 2.2s ease-in-out 1.4s infinite;
-    }
-
     /* ─── STAT BAR ────────────────────────────── */
     .stat-bar {
       background: var(--black);
-      padding: 48px 24px;
+      padding: 56px 24px 44px;
     }
     .stat-bar-inner {
       max-width: 1080px;
@@ -338,9 +506,65 @@
       letter-spacing: -0.02em !important;
     }
 
+    /* Brands sit under the numbers, separated by a hairline */
+    .stat-brands {
+      max-width: 1080px;
+      margin: 28px auto 0;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px 44px;
+    }
+    .stat-brands-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .brand-mark {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      opacity: 0.42;
+      transition: opacity 0.3s;
+      white-space: nowrap;
+    }
+    .brand-mark:hover { opacity: 0.95; }
+
+    /* ─── ICONS ───────────────────────────────── */
+    svg.i {
+      width: 20px; height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+    /* Accent-tinted rounded square behind value / personal icons */
+    .tile-value-icon, .personal-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+    }
+    .personal-icon .i { width: 18px; height: 18px; }
+
     /* ─── SHARED LAYOUT ──────────────────────── */
     section { padding: 96px 24px; }
     .container { max-width: 1080px; margin: 0 auto; }
+
+    /* Anchor targets must clear the fixed bar */
+    section[id], div[id].stat-bar { scroll-margin-top: 70px; }
 
     .label {
       font-size: 12px;
@@ -367,152 +591,119 @@
       max-width: 580px;
     }
 
-    /* ─── ABOUT ───────────────────────────────── */
+    /* ─── ABOUT (bento) ──────────────────────── */
+    /* About, mindset and values share one grid of tiles: photo spans two
+       rows, intro spans two columns, values close the grid as one row. */
     .about { background: var(--gray-1); }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.55fr 1fr;
-      gap: 72px;
-      align-items: start;
-    }
-
-    .about-photo-wrap {
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-      width: 75%;
-      margin: 0 auto;
-    }
-
-    .about-photo {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s cubic-bezier(.16,1,.3,1);
-    }
-
-    .about-photo-wrap:hover .about-photo {
-      transform: scale(1.1);
-    }
-
-    .about-quote {
-      font-size: clamp(28px, 3.5vw, 40px);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      color: var(--black);
-    }
-    .about-quote em { font-style: normal; color: var(--accent); }
-
-    .about-body {
-      font-size: 17px;
-      line-height: 1.75;
-      color: var(--gray-4);
-    }
-    .about-body p + p { margin-top: 18px; }
-
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 28px;
-    }
-    .pill {
-      background: var(--white);
-      border: 1px solid var(--gray-2);
-      border-radius: 980px;
-      padding: 7px 16px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--black);
-    }
-
-    /* ─── MINDSET ─────────────────────────────── */
-    .mindset {
-      background: var(--white);
-      overflow: hidden;
-    }
-
-    .mindset-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .mindset-left {
-      position: relative;
-      z-index: 1;
-    }
-
-    .mindset-quote {
-      font-size: clamp(26px, 3.2vw, 38px);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      color: var(--black);
-      margin-top: 48px;
-    }
-
-    .mindset-quote em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
-    .mindset-right {
-      position: relative;
-      z-index: 1;
-      padding-top: 16px;
-    }
-
-    .mindset-body {
-      font-size: 17px;
-      line-height: 1.8;
-      color: var(--gray-4);
-    }
-
-    .mindset-body p + p { margin-top: 24px; }
-
-    .mindset-highlight {
-      display: block;
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--black);
-      border-left: 3px solid var(--accent);
-      padding-left: 16px;
-      margin-top: 32px;
-      line-height: 1.6;
-    }
-
-    /* ─── VALUES ──────────────────────────────── */
-    .values-grid {
+    .bento {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
-      margin-top: 40px;
     }
 
-    .value-card {
-      background: var(--gray-1);
-      border-radius: 22px;
-      padding: 32px 28px;
-      transition: all 0.45s cubic-bezier(.16,1,.3,1);
-      cursor: default;
+    .tile {
+      position: relative;
+      background: var(--white);
+      border-radius: 28px;
+      padding: 40px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      transition: transform 0.45s cubic-bezier(.16,1,.3,1), box-shadow 0.45s cubic-bezier(.16,1,.3,1);
     }
-    .value-card:hover {
-      background: var(--black);
+
+    .tile-kicker {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      margin-bottom: 14px;
+    }
+
+    /* Photo */
+    .tile-photo { grid-row: span 2; padding: 0; min-height: 420px; }
+    .tile-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform 0.8s cubic-bezier(.16,1,.3,1);
+    }
+    .tile-photo:hover img { transform: scale(1.04); }
+
+    /* Intro */
+    .tile-intro { grid-column: span 2; padding: 48px; }
+    .about-quote {
+      font-size: clamp(28px, 3.4vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--black);
+      margin-bottom: 22px;
+    }
+    .about-quote em { font-style: normal; color: var(--accent); }
+    .tile-body {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--gray-4);
+      max-width: 620px;
+    }
+    .tile-body p + p { margin-top: 14px; }
+
+    /* Mindset quote — the one saturated tile in the grid */
+    .tile-quote {
+      background:
+        radial-gradient(120% 90% at 100% 0%, rgba(255,255,255,0.18) 0%, transparent 55%),
+        linear-gradient(150deg, #0A84FF 0%, #0060C7 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .tile-quote .tile-kicker { color: rgba(255,255,255,0.65); }
+    .tile-quote-text {
+      font-size: clamp(22px, 2.2vw, 26px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.22;
+      margin-bottom: 20px;
+    }
+    .tile-quote-sub {
+      margin-top: auto;
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.8);
+      padding-left: 14px;
+      border-left: 2px solid rgba(255,255,255,0.45);
+    }
+
+    /* Location */
+    .tile-place { display: flex; flex-direction: column; }
+    .tile-place-city {
+      font-size: clamp(36px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+    .tile-place-text {
+      margin-top: auto;
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--gray-3);
+    }
+
+    /* Values */
+    .tile-value { padding: 32px 32px 34px; }
+    .tile-value:hover {
       transform: translateY(-4px);
-      box-shadow: 0 20px 48px rgba(0,0,0,0.12);
+      box-shadow: 0 20px 44px rgba(0,0,0,0.08);
     }
-    .value-card:hover .value-icon,
-    .value-card:hover .value-title,
-    .value-card:hover .value-desc { color: var(--white); }
-
-    .value-icon  { font-size: 24px; margin-bottom: 14px; display: block; transition: color 0.4s; }
-    .value-title { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; color: var(--black); transition: color 0.4s; }
-    .value-desc  { font-size: 14px; line-height: 1.6; color: var(--gray-3); transition: color 0.4s; }
+    .tile-value-icon  { margin-bottom: 18px; }
+    .tile-value-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; color: var(--black); margin-bottom: 8px; }
+    .tile-value-desc  { font-size: 14px; line-height: 1.6; color: var(--gray-3); }
 
     /* ─── EXPERTISE ───────────────────────────── */
     .expertise { background: var(--black); }
@@ -520,64 +711,139 @@
     .expertise .section-title { color: var(--white); }
     .expertise .section-sub   { color: rgba(255,255,255,0.45); }
 
+    /* Header: title left, intro right — one row instead of a stacked block */
+    .exp-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+    }
+    .exp-head .section-title { margin-bottom: 0; }
+    .exp-head .section-sub { margin-bottom: 6px; }
+
+    /* Bento on a 12-col track, two rows. Row one is even thirds; row two
+       sizes tiles by content length so their bottoms line up. */
     .exp-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-      margin-top: 64px;
-      border-radius: 28px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.07);
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      margin-top: 56px;
     }
+    .exp-third  { grid-column: span 4; }
+    .exp-wide   { grid-column: span 5; }
+    .exp-mid    { grid-column: span 4; }
+    .exp-narrow { grid-column: span 3; }
 
     .exp-item {
-      background: var(--black);
-      padding: 52px 44px;
-      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+      background: #161617;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 26px;
+      padding: 36px 32px 38px;
+      transition: border-color 0.45s, transform 0.45s cubic-bezier(.16,1,.3,1);
     }
-    .exp-item:hover { background: #111; }
+    /* Soft accent glow from the top edge on hover */
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(90% 60% at 50% 0%, rgba(41,151,255,0.16), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.45s;
+      pointer-events: none;
+    }
+    .exp-item:hover { border-color: rgba(255,255,255,0.16); transform: translateY(-3px); }
+    .exp-item:hover::before { opacity: 1; }
+    .exp-item > * { position: relative; }
 
-    .exp-num   { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 16px; }
-    .exp-title { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--white); margin-bottom: 12px; }
+    /* Project list inside a tile */
+    .exp-list { list-style: none; margin-top: 4px; }
+    .exp-list li {
+      position: relative;
+      padding-left: 17px;
+      margin-bottom: 11px;
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.46);
+    }
+    .exp-list li:last-child { margin-bottom: 0; }
+    .exp-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 9px;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.75;
+    }
+    .exp-list strong { color: rgba(255,255,255,0.88); font-weight: 600; }
+    .exp-list .yr { color: rgba(255,255,255,0.32); font-size: 13px; white-space: nowrap; }
+
+    /* Number row with the tile's photo fan on the right */
+    .exp-top { display: flex; align-items: center; min-height: 44px; margin: -10px -4px 4px 0; }
+    .exp-top .exp-num { margin-bottom: 0; }
+    .exp-item .photo-fan > img,
+    .exp-item .fan-more { border-color: #161617; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+    .exp-item .fan-more { background: #2C2C2E; color: rgba(255,255,255,0.6); }
+    .exp-num   { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 14px; }
+    .exp-title { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--white); margin-bottom: 16px; }
     .exp-desc  { font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.42); }
+
+    /* Optional line for a concrete project name / scope / year.
+       Add under .exp-title, e.g. <p class="exp-meta">LUMIX S5 II · 20+ markets · 2023</p> */
+    .exp-meta {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.72);
+      letter-spacing: -0.01em;
+      margin: -6px 0 14px;
+      padding-left: 11px;
+      border-left: 2px solid var(--accent);
+      line-height: 1.5;
+    }
 
     /* ─── JOURNEY / TIMELINE ─────────────────── */
     .journey { background: var(--gray-1); }
 
+    .journey-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .journey-intro {
+      position: sticky;
+      top: calc(var(--nav-h) + 48px);
+    }
+    .journey-intro .section-sub { font-size: 16px; }
+
     .timeline {
       position: relative;
-      margin-top: 64px;
       padding-left: 32px;
     }
     .timeline::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 8px;
-      bottom: 8px;
+      left: 4px;
+      top: 10px;
+      bottom: 30px;
       width: 1px;
       background: var(--gray-2);
     }
 
-    .timeline-item {
-      position: relative;
-      padding-bottom: 56px;
-    }
-    .timeline-item:last-child { padding-bottom: 0; }
-
-    .timeline-dot {
+    .tl-dot {
       position: absolute;
-      left: -36px;
-      top: 6px;
+      left: -32px;
       width: 9px;
       height: 9px;
       border-radius: 50%;
       background: var(--accent);
-      border: 2px solid var(--gray-1);
-      box-shadow: 0 0 0 3px rgba(0,113,227,0.15);
+      box-shadow: 0 0 0 4px var(--gray-1), 0 0 0 7px rgba(0,113,227,0.15);
     }
 
-    .timeline-period {
+    .tl-period {
+      display: block;
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.08em;
@@ -586,28 +852,32 @@
       margin-bottom: 8px;
     }
 
+    /* Current role — fully open */
+    .tl-current {
+      position: relative;
+      padding-bottom: 40px;
+    }
+    .tl-current .tl-dot { top: 4px; }
+
     .timeline-role {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 700;
       letter-spacing: -0.025em;
       color: var(--black);
       margin-bottom: 4px;
     }
-
     .timeline-company {
       font-size: 15px;
       font-weight: 500;
       color: var(--gray-3);
       margin-bottom: 16px;
     }
-
     .timeline-desc {
       font-size: 15px;
       line-height: 1.7;
       color: var(--gray-4);
       max-width: 680px;
     }
-
     .timeline-tags {
       display: flex;
       flex-wrap: wrap;
@@ -624,127 +894,452 @@
       color: var(--gray-4);
     }
 
-    /* ─── TIMELINE EDUCATION SEPARATOR ─────────── */
-    .timeline-edu-sep {
+    /* Earlier roles — one-line rows that expand */
+    .tl-row {
       position: relative;
+      border-top: 1px solid var(--gray-2);
+    }
+    .tl-row summary {
+      list-style: none;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 40px;
-      margin-top: 8px;
+      gap: 24px;
+      padding: 22px 0;
+      outline: none;
     }
-    .timeline-edu-sep span {
+    .tl-row summary::-webkit-details-marker { display: none; }
+    .tl-row summary:focus-visible { box-shadow: 0 0 0 2px var(--accent); border-radius: 12px; }
+    .tl-row .tl-dot { top: 30px; background: var(--gray-3); box-shadow: 0 0 0 4px var(--gray-1); transition: background 0.3s; }
+    .tl-row[open] .tl-dot,
+    .tl-row summary:hover .tl-dot { background: var(--accent); }
+
+    .tl-head { flex: 1; display: flex; flex-direction: column; }
+    .tl-head .tl-period { margin-bottom: 6px; color: var(--gray-3); transition: color 0.3s; }
+    .tl-row[open] .tl-period { color: var(--accent); }
+    .tl-role { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; color: var(--black); }
+    .tl-company { font-size: 14px; font-weight: 500; color: var(--gray-3); margin-top: 3px; }
+
+    /* Plus that turns into a cross */
+    .tl-toggle {
+      position: relative;
+      flex-shrink: 0;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--gray-2);
+      background: var(--white);
+      transition: transform 0.45s cubic-bezier(.16,1,.3,1), background 0.3s, border-color 0.3s;
+    }
+    .tl-toggle::before,
+    .tl-toggle::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 12px; height: 1.5px;
+      margin: -0.75px 0 0 -6px;
+      border-radius: 2px;
+      background: var(--black);
+    }
+    .tl-toggle::after { transform: rotate(90deg); }
+    .tl-row summary:hover .tl-toggle { border-color: var(--gray-4); }
+    .tl-row[open] .tl-toggle { transform: rotate(45deg); background: var(--black); border-color: var(--black); }
+    .tl-row[open] .tl-toggle::before,
+    .tl-row[open] .tl-toggle::after { background: var(--white); }
+
+    .tl-body { padding: 0 58px 28px 0; }
+
+    /* Smooth height animation where supported; instant open elsewhere */
+    :root { interpolate-size: allow-keywords; }
+    .tl-row::details-content {
+      block-size: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: block-size 0.5s cubic-bezier(.16,1,.3,1), opacity 0.4s, content-visibility 0.5s allow-discrete;
+    }
+    .tl-row[open]::details-content { block-size: auto; opacity: 1; }
+
+    /* Education */
+    .tl-sep {
+      position: relative;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: #a855f7;
-      white-space: nowrap;
-      background: var(--gray-1);
-      padding-right: 12px;
-      position: relative;
-      z-index: 1;
+      padding: 36px 0 14px;
+      border-top: 1px solid var(--gray-2);
     }
-    .timeline-edu-sep::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--gray-2);
-    }
+    .tl-edu .tl-dot { background: #a855f7 !important; }
+    .tl-edu[open] .tl-period { color: #a855f7; }
+    .tl-edu:last-child { border-bottom: 1px solid var(--gray-2); }
 
     /* ─── PERSONAL ────────────────────────────── */
+    .personal { padding-bottom: 48px; }
+
+    /* Title left, intro right (shared by Personal) */
+    .split-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+    }
+    .split-head .section-title { margin-bottom: 0; }
+    .split-head .section-sub { margin-bottom: 6px; }
+
+    /* Photo left, cards stacked right (bento) */
+    .personal-layout {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .personal-photo {
+      position: relative;
+      min-height: 480px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--gray-1);
+    }
+    .personal-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      transition: transform 0.8s cubic-bezier(.16,1,.3,1);
+    }
+    .personal-photo:hover img { transform: scale(1.04); }
     .personal-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 60px;
+      grid-template-columns: 1fr;
+      grid-auto-rows: 1fr;
+      gap: 16px;
     }
-
+    .personal-card { display: flex; flex-direction: column; justify-content: center; }
     .personal-card {
       border: 1px solid var(--gray-2);
-      border-radius: 28px;
-      padding: 44px 36px;
-      text-align: center;
-      transition: all 0.35s cubic-bezier(.16,1,.3,1);
+      border-radius: 24px;
+      padding: 28px 28px 30px;
+      transition: border-color 0.35s, transform 0.35s cubic-bezier(.16,1,.3,1), box-shadow 0.35s;
     }
     .personal-card:hover {
       border-color: var(--gray-4);
       transform: translateY(-3px);
       box-shadow: 0 12px 28px rgba(0,0,0,0.06);
     }
+    .personal-head  { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .personal-icon  { width: 34px; height: 34px; border-radius: 10px; }
+    .personal-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; color: var(--black); white-space: nowrap; }
+    .personal-text  { font-size: 14.5px; color: var(--gray-3); line-height: 1.65; }
 
-    .personal-icon  { font-size: 32px; margin-bottom: 14px; display: block; }
-    .personal-title { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
-    .personal-text  { font-size: 15px; color: var(--gray-3); line-height: 1.65; }
+    /* Photo fan: small overlapping thumbs beside the card title.
+       Opens the card's gallery; spreads out on hover. */
+    .personal-head { justify-content: flex-start; }
+    .photo-fan {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      padding: 4px;
+      border: 0;
+      background: none;
+      cursor: zoom-in;
+      border-radius: 14px;
+    }
+    .photo-fan > img,
+    .fan-more {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid var(--white);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      transition: transform 0.45s cubic-bezier(.16,1,.3,1);
+    }
+    .photo-fan > * + * { margin-left: -14px; }
+    .photo-fan > :nth-child(1) { transform: rotate(-7deg); }
+    .photo-fan > :nth-child(2) { transform: rotate(4deg) translateY(-2px); }
+    .photo-fan > :nth-child(3) { transform: rotate(-3deg); }
+    /* Spread with transforms (anchored right) so the title never reflows */
+    .photo-fan:hover > :nth-last-child(3), .photo-fan:focus-visible > :nth-last-child(3) { transform: translate(-18px, -3px); }
+    .photo-fan:hover > :nth-last-child(2), .photo-fan:focus-visible > :nth-last-child(2) { transform: translate(-9px, -3px); }
+    .photo-fan:hover > :last-child,        .photo-fan:focus-visible > :last-child        { transform: translateY(-3px); }
+    .photo-fan:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .fan-more {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-4);
+      background: var(--gray-1);
+    }
 
-    /* ─── TESTIMONIAL ────────────────────────── */
+    /* LEGO photo beside the LEGO quote */
+    .lego-quote { display: flex; align-items: center; gap: 18px; }
+    .lego-quote .section-sub { margin-bottom: 0; }
+    .lego-thumb {
+      flex-shrink: 0;
+      border-radius: 50%;
+    }
+    .lego-thumb img {
+      display: block;
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 0 3px var(--white), 0 0 0 4px var(--gray-2), 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+
+    /* ─── WORK PHOTO WALL ─────────────────────── */
+    .expertise { overflow: hidden; }
+    .work-wall-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-top: 72px; }
+    .work-wall-head .label { margin-bottom: 0; }
+    .work-wall-meta { font-size: 14px; color: rgba(255,255,255,0.38); }
+    .marquee.work-wall { margin-top: 22px; }
+    .marquee.work-wall + .marquee.work-wall { margin-top: 14px; }
+    .work-wall .marquee-list { gap: 14px; padding-right: 14px; }
+    .wall-tile {
+      position: relative;
+      display: block;
+      height: 180px;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #1C1C1E;
+      cursor: zoom-in;
+      transition: border-color 0.4s;
+    }
+    .wall-tile img { display: block; height: 100%; width: auto; transition: transform 0.7s cubic-bezier(.16,1,.3,1), filter 0.4s; filter: saturate(0.92) brightness(0.92); -webkit-user-drag: none; }
+    .wall-tile:hover { border-color: rgba(255,255,255,0.22); }
+    .wall-tile:hover img { transform: scale(1.045); filter: none; }
+    .wall-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .wall-tag {
+      position: absolute; left: 10px; bottom: 10px;
+      padding: 5px 10px;
+      border-radius: 980px;
+      font-size: 11.5px; font-weight: 600; letter-spacing: 0.01em;
+      color: #fff;
+      background: rgba(0,0,0,0.5);
+      -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    }
+    .marquee.is-dragging .wall-tile { pointer-events: none; }
+    @media (prefers-reduced-motion: reduce) { .work-wall .marquee-list { justify-content: center; } }
+    @media (max-width: 768px) {
+      .work-wall-head { flex-direction: column; gap: 6px; margin-top: 48px; }
+      .wall-tile { height: 128px; border-radius: 14px; }
+      .marquee.work-wall { margin-top: 18px; }
+      .marquee.work-wall + .marquee.work-wall { margin-top: 10px; }
+      .work-wall .marquee-list { gap: 10px; padding-right: 10px; }
+    }
+    /* Bigger, easier-to-spot photo fans on the project cards */
+    .exp-top { min-height: 52px; }
+    .exp-item .photo-fan > img, .exp-item .fan-more { width: 44px; height: 44px; border-radius: 12px; }
+    .exp-item .photo-fan > * + * { margin-left: -16px; }
+
+
+    /* ─── VIEW TRANSITIONS ────────────────────── */
+    /* EN ⇄ CZ: cross-fade between the two pages instead of a hard reload */
+    @view-transition { navigation: auto; }
+    /* Thumbnail grows into the preview (and back). The dialog's own fade is
+       switched off while a transition runs so the two don't fight. */
+    .lightbox.vt, .lightbox.vt::backdrop { transition: none; }
+    ::view-transition-group(lb-photo) { animation-duration: 0.55s; animation-timing-function: cubic-bezier(.16,1,.3,1); }
+    ::view-transition-old(lb-photo), ::view-transition-new(lb-photo) { height: 100%; width: 100%; object-fit: cover; animation-duration: 0.55s; }
+    ::view-transition-group(root) { animation-duration: 0.35s; }
+    @media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+
+    /* ─── PHOTO PREVIEW ───────────────────────── */
+    /* Just the photo, centred over a lightly dimmed page; controls sit on it */
+    .lightbox {
+      margin: auto;              /* the global * reset would pin it top-left */
+      width: fit-content;
+      max-width: calc(100vw - 32px);
+      padding: 0;
+      border: 0;
+      background: transparent;
+      overflow: visible;
+      opacity: 0;
+      transform: translateY(8px) scale(0.98);
+      transition: opacity 0.3s, transform 0.4s cubic-bezier(.16,1,.3,1), overlay 0.3s allow-discrete, display 0.3s allow-discrete;
+    }
+    .lightbox[open] { opacity: 1; transform: none; }
+    @starting-style { .lightbox[open] { opacity: 0; transform: translateY(8px) scale(0.98); } }
+    .lightbox::backdrop {
+      background: rgba(0,0,0,0.32);
+      -webkit-backdrop-filter: blur(4px);
+              backdrop-filter: blur(4px);
+    }
+
+    .lb-stage {
+      touch-action: pan-y;
+      user-select: none;
+    }
+    .lb-img {
+      display: block;
+      width: auto; height: auto;
+      max-width: min(560px, calc(100vw - 32px));
+      max-height: min(480px, 70vh);
+      min-width: 220px;
+      min-height: 160px;
+      border-radius: 20px;
+      background: var(--gray-1);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      -webkit-user-drag: none;
+    }
+
+    .lb-btn {
+      position: absolute;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 0;
+      background: rgba(0,0,0,0.42);
+      color: #fff;
+      -webkit-backdrop-filter: blur(8px);
+              backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.25s;
+    }
+    .lb-btn .i { width: 18px; height: 18px; }
+    .lb-btn:hover { background: rgba(0,0,0,0.65); }
+    .lb-btn:focus-visible { outline: 2px solid #2997FF; outline-offset: 2px; }
+    .lb-close { top: 12px; right: 12px; }
+    .lb-side { top: 50%; transform: translateY(-50%); }
+    .lb-prev { left: 12px; }
+    .lb-next { right: 12px; }
+    .lightbox.single .lb-side { display: none; }
+
+    /* ─── CONTACT: testimonial + CTA card ───── */
+    .contact { padding-top: 48px; }
+
     .testimonial {
-      background: var(--black);
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 32px 0 72px;
       text-align: center;
     }
     .testimonial-mark {
-      font-size: 96px;
-      line-height: 0.6;
-      color: var(--accent);
-      font-family: Georgia, serif;
       display: block;
-      margin-bottom: 40px;
-      opacity: 0.6;
+      font-family: Georgia, serif;
+      font-size: 88px;
+      line-height: 0.5;
+      color: var(--accent);
+      margin-bottom: 0;
       user-select: none;
     }
     .testimonial-text {
-      font-size: clamp(18px, 2.2vw, 24px);
-      font-weight: 400;
-      line-height: 1.7;
-      color: var(--white);
-      max-width: 820px;
-      margin: 0 auto 40px;
-      font-style: italic;
-      letter-spacing: -0.01em;
+      font-size: clamp(22px, 2.6vw, 30px);
+      font-weight: 500;
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 28px;
     }
-    .testimonial-author {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-    }
-    .testimonial-name {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--white);
-      letter-spacing: -0.01em;
-    }
-    .testimonial-role {
-      font-size: 14px;
-      color: var(--gray-3);
-    }
-    [data-theme="dark"] .testimonial { background: #111111; }
-    [data-theme="dark"] .testimonial-text { color: #F5F5F7; }
-    [data-theme="dark"] .testimonial-name { color: #F5F5F7; }
+    .testimonial-author { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .testimonial-name { font-size: 15px; font-weight: 600; color: var(--black); }
+    .testimonial-role { font-size: 14px; color: var(--gray-3); }
 
-    /* ─── CONTACT ─────────────────────────────── */
-    .contact { text-align: center; }
-    .contact .section-sub  { margin: 0 auto; }
+    /* Dark closing panel — stays dark in both themes */
+    .cta-card {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 32px;
+      padding: 72px 32px 76px;
+      background:
+        radial-gradient(70% 90% at 50% 0%, rgba(41,151,255,0.22), transparent 65%),
+        #1D1D1F;
+    }
+    .cta-card .label { color: #2997FF; }
+    .cta-card .section-title { color: #F5F5F7; }
+    .cta-card .section-sub { color: rgba(255,255,255,0.6); margin: 0 auto; }
+    .cta-card .btn-primary { background: #F5F5F7; color: #1D1D1F; }
+    .cta-card .btn-primary:hover { background: #fff; box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+    .cta-card .btn-secondary { color: #2997FF; }
+    .cta-card .btn-secondary:hover { background: rgba(41,151,255,0.12); }
     .contact-actions {
       display: flex;
       gap: 14px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 48px;
+      margin-top: 40px;
     }
 
-    /* ─── FOOTER ──────────────────────────────── */
+    /* "Ask an AI about me": opens ChatGPT / Claude / Perplexity with a prompt
+       pointing at llms.txt (plain-text profile for AI assistants) */
+    .ask-ai { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 10px; margin-top: 30px; }
+    .ask-ai-lead { display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; color: rgba(255,255,255,0.45); margin-right: 4px; }
+    .ask-ai-lead .i { width: 15px; height: 15px; color: #2997FF; }
+    .ask-ai-link {
+      font-size: 13.5px; font-weight: 600; color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      padding: 7px 14px; border-radius: 980px;
+      border: 1px solid rgba(255,255,255,0.16);
+      transition: border-color 0.25s, color 0.25s, background 0.25s;
+    }
+    .ask-ai-link:hover { border-color: #2997FF; color: #fff; background: rgba(41,151,255,0.12); }
+    .ask-ai-link:focus-visible { outline: 2px solid #2997FF; outline-offset: 2px; }
+    @media (max-width: 768px) { .ask-ai-lead { flex-basis: 100%; justify-content: center; margin: 0 0 4px; } }
+    [data-theme="dark"] .cta-card {
+      background:
+        radial-gradient(70% 90% at 50% 0%, rgba(41,151,255,0.2), transparent 65%),
+        #1C1C1E;
+    }
+
+    /* ─── FOOTER ────────────────────────────── */
+    /* One slim row: everything it used to list is already directly above */
     footer {
-      padding: 36px 48px;
+      border-top: 1px solid var(--gray-2);
+      padding: 28px 24px;
+    }
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-top: 1px solid var(--gray-2);
+      gap: 16px 32px;
+      flex-wrap: wrap;
     }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .footer-brand .nav-mark { width: 28px; height: 28px; border-radius: 8px; font-size: 11.5px; }
+    .footer-name { font-size: 15px; font-weight: 600; letter-spacing: -0.02em; color: var(--black); }
     .footer-copy { font-size: 13px; color: var(--gray-3); }
-    .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; color: var(--gray-3); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--black); }
+    .footer-links { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 28px; }
+    .footer-links a {
+      font-size: 14px;
+      color: var(--gray-4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* EN | CZ segmented switch */
+    .footer-links .lang-switch {
+      display: inline-flex;
+      gap: 2px;
+      padding: 3px;
+      border: 1px solid var(--gray-2);
+      border-radius: 980px;
+    }
+    .footer-links .lang-switch a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 4px 11px;
+      border-radius: 980px;
+      color: var(--gray-3);
+      transition: background 0.2s, color 0.2s;
+    }
+    .footer-links .lang-switch a:hover { color: var(--black); }
+    .footer-links .lang-switch a[aria-current="page"] { background: var(--black); color: var(--white); }
 
     /* ─── ANIMATIONS ──────────────────────────── */
     @keyframes fadeUp {
@@ -754,10 +1349,6 @@
     @keyframes fadeIn {
       from { opacity: 0; }
       to   { opacity: 1; }
-    }
-    @keyframes scrollPulse {
-      0%,100% { opacity: 0; transform: scaleY(0.4); transform-origin: top; }
-      50%      { opacity: 1; transform: scaleY(1); }
     }
 
     .reveal {
@@ -771,55 +1362,210 @@
     .d3 { transition-delay: 0.24s; }
     .d4 { transition-delay: 0.32s; }
 
-    /* ─── RESPONSIVE ──────────────────────────── */
-    .scroll-indicator.hidden { opacity: 0 !important; pointer-events: none; }
 
-    /* ─── LEARNING ─────────────────────────────── */
-    .learning { background: var(--gray-1); padding-top: 80px; padding-bottom: 80px; }
+    /* ─── SCROLL-DRIVEN MOTION (CSS only) ─────── */
+    /* Browsers without scroll timelines keep the static layout untouched. */
+    @supports (animation-timeline: view()) {
+      @media (prefers-reduced-motion: no-preference) {
+        /* Career: an accent line fills the timeline as it passes mid-screen,
+           and each dot lights up when the line reaches it. */
+        .timeline::after {
+          content: '';
+          position: absolute;
+          left: 4px; top: 10px; bottom: 30px;
+          width: 1px;
+          background: linear-gradient(var(--accent), #2997FF);
+          box-shadow: 0 0 8px rgba(41,151,255,0.55);
+          transform-origin: top;
+          animation: tl-fill linear both;
+          animation-timeline: view();
+          animation-range: cover 50vh cover calc(100% - 50vh);
+          pointer-events: none;
+        }
+        @keyframes tl-fill { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+        .tl-row .tl-dot {
+          animation: tl-dot-on linear both;
+          animation-timeline: view();
+          animation-range: cover calc(50vh - 4px) cover calc(50vh + 6px);
+        }
+        @keyframes tl-dot-on {
+          from { background: var(--gray-3); }
+          to   { background: var(--accent); box-shadow: 0 0 0 4px var(--gray-1), 0 0 0 7px rgba(0,113,227,0.15); }
+        }
 
-    .courses-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 40px;
+        /* Section titles gain weight as they scroll in (Inter is variable,
+           so the weight changes smoothly; it ends on the original 700). */
+        .section-title {
+          animation: title-weight linear both;
+          animation-timeline: view();
+          animation-range: entry 0% cover 30%;
+        }
+        @keyframes title-weight {
+          from { font-weight: 300; letter-spacing: -0.02em; }
+          to   { font-weight: 700; letter-spacing: -0.035em; }
+        }
+      }
+    }
+    /* Hero name: weight sweeps up as it fades in */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-name { animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.4s forwards, name-weight 1.6s cubic-bezier(.16,1,.3,1) 0.4s both; }
+      @keyframes name-weight { from { font-weight: 200; } to { font-weight: 800; } }
     }
 
-    .course-card {
+
+    /* ─── NOW CARD (end of Learning) ──────────── */
+    .now-card {
+      margin-top: 56px;
       background: var(--white);
       border: 1px solid var(--gray-2);
-      border-radius: 14px;
-      padding: 18px 18px 16px;
-      transition: all 0.3s cubic-bezier(.16,1,.3,1);
+      border-radius: 28px;
+      padding: 36px 36px 38px;
+    }
+    .now-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .now-label {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .now-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #30D158; }
+    .now-dot::after {
+      content: ''; position: absolute; inset: 0; border-radius: 50%; background: #30D158;
+      animation: now-ping 2.4s cubic-bezier(0,0,.2,1) infinite;
+    }
+    @keyframes now-ping { 0% { transform: scale(1); opacity: .6; } 80%, 100% { transform: scale(2.8); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .now-dot::after { animation: none; } }
+    .now-upd { font-size: 13px; color: var(--gray-3); }
+    .now-title { font-size: 26px; font-weight: 700; letter-spacing: -0.025em; color: var(--black); margin: 10px 0 26px; }
+    .now-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .now-item {
+      background: var(--gray-1);
+      border-radius: 20px;
+      padding: 22px 22px 24px;
+      transition: transform 0.45s cubic-bezier(.16,1,.3,1);
+    }
+    .now-item:hover { transform: translateY(-2px); }
+    .now-wide { grid-column: span 2; }
+    .now-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 10px;
+      background: rgba(0,113,227,0.1); color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .now-icon .i { width: 17px; height: 17px; }
+    .now-k { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-3); margin-bottom: 6px; }
+    .now-v { font-size: 15px; line-height: 1.6; color: var(--gray-4); }
+    .now-v strong { color: var(--black); font-weight: 600; }
+    .now-wide .now-v { font-size: 17px; }
+    .now-talk {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px;
+      margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--gray-2);
+    }
+    .now-talk .now-k { margin: 0 6px 0 0; }
+    .now-topic {
+      font-size: 13.5px; font-weight: 500; color: var(--black);
+      padding: 7px 14px; border-radius: 980px;
+      background: var(--gray-1);
+    }
+    .now-talk-cta { margin-left: auto; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; white-space: nowrap; }
+    .now-talk-cta:hover { text-decoration: underline; }
+    @media (max-width: 768px) {
+      .now-talk .now-k { flex-basis: 100%; }
+      .now-talk-cta { margin-left: 0; flex-basis: 100%; margin-top: 4px; }
+    }
+    @media (max-width: 900px) { .now-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) {
+      .now-card { margin-top: 40px; padding: 28px 20px 24px; border-radius: 24px; }
+      .now-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .now-title { font-size: 22px; margin-bottom: 20px; }
+      .now-grid { grid-template-columns: 1fr; gap: 10px; }
+      .now-wide { grid-column: auto; }
+      .now-item { padding: 18px 18px 20px; }
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────── */
+
+    /* ─── LEARNING (marquee) ─────────────────── */
+    .learning { background: var(--gray-1); padding-top: 88px; padding-bottom: 88px; overflow: hidden; }
+
+    .learning-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+    }
+    .learning-head .section-title { margin-bottom: 0; }
+    .learning-head .section-sub { margin-bottom: 6px; }
+
+    .marquee {
+      margin-top: 48px;
+      /* Pills fade out at both edges instead of being cut off */
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+              mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    }
+    .marquee-track {
       display: flex;
-      align-items: flex-start;
+      width: max-content;
+      animation: marquee 60s linear infinite;
+    }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee + .marquee { margin-top: 12px; }
+    .marquee[data-dir="right"] .marquee-track { animation-direction: reverse; }
+
+    /* With JS the track is driven by script so it can be grabbed and flicked.
+       pan-y keeps vertical page scrolling on touch; horizontal swipes drag. */
+    .marquee.is-js { cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+    .marquee.is-js .marquee-track { animation: none; will-change: transform; }
+    .marquee.is-dragging { cursor: grabbing; }
+    .marquee.is-dragging .course-pill { pointer-events: none; }
+    .marquee-list {
+      display: flex;
       gap: 12px;
+      padding-right: 12px;
+      list-style: none;
     }
-
-    .course-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 28px rgba(0,113,227,0.08);
-    }
-
-    .course-name {
-      font-size: 14px;
+    .course-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      background: var(--white);
+      border: 1px solid var(--gray-2);
+      border-radius: 980px;
+      padding: 13px 22px 13px 18px;
+      font-size: 14.5px;
       font-weight: 600;
+      letter-spacing: -0.01em;
       color: var(--black);
-      line-height: 1.4;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .course-pill span { display: inline-flex; color: var(--accent); }
+    .course-pill .i { width: 17px; height: 17px; }
+    .course-pill:hover { border-color: var(--accent); color: var(--accent); }
+
+    @keyframes marquee {
+      to { transform: translateX(-50%); }
     }
 
-    .course-icon {
-      font-size: 18px;
-      flex-shrink: 0;
-      margin-top: 1px;
+    /* No motion: show every course once, wrapped and centred */
+    @media (prefers-reduced-motion: reduce) {
+      .marquee { -webkit-mask-image: none; mask-image: none; max-width: 1080px; margin-left: auto; margin-right: auto; }
+      .marquee-track { animation: none; width: auto; }
+      .marquee-list { flex-wrap: wrap; padding-right: 0; }
+      .marquee-list[aria-hidden="true"] { display: none; }
+    }
+
+    @media (max-width: 1100px) and (min-width: 769px) {
+      .journey-grid { grid-template-columns: 260px 1fr; gap: 48px; }
+      .exp-grid { grid-template-columns: repeat(2, 1fr); }
+      .exp-third, .exp-wide, .exp-mid, .exp-narrow { grid-column: auto; }
     }
 
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
-      .hamburger { display: flex; }
+      .nav-logo-role { display: none; }
       .nav-links {
         position: fixed;
-        top: 52px; left: 0; right: 0;
+        top: var(--nav-h); left: 0; right: 0;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -836,27 +1582,62 @@
       .nav-links.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
       .nav-links li { width: 100%; }
       .nav-links a { display: block; padding: 13px 24px; font-size: 16px; opacity: 1 !important; }
-      .nav-cta { margin: 8px 20px 0 !important; text-align: center; border-radius: 12px !important; padding: 12px 24px !important; }
+      .nav-links a::after { display: none; }
+      .nav-cta { padding: 8px 15px; font-size: 13px; }
       section { padding: 80px 20px; }
-      .hero { grid-template-columns: 1fr; text-align: center; padding: 100px 24px 80px; gap: 40px; justify-items: center; }
-      .hero-avatar-wrap { max-width: 286px; order: 2; }
+      .hero { grid-template-columns: 1fr; text-align: center; padding: 110px 24px 80px; gap: 40px; justify-items: center; }
+      /* Glow must not extend past the screen edge, or phones widen the layout viewport */
+      .hero::after { inset: -10% 0; }
+      .hero-avatar-wrap { max-width: 300px; order: 2; }
+      .hero-photo-stack::before { inset: 18px -13px -18px 13px; }
+      .hero-award { margin-top: 28px; text-align: left; }
       .hero-content { order: 1; }
       .hero-actions { justify-content: center; }
-      .mindset-inner { grid-template-columns: 1fr; gap: 0; }
-      .mindset-quote { margin-top: 24px; }
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .values-grid { grid-template-columns: 1fr; }
-      .exp-grid { grid-template-columns: 1fr; }
-      .personal-grid { grid-template-columns: 1fr; }
-      .courses-grid { grid-template-columns: 1fr 1fr; }
+      .hero-meta { justify-content: center; }
+      .bento { grid-template-columns: 1fr; gap: 12px; }
+      .tile, .tile-intro { padding: 32px 26px; border-radius: 24px; }
+      .tile-intro { grid-column: auto; order: -1; }
+      .tile-photo { grid-row: auto; min-height: 0; aspect-ratio: 1/1; padding: 0; }
+      .tile-value {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 12px;
+        align-items: center;
+        padding: 24px 24px 26px;
+      }
+      .tile-value-icon  { margin-bottom: 0; width: 36px; height: 36px; }
+      .tile-value-title { margin-bottom: 0; }
+      .tile-value-desc  { grid-column: 1 / -1; margin-top: 8px; }
+      .exp-head { grid-template-columns: 1fr; gap: 16px; }
+      .exp-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 40px; }
+      .exp-third, .exp-wide, .exp-mid, .exp-narrow { grid-column: auto; }
+      .exp-item { padding: 30px 26px 32px; border-radius: 24px; }
+      .personal-layout { grid-template-columns: 1fr; gap: 12px; margin-top: 36px; }
+      .personal-photo { min-height: 0; aspect-ratio: 4/5; }
+      .personal-grid { gap: 12px; grid-auto-rows: auto; }
+      .split-head { grid-template-columns: 1fr; gap: 16px; }
+      .lego-quote { gap: 14px; }
+      .lego-thumb img { width: 60px; height: 60px; }
+      .testimonial { padding: 32px 0 56px; }
+      .cta-card { padding: 56px 22px 60px; border-radius: 26px; }
+      .journey-grid { grid-template-columns: 1fr; gap: 40px; }
+      .journey-intro { position: static; }
+      .timeline-role { font-size: 21px; }
+      .tl-row summary { gap: 14px; }
+      .tl-body { padding-right: 0; }
+      .learning-head { grid-template-columns: 1fr; gap: 16px; }
+      .marquee { margin: 36px -20px 0; }
+      .course-pill { padding: 11px 18px 11px 15px; font-size: 14px; }
       .stat-bar-inner { grid-template-columns: repeat(2, 1fr); }
       .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
-      .stat:nth-child(2), .stat:last-child { border-bottom: none; }
-      footer { flex-direction: column; gap: 12px; text-align: center; }
-    }
-
-    @media (max-width: 480px) {
-      .courses-grid { grid-template-columns: 1fr; }
+      .stat:nth-child(3), .stat:last-child { border-bottom: none; }
+      .stat-brands { gap: 12px 26px; margin-top: 20px; padding-top: 26px; }
+      .stat-brands-label { flex-basis: 100%; text-align: center; }
+      .brand-mark { font-size: 14px; }
+      /* Extra bottom room so the fixed back-to-top button never covers a link */
+      footer { padding: 28px 20px 96px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; gap: 8px 22px; }
     }
 
     /* ─── DARK MODE ───────────────────────────── */
@@ -881,9 +1662,7 @@
     [data-theme="dark"] .stat-bar        { background: #1C1C1E; }
     [data-theme="dark"] .stat-number     { color: #F5F5F7; }
     [data-theme="dark"] .expertise       { background: #111111; }
-    [data-theme="dark"] .exp-item        { background: #111111; }
-    [data-theme="dark"] .exp-item:hover  { background: #1C1C1E; }
-    [data-theme="dark"] .exp-grid        { background: rgba(255,255,255,0.05); }
+    [data-theme="dark"] .exp-item        { background: #1C1C1E; }
     [data-theme="dark"] .expertise .section-title { color: #F5F5F7; }
     [data-theme="dark"] .expertise .label         { color: rgba(255,255,255,0.35); }
     [data-theme="dark"] .expertise .section-sub   { color: rgba(255,255,255,0.5); }
@@ -899,9 +1678,11 @@
     [data-theme="dark"] .hero-avatar-inner {
       box-shadow: 0 32px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
     }
-    [data-theme="dark"] .about-photo-wrap {
-      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-    }
+    /* Bento: black page, raised graphite tiles (Apple-style) */
+    [data-theme="dark"] .about { background: #000; }
+    [data-theme="dark"] .tile:not(.tile-quote):not(.tile-photo) { background: #1C1C1E; }
+    [data-theme="dark"] .hero-award-icon { color: #D9A066; background: rgba(217,160,102,0.14); }
+    [data-theme="dark"] .tile-value:hover { box-shadow: 0 20px 44px rgba(0,0,0,0.5); }
 
     /* ─── PROGRESS BAR ──────────────────────── */
     #progressBar {
@@ -984,6 +1765,13 @@
     .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
     .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+    /* Must come after the base rule above, or the base display:none wins */
+    @media (max-width: 768px) { .hamburger { display: flex; } }
+    /* Small phones: the menu button needs the room; LinkedIn is in Contact and the footer */
+    @media (max-width: 480px) {
+      .nav-controls .nav-cta { display: none; }
+      .nav-cv { padding: 7px 12px; font-size: 13px; }
+    }
 
     body.nav-open { overflow: hidden; }
 
@@ -1033,24 +1821,61 @@
       line-height: 1;
     }
     .theme-toggle:hover { background: var(--gray-1); }
+    .theme-toggle .i { width: 16px; height: 16px; }
   </style>
 </head>
 <body>
+
+  <!-- Icon sprite: line icons (Lucide geometry), referenced via <use> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></symbol>
+    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect x="2" y="6" width="20" height="14" rx="2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4M12 16h4M8 11h.01M8 16h.01"/></symbol>
+    <symbol id="i-usercheck" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><path d="M10 2h4"/><path d="m12 14 3-3"/><circle cx="12" cy="14" r="8"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41M17.66 6.34l1.41-1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 19.07l-1.41-1.41"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  </svg>
 
   <div id="progressBar" role="progressbar" aria-hidden="true"></div>
 
   <!-- ═══ NAV ═══════════════════════════════════ -->
   <nav id="nav">
-    <a href="#" class="nav-logo">Jakub Pešl</a>
+    <a href="#" class="nav-logo">
+      <span class="nav-mark" aria-hidden="true">JP</span>
+      <span class="nav-logo-text">
+        <span class="nav-logo-name">Jakub Pešl</span>
+        <span class="nav-logo-role">Marketing Communications</span>
+      </span>
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
-      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#expertise">Work</a></li>
       <li><a href="#journey">Journey</a></li>
+      <li><a href="#learning">Learning</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="https://www.linkedin.com/in/jakub-pe%C5%A1l" target="_blank" class="nav-cta">LinkedIn ↗</a></li>
     </ul>
     <div class="nav-controls">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <a href="Jakub-Pesl-CV.pdf" target="_blank" class="nav-cv">CV ↓</a>
+      <a href="https://www.linkedin.com/in/jakub-pe%C5%A1l" target="_blank" class="nav-cta">LinkedIn ↗</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><svg class="i"><use href="#i-moon"/></svg></button>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
@@ -1060,126 +1885,126 @@
   <!-- ═══ HERO ══════════════════════════════════ -->
   <section class="hero">
     <div class="hero-avatar-wrap">
-      <div class="hero-avatar-inner">
-        <img src="JakubP.png" alt="Jakub Pešl" class="hero-avatar" />
+      <div class="hero-photo-stack">
+        <div class="hero-avatar-inner">
+          <img src="JakubP.png" alt="Jakub Pešl" class="hero-avatar" />
+        </div>
+      </div>
+      <div class="hero-award">
+        <span class="hero-award-icon" aria-hidden="true"><svg class="i"><use href="#i-award"/></svg></span>
+        <div>
+          <p class="hero-award-title">Bronze Individual Award</p>
+          <p class="hero-award-sub">Top 3 of ~150 employees across 17 countries, Panasonic CEE</p>
+        </div>
       </div>
     </div>
     <div class="hero-content">
-      <div class="hero-badge">
-        <span class="dot"></span>
-        European Marketing Communications Manager · Panasonic
-      </div>
       <h1 class="hero-name">Jakub Pešl<span class="hero-degree">, MBA</span></h1>
       <p class="hero-title">
-        Marketing Leader · Wiesbaden / Prague<br />
-        <strong>Panasonic Marketing Europe</strong>
+        European Marketing Communications Manager
       </p>
       <p class="hero-tagline">
-        Life is like <em>LEGO</em> — only when all the pieces fit together
-        can the result be perfect.
+        Building and executing go-to-market communication across
+        <em>20+ European markets</em> — from master strategy with global HQ in Japan
+        to campaigns that land in each individual country.
       </p>
+      <ul class="hero-meta">
+        <li>European GTM</li>
+        <li>Product marketing</li>
+        <li>Campaign development</li>
+        <li>Trade marketing</li>
+        <li>Brand communication</li>
+        <li>CES / IFA</li>
+      </ul>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Let's connect →</a>
         <a href="#about" class="btn-secondary">Learn more</a>
       </div>
-    </div>
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Panasonic Marketing Europe · Prague / Wiesbaden
+      </div>
     </div>
   </section>
 
   <!-- ═══ STAT BAR ═══════════════════════════════ -->
   <div class="stat-bar">
     <div class="stat-bar-inner">
+      <!-- Final values live in the HTML so crawlers and slow/blocked JS never see a 0.
+           The counter animation overwrites them only once the bar scrolls into view. -->
       <div class="stat reveal">
-        <div class="stat-number" data-target="15" data-suffix="+">0</div>
+        <div class="stat-number" data-target="19" data-suffix="">19</div>
         <div class="stat-label">Years at Panasonic</div>
       </div>
       <div class="stat reveal d1">
-        <div class="stat-number" data-target="30" data-suffix="+">0</div>
+        <div class="stat-number" data-target="20" data-suffix="+">20+</div>
         <div class="stat-label">European Markets</div>
       </div>
       <div class="stat reveal d2">
-        <div class="stat-number" data-target="5" data-suffix="+">0</div>
+        <div class="stat-number" data-target="5" data-suffix="+">5+</div>
         <div class="stat-label">Global Trade Shows &amp; Events — CES, IFA &amp; more</div>
       </div>
       <div class="stat reveal d3">
-        <div class="stat-number" data-target="20" data-suffix="+">0</div>
+        <div class="stat-number" data-target="20" data-suffix="+">20+</div>
         <div class="stat-label">Courses &amp; Certifications</div>
       </div>
     </div>
+    <div class="stat-brands reveal d2">
+      <span class="stat-brands-label">Brands &amp; stages</span>
+      <span class="brand-mark">Panasonic</span>
+      <span class="brand-mark">Technics</span>
+      <span class="brand-mark">Lumix</span>
+      <span class="brand-mark">CES</span>
+      <span class="brand-mark">IFA</span>
+    </div>
   </div>
 
-  <!-- ═══ ABOUT ══════════════════════════════════ -->
+  <!-- ═══ ABOUT (bento: about + mindset + values) ═══ -->
   <section class="about" id="about">
     <div class="container">
-      <div class="about-grid">
-        <div class="reveal">
-          <div class="about-photo-wrap">
-            <img src="MicrosoftTeams-image.jpg" alt="Jakub Pešl — Professional" class="about-photo" />
-          </div>
+      <div class="bento">
+
+        <div class="tile tile-photo reveal">
+          <img src="MicrosoftTeams-image.jpg" alt="Jakub Pešl" loading="lazy" />
         </div>
-        <div class="reveal d2">
+
+        <div class="tile tile-intro reveal d1">
           <p class="label">Philosophy</p>
-          <h2 class="about-quote" style="margin-bottom:24px;">
-            Strategy meets <em>creativity</em>.<br />
-            Precision meets <em>humanity</em>.
-          </h2>
-          <div class="about-body">
-            <p>Results-driven and strategic marketing leader with a strong European perspective, blending creativity with analytical precision to deliver impactful communication and trade marketing strategies.</p>
-            <p>An empathetic team player who values innovation, collaboration, and continuous growth — both professionally and personally. I look for ways to make things work, not excuses for why they can't.</p>
-            <p>Fair play, inspiring people, and a passion for tech and travel shape everything I do — inside and outside the office.</p>
+          <h2 class="about-quote">European strategy, <em>local</em> execution</h2>
+          <div class="tile-body">
+            <p>I have spent most of my career connecting European strategy with local market execution — campaign development, go-to-market communication, retail and trade marketing, and coordination between European markets and global HQ in Japan.</p>
+            <p>In practice that means adapting a centrally built message so it still makes sense in each country, steering agencies, running retail and partner activity, owning the P&amp;L behind it, keeping 20+ markets moving in the right direction — and plenty of other, equally fascinating work.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ═══ MINDSET ════════════════════════════════ -->
-  <section class="mindset" id="mindset">
-    <div class="container">
-      <div class="mindset-inner">
-        <div class="mindset-left reveal">
-          <p class="label">Mindset</p>
-          <h2 class="mindset-quote">
-            Marketing is my daily <em>challenge</em> — and my daily <em>passion</em>.
-          </h2>
+        <div class="tile tile-quote reveal d2">
+          <p class="tile-kicker">Mindset</p>
+          <p class="tile-quote-text">Marketing is my daily challenge – my daily passion.</p>
+          <p class="tile-quote-sub">“I look for ways to come up with ideas, bring them to life and see them through to the last detail. No excuses for why it can’t be done.”</p>
         </div>
-        <div class="mindset-right reveal d2">
-          <div class="mindset-body">
-            <p>I enjoy moving things forward, finding relevant and effective solutions, and communicating with new people — from whom I try to take only the best. I always keep in mind that a job well done positively impacts everyone around.</p>
-            <p>In my professional life, I am grateful for the opportunity to develop internationally and gain a multicultural perspective — and for the chance to lead and cooperate with a team of successful and creative people.</p>
-          </div>
-          <span class="mindset-highlight">
-            "I look for ways to make things work, not excuses for why they can't."
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ═══ VALUES ═════════════════════════════════ -->
-  <section id="values" style="padding-top:72px;padding-bottom:72px;">
-    <div class="container">
-      <p class="label reveal">Values</p>
-      <h2 class="section-title reveal d1">What drives me forward</h2>
-      <div class="values-grid">
-        <div class="value-card reveal d1">
-          <span class="value-icon">⚖️</span>
-          <h3 class="value-title">Fair Play</h3>
-          <p class="value-desc">Integrity is non-negotiable. The best results come from honest collaboration and mutual respect — in business and in life.</p>
+        <div class="tile tile-place reveal d3">
+          <p class="tile-kicker">Based in</p>
+          <p class="tile-place-city">Prague</p>
+          <p class="tile-place-text">Working with teams in Wiesbaden, across Europe and with colleagues in Japan. The international side is the part of the job I value most.</p>
         </div>
-        <div class="value-card reveal d2">
-          <span class="value-icon">💡</span>
-          <h3 class="value-title">Innovation First</h3>
-          <p class="value-desc">I look for ways to make things work instead of excuses for why they can't. Every challenge is an opportunity to think differently.</p>
+
+        <div class="tile tile-value reveal d1">
+          <span class="tile-value-icon" aria-hidden="true"><svg class="i"><use href="#i-scale"/></svg></span>
+          <h3 class="tile-value-title">Fair Play</h3>
+          <p class="tile-value-desc">Say what you'll do, then do it. Long-term relationships with agencies, retailers and teams are built on that, not on pressure.</p>
         </div>
-        <div class="value-card reveal d3">
-          <span class="value-icon">🚀</span>
-          <h3 class="value-title">Inspiring Growth</h3>
-          <p class="value-desc">People who push boundaries and uplift others are my kind of people. Growth — professional and personal — is the only direction that matters.</p>
+        <div class="tile tile-value reveal d2">
+          <span class="tile-value-icon" aria-hidden="true"><svg class="i"><use href="#i-bulb"/></svg></span>
+          <h3 class="tile-value-title">Eyes on the Goal</h3>
+          <p class="tile-value-desc">Budget, deadlines, more than 20 different markets. I treat constraints and constant change as the normal state of things and give them what they need – efficiency, impact and a creative approach.</p>
         </div>
+        <div class="tile tile-value reveal d3">
+          <span class="tile-value-icon" aria-hidden="true"><svg class="i"><use href="#i-sprout"/></svg></span>
+          <h3 class="tile-value-title">Growing People</h3>
+          <p class="tile-value-desc">Most of what I know came from people I worked with. Building a team that can run things without me is the point.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1187,118 +2012,217 @@
   <!-- ═══ EXPERTISE ══════════════════════════════ -->
   <section class="expertise" id="expertise">
     <div class="container">
-      <p class="label reveal">Expertise</p>
-      <h2 class="section-title reveal d1">Built across Europe.<br />Delivered with precision.</h2>
-      <p class="section-sub reveal d2">
-        End-to-end marketing communications management — from global strategy
-        set in Japan to local execution across 30+ European markets.
-      </p>
+      <div class="exp-head">
+        <div>
+          <p class="label reveal">Selected work</p>
+          <h2 class="section-title reveal d1">Highlights from<br />last years' projects</h2>
+        </div>
+        <p class="section-sub reveal d2">
+          Campaigns, launches and events delivered across the European lineup — from master
+          strategy agreed with global HQ in Japan to activation in individual markets.
+        </p>
+      </div>
       <div class="exp-grid">
-        <div class="exp-item reveal d1">
-          <p class="exp-num">01</p>
-          <h3 class="exp-title">Marketing Communications</h3>
-          <p class="exp-desc">Continental asset creation, integrated campaign management, and brand strategy — designed globally, executed locally with consistency and impact.</p>
+
+        <div class="exp-item exp-third reveal d1">
+          <div class="exp-top"><p class="exp-num">01</p><button class="photo-fan" type="button" data-gallery="tv" aria-label="Open TV photos (5)"><img src="img/work/tv-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="img/work/tv-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><span class="fan-more">+3</span></button></div>
+          <h3 class="exp-title">TV</h3>
+          <ul class="exp-list">
+            <li>European <strong>GTM strategy for the TV lineup</strong></li>
+            <li>Partnerships with <strong>Activision Blizzard</strong> and <strong>Amazon</strong> — European communication subsequently used globally</li>
+            <li>Gaming TV strategy activation across the European continent</li>
+            <li>Creating <strong>200+ product videos a year</strong> for global usage</li>
+          </ul>
         </div>
-        <div class="exp-item reveal d2">
-          <p class="exp-num">02</p>
-          <h3 class="exp-title">Trade Marketing</h3>
-          <p class="exp-desc">Bridging brand strategy and retail reality. POS, sell-in tools, merchandising, and partner programs that move products off shelves across Europe.</p>
+
+        <div class="exp-item exp-third reveal d2">
+          <div class="exp-top"><p class="exp-num">02</p><button class="photo-fan" type="button" data-gallery="technics" aria-label="Open Technics photos (6)"><img src="img/work/technics-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="img/work/technics-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><span class="fan-more">+4</span></button></div>
+          <h3 class="exp-title">Technics</h3>
+          <ul class="exp-list">
+            <li><strong>Technics TWS European strategy</strong> and campaign activation <span class="yr">2023–2025</span></li>
+            <li>Production team behind the <strong>Technics TWS global events</strong> <span class="yr">2023, 2024, 2025</span></li>
+            <li>Czech activation with <strong>Ondřej Brzobohatý</strong> — „Bohatý zvuk, luxusní design"</li>
+          </ul>
         </div>
-        <div class="exp-item reveal d2">
-          <p class="exp-num">03</p>
-          <h3 class="exp-title">P&amp;L &amp; Budget Management</h3>
-          <p class="exp-desc">Full ownership of marketing budgets with ROI focus. Structured planning, rigorous control, and transparent reporting to senior management.</p>
+
+        <div class="exp-item exp-third reveal d3">
+          <div class="exp-top"><p class="exp-num">03</p><button class="photo-fan" type="button" data-gallery="lumix" aria-label="Open LUMIX photo"><img src="img/work/lumix-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></button></div>
+          <h3 class="exp-title">LUMIX</h3>
+          <ul class="exp-list">
+            <li><strong>LUMIX Stories</strong> — influencer and ambassador programme built on authentic storytelling that demonstrates what the cameras can actually do</li>
+            <li>Creators from the programme also used for internal production</li>
+          </ul>
         </div>
-        <div class="exp-item reveal d3">
-          <p class="exp-num">04</p>
-          <h3 class="exp-title">Global Events &amp; PR</h3>
-          <p class="exp-desc">Proud part of the organisation team for CES and IFA — the world's largest electronics trade shows. High-stakes execution, flawlessly delivered.</p>
+
+        <div class="exp-item exp-mid reveal d1">
+          <div class="exp-top"><p class="exp-num">04</p><button class="photo-fan" type="button" data-gallery="events" aria-label="Open Exhibitions &amp; Events photos (5)"><img src="img/work/events-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="img/work/events-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><span class="fan-more">+3</span></button></div>
+          <h3 class="exp-title">Exhibitions &amp; Events</h3>
+          <ul class="exp-list">
+            <li><strong>CES 2024 &amp; CES 2025</strong> — project leader for the Consumer section, bringing the Panasonic booth to life</li>
+            <li><strong>IFA Berlin</strong> — category owner for the Panasonic hall <span class="yr">2020–2025</span></li>
+            <li>Range Review events for dealers — Prague, Milan</li>
+            <li>TV lineup introduction events <span class="yr">2024, 2025</span></li>
+          </ul>
         </div>
+
+        <div class="exp-item exp-wide reveal d2">
+          <div class="exp-top"><p class="exp-num">05</p></div>
+          <h3 class="exp-title">P&amp;L, Budget &amp; ROI</h3>
+          <ul class="exp-list">
+            <li>Full ownership of the <strong>European multi-channel marketing budget</strong>, including P&amp;L setup</li>
+            <li>Built the control system behind marketing investment — ROI evaluation and regular reporting to senior management</li>
+            <li>Agency cooperation optimisation — raising effectiveness and ROI <span class="yr">2024–present</span></li>
+            <li>CEEG merchandising team operations — web systems, setup, internal communication and the link to sales <span class="yr">2022–2023</span></li>
+          </ul>
+        </div>
+
+        <div class="exp-item exp-narrow reveal d3">
+          <div class="exp-top"><p class="exp-num">06</p><button class="photo-fan" type="button" data-gallery="audio" aria-label="Open Audio photos (3)"><img src="img/work/audio-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="img/work/audio-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><span class="fan-more">+1</span></button></div>
+          <h3 class="exp-title">Audio</h3>
+          <ul class="exp-list">
+            <li>Czech cooperation with the band <strong>Lake Malawi</strong> — Technics and party speaker activation</li>
+            <li>Party speakers — long-term cooperation and partnership with <strong>Óčko&nbsp;TV</strong></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Photo wall: a moving strip of project photos; each opens its card gallery -->
+    <div class="container work-wall-head reveal d1"><p class="label">Behind the work</p><p class="work-wall-meta">Campaigns, launches, trade shows — a selection</p></div>
+    <div class="marquee work-wall reveal d2" data-dir="left" data-speed="28">
+      <div class="marquee-track">
+        <ul class="marquee-list"><li><button class="wall-tile" type="button" data-gallery="events" data-index="0" aria-label="Open photo: Panasonic booth at CES"><img src="img/work/events-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Events</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="0" aria-label="Open photo: Level Up Your Game — Panasonic gaming TV campaign with Diablo IV"><img src="img/work/tv-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="technics" data-index="0" aria-label="Open photo: Technics TWS campaign with Ondřej Brzobohatý"><img src="img/work/technics-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="audio" data-index="0" aria-label="Open photo: With the band Lake Malawi"><img src="img/work/audio-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Audio</span></button></li><li><button class="wall-tile" type="button" data-gallery="lumix" data-index="0" aria-label="Open photo: LUMIX Stories video series"><img src="img/work/lumix-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">LUMIX</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="2" aria-label="Open photo: Panasonic hall at IFA Berlin"><img src="img/work/events-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Events</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="2" aria-label="Open photo: See it all. Feel it all. — Panasonic TV cinematic campaign"><img src="img/work/tv-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="technics" data-index="1" aria-label="Open photo: Technics AZ80 true wireless launch event"><img src="img/work/technics-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="3" aria-label="Open photo: Panasonic TV Experience 2024 event"><img src="img/work/events-4-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Events</span></button></li></ul>
+        <ul class="marquee-list" aria-hidden="true"><li><button class="wall-tile" type="button" data-gallery="events" data-index="0" tabindex="-1" aria-label="Open photo: Panasonic booth at CES"><img src="img/work/events-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Events</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="0" tabindex="-1" aria-label="Open photo: Level Up Your Game — Panasonic gaming TV campaign with Diablo IV"><img src="img/work/tv-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="technics" data-index="0" tabindex="-1" aria-label="Open photo: Technics TWS campaign with Ondřej Brzobohatý"><img src="img/work/technics-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="audio" data-index="0" tabindex="-1" aria-label="Open photo: With the band Lake Malawi"><img src="img/work/audio-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Audio</span></button></li><li><button class="wall-tile" type="button" data-gallery="lumix" data-index="0" tabindex="-1" aria-label="Open photo: LUMIX Stories video series"><img src="img/work/lumix-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">LUMIX</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="2" tabindex="-1" aria-label="Open photo: Panasonic hall at IFA Berlin"><img src="img/work/events-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Events</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="2" tabindex="-1" aria-label="Open photo: See it all. Feel it all. — Panasonic TV cinematic campaign"><img src="img/work/tv-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="technics" data-index="1" tabindex="-1" aria-label="Open photo: Technics AZ80 true wireless launch event"><img src="img/work/technics-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="3" tabindex="-1" aria-label="Open photo: Panasonic TV Experience 2024 event"><img src="img/work/events-4-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Events</span></button></li></ul>
+      </div>
+    </div>
+    <div class="marquee work-wall reveal d3" data-dir="right" data-speed="28">
+      <div class="marquee-track">
+        <ul class="marquee-list"><li><button class="wall-tile" type="button" data-gallery="technics" data-index="3" aria-label="Open photo: On set with Ondřej Brzobohatý"><img src="img/work/technics-4-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="1" aria-label="Open photo: Panasonic team at CES"><img src="img/work/events-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Events</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="1" aria-label="Open photo: Panasonic TV with Fire TV — Watch your favourites. Control your home."><img src="img/work/tv-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="audio" data-index="1" aria-label="Open photo: Lake Malawi with Panasonic party speakers"><img src="img/work/audio-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Audio</span></button></li><li><button class="wall-tile" type="button" data-gallery="technics" data-index="2" aria-label="Open photo: Technics EAH-AZ100 launch event"><img src="img/work/technics-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="4" aria-label="Open photo: Panasonic TV Experience 2025 event"><img src="img/work/events-5-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Events</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="4" aria-label="Open photo: Panasonic TV product videos on YouTube"><img src="img/work/tv-5-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="audio" data-index="2" aria-label="Open photo: Panasonic product placement on Óčko TV"><img src="img/work/audio-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Audio</span></button></li></ul>
+        <ul class="marquee-list" aria-hidden="true"><li><button class="wall-tile" type="button" data-gallery="technics" data-index="3" tabindex="-1" aria-label="Open photo: On set with Ondřej Brzobohatý"><img src="img/work/technics-4-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="1" tabindex="-1" aria-label="Open photo: Panasonic team at CES"><img src="img/work/events-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Events</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="1" tabindex="-1" aria-label="Open photo: Panasonic TV with Fire TV — Watch your favourites. Control your home."><img src="img/work/tv-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="audio" data-index="1" tabindex="-1" aria-label="Open photo: Lake Malawi with Panasonic party speakers"><img src="img/work/audio-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Audio</span></button></li><li><button class="wall-tile" type="button" data-gallery="technics" data-index="2" tabindex="-1" aria-label="Open photo: Technics EAH-AZ100 launch event"><img src="img/work/technics-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="4" tabindex="-1" aria-label="Open photo: Panasonic TV Experience 2025 event"><img src="img/work/events-5-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Events</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="4" tabindex="-1" aria-label="Open photo: Panasonic TV product videos on YouTube"><img src="img/work/tv-5-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="audio" data-index="2" tabindex="-1" aria-label="Open photo: Panasonic product placement on Óčko TV"><img src="img/work/audio-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Audio</span></button></li></ul>
       </div>
     </div>
   </section>
 
   <!-- ═══ JOURNEY / TIMELINE ═════════════════════ -->
   <section class="journey" id="journey">
-    <div class="container">
-      <p class="label reveal">Career</p>
-      <h2 class="section-title reveal d1">The journey so far</h2>
+    <div class="container journey-grid">
+
+      <!-- Intro stays pinned while the timeline scrolls past it -->
+      <div class="journey-intro">
+        <p class="label reveal">Career</p>
+        <h2 class="section-title reveal d1">The journey so far</h2>
+        <p class="section-sub reveal d2">Nineteen years at Panasonic — from building the Czech customer department to running communication for 20+ European markets.</p>
+      </div>
+
       <div class="timeline">
 
-        <div class="timeline-item reveal d1">
-          <div class="timeline-dot"></div>
-          <p class="timeline-period">Current Position · Wiesbaden, DE</p>
+        <div class="tl-current reveal d1">
+          <span class="tl-dot" aria-hidden="true"></span>
+          <p class="tl-period">Apr 2021 – Present · Based in Prague, CZ · Hybrid from Wiesbaden, DE</p>
           <h3 class="timeline-role">European Marketing Communications Manager</h3>
           <p class="timeline-company">Panasonic Marketing Europe</p>
-          <p class="timeline-desc">
-            Central European role with full continental responsibility. Managing go-to-market strategies for Panasonic CE across Europe — from master strategy development and campaign execution to direct collaboration with global HQ in Japan. Leading cross-country communication, PR, global events (CES &amp; IFA), and marketing team development.
-          </p>
+          <p class="timeline-desc">Central European role with full continental responsibility. Developing the pan-European master strategy for marketing communication and creating the assets European markets run on. End-to-end management of European campaigns, including P&amp;L setup, budget ownership and ROI evaluation. Direct coordination with global HQ in Japan, methodological guidance and support for the national sales organisations (LSOs) across Europe, plus global events (CES &amp; IFA), and leadership of the marketing team alongside external agencies and suppliers.</p>
           <div class="timeline-tags">
             <span class="tag">European Go-to-Market</span>
             <span class="tag">Campaign Management</span>
             <span class="tag">Global HQ Liaison</span>
+            <span class="tag">LSO Support</span>
             <span class="tag">CES &amp; IFA</span>
-            <span class="tag">P&amp;L</span>
+            <span class="tag">P&amp;L &amp; Budget</span>
             <span class="tag">Team Lead</span>
           </div>
         </div>
 
-        <div class="timeline-item reveal d2">
-          <div class="timeline-dot"></div>
-          <p class="timeline-period">Previous Role · Prague, CZ</p>
-          <h3 class="timeline-role">Trade &amp; Marketing Communications Manager</h3>
-          <p class="timeline-company">Panasonic Marketing Europe GmbH, Czech Branch</p>
-          <p class="timeline-desc">
-            Full ownership of marketing communications, trade marketing, and merchandising for the Czech market. Led Training &amp; Promotion team, managed ATL and BTL campaigns across B2E, B2B, and B2C. Handled agency selection and management, budget control, PR events, and cross-country active communication within the European network.
-          </p>
-          <div class="timeline-tags">
-            <span class="tag">Trade Marketing</span>
-            <span class="tag">ATL / BTL</span>
-            <span class="tag">B2B · B2C · B2E</span>
-            <span class="tag">Agency Management</span>
-            <span class="tag">Merchandising</span>
-            <span class="tag">Recruitment</span>
-          </div>
-        </div>
+        <!-- Earlier roles collapse to one line each; native <details>, no JS -->
+          <details class="tl-row reveal d1">
+            <summary>
+              <span class="tl-dot" aria-hidden="true"></span>
+              <span class="tl-head">
+                <span class="tl-period">2019 – Jan 2021 · Prague, CZ</span>
+                <span class="tl-role">Trade &amp; Marketing Communications Manager</span>
+                <span class="tl-company">Panasonic Marketing Europe GmbH, Czech Branch</span>
+              </span>
+              <span class="tl-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="tl-body">
+              <p class="timeline-desc">Full ownership of marketing communications, trade marketing, and merchandising for the Czech market. Led Training &amp; Promotion team, managed ATL and BTL campaigns across B2E, B2B, and B2C. Handled agency selection and management, budget control, PR events, and cross-country active communication within the European network.</p>
+              <div class="timeline-tags">
+                <span class="tag">Trade Marketing</span>
+                <span class="tag">ATL / BTL</span>
+                <span class="tag">B2B · B2C · B2E</span>
+                <span class="tag">Agency Management</span>
+                <span class="tag">Merchandising</span>
+                <span class="tag">Recruitment</span>
+              </div>
+            </div>
+          </details>
+          <details class="tl-row reveal d2">
+            <summary>
+              <span class="tl-dot" aria-hidden="true"></span>
+              <span class="tl-head">
+                <span class="tl-period">Apr 2011 – 2019 · Prague, CZ</span>
+                <span class="tl-role">Trade Marketing Manager</span>
+                <span class="tl-company">Panasonic Marketing Europe GmbH, Czech Branch</span>
+              </span>
+              <span class="tl-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="tl-body">
+              <p class="timeline-desc">Leading local Trade Marketing, Merchandising, and Training &amp; Promotion team — including a regional remit for Eastern Europe as Regional Trade Marketing Manager (2011–2013). Responsible for CE ATL and BTL marketing communication across B2E, B2B, and B2C channels. Created and executed sales promotion plans for individual CE product categories, organised internal and external training, PR events, and cross-country communication. Managed creative and advertising agency relationships, implemented effective online trade systems, and owned the marketing budget.</p>
+              <div class="timeline-tags">
+                <span class="tag">Trade Marketing</span>
+                <span class="tag">Merchandising</span>
+                <span class="tag">Training &amp; Promotion</span>
+                <span class="tag">ATL / BTL</span>
+                <span class="tag">Online Trade Systems</span>
+                <span class="tag">Agency Management</span>
+                <span class="tag">Budget Management</span>
+              </div>
+            </div>
+          </details>
+          <details class="tl-row reveal d3">
+            <summary>
+              <span class="tl-dot" aria-hidden="true"></span>
+              <span class="tl-head">
+                <span class="tl-period">Sep 2007 – Mar 2011 · Prague, CZ</span>
+                <span class="tl-role">Head of Call Centre</span>
+                <span class="tl-company">Panasonic Marketing Europe GmbH, Czech Branch</span>
+              </span>
+              <span class="tl-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="tl-body">
+              <p class="timeline-desc">Where the Panasonic years started. Built and ran the in-house customer department for the Czech and Slovak markets, including process support for internal communication and the creation and management of online systems and knowledge bases.</p>
+              <div class="timeline-tags">
+                <span class="tag">CZ &amp; SK Markets</span>
+                <span class="tag">Team Management</span>
+                <span class="tag">Process Design</span>
+                <span class="tag">Online Systems</span>
+              </div>
+            </div>
+          </details>
 
-        <div class="timeline-item reveal d3">
-          <div class="timeline-dot"></div>
-          <p class="timeline-period">Early Career · Prague, CZ</p>
-          <h3 class="timeline-role">Trade Marketing Manager</h3>
-          <p class="timeline-company">Panasonic Marketing Europe GmbH, Czech Branch</p>
-          <p class="timeline-desc">
-            Leading local Trade Marketing, Merchandising, and Training &amp; Promotion team. Responsible for CE ATL and BTL marketing communication across B2E, B2B, and B2C channels. Created and executed sales promotion plans for individual CE product categories, organised internal and external training, PR events, and cross-country communication. Managed creative and advertising agency relationships, implemented effective online trade systems, and owned the marketing budget.
-          </p>
-          <div class="timeline-tags">
-            <span class="tag">Trade Marketing</span>
-            <span class="tag">Merchandising</span>
-            <span class="tag">Training &amp; Promotion</span>
-            <span class="tag">ATL / BTL</span>
-            <span class="tag">Online Trade Systems</span>
-            <span class="tag">Agency Management</span>
-            <span class="tag">Budget Management</span>
-          </div>
-        </div>
+        <p class="tl-sep reveal">Education</p>
 
-        <div class="timeline-edu-sep reveal">
-          <span>Education</span>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot" style="background: #a855f7; box-shadow: 0 0 0 3px rgba(168,85,247,0.15);"></div>
-          <p class="timeline-period" style="color: #a855f7;">2024 / 2025 · Prague, CZ</p>
-          <h3 class="timeline-role">Master of Business Administration</h3>
-          <p class="timeline-company">British Business School (BBS)</p>
-          <p class="timeline-desc">
-            MBA program with specialisation in Marketing &amp; PR. Focused on strategic leadership, brand management, and modern marketing frameworks across international markets.
-          </p>
-          <div class="timeline-tags">
-            <span class="tag">MBA</span>
-            <span class="tag">Marketing &amp; PR</span>
-            <span class="tag">Strategic Leadership</span>
-            <span class="tag">Brand Management</span>
-          </div>
-        </div>
+          <details class="tl-row tl-edu reveal d1">
+            <summary>
+              <span class="tl-dot" aria-hidden="true"></span>
+              <span class="tl-head">
+                <span class="tl-period">May 2024 – Jul 2025 · Prague, CZ</span>
+                <span class="tl-role">Master of Business Administration</span>
+                <span class="tl-company">British Business School (BBS)</span>
+              </span>
+              <span class="tl-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="tl-body">
+              <p class="timeline-desc">MBA program with specialisation in Marketing &amp; PR. Focused on strategic leadership, brand management, and modern marketing frameworks across international markets.</p>
+              <div class="timeline-tags">
+                <span class="tag">MBA</span>
+                <span class="tag">Marketing &amp; PR</span>
+                <span class="tag">Strategic Leadership</span>
+                <span class="tag">Brand Management</span>
+              </div>
+            </div>
+          </details>
 
       </div>
     </div>
@@ -1306,130 +2230,190 @@
 
   <!-- ═══ LEARNING ════════════════════════════════ -->
   <section class="learning" id="learning">
-    <div class="container">
-      <p class="label reveal">Continuous Development</p>
-      <h2 class="section-title reveal d1">Learning never stops</h2>
+    <div class="container learning-head">
+      <div>
+        <p class="label reveal">Continuous Development</p>
+        <h2 class="section-title reveal d1">For me, learning never stops</h2>
+      </div>
       <p class="section-sub reveal d2">Ongoing professional development — from leadership and communication to AI and project management.</p>
-      <div class="courses-grid">
-        <div class="course-card reveal d1">
-          <span class="course-icon">🤖</span>
-          <p class="course-name">AI in Marketing</p>
+    </div>
+
+    <!-- Two marquee rows running in opposite directions. Each list is rendered
+         twice so the loop is seamless; the copy is hidden from assistive tech. -->
+    <div class="marquee reveal d2" data-dir="left">
+      <div class="marquee-track">
+        <ul class="marquee-list">
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-laptop"/></svg></span>vibecodingformarketers.com – AI course</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-cpu"/></svg></span>AI in Marketing</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-chat"/></svg></span>Communication Skills I – III</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-briefcase"/></svg></span>Communication Skills for Managers</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-phone"/></svg></span>Facebook &amp; Corporate Communication</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-users"/></svg></span>Team Communication</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-megaphone"/></svg></span>Marketing Communication</li>
+        </ul>
+        <ul class="marquee-list" aria-hidden="true">
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-laptop"/></svg></span>vibecodingformarketers.com – AI course</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-cpu"/></svg></span>AI in Marketing</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-chat"/></svg></span>Communication Skills I – III</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-briefcase"/></svg></span>Communication Skills for Managers</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-phone"/></svg></span>Facebook &amp; Corporate Communication</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-users"/></svg></span>Team Communication</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-megaphone"/></svg></span>Marketing Communication</li>
+        </ul>
+      </div>
+    </div>
+    <div class="marquee reveal d3" data-dir="right">
+      <div class="marquee-track">
+        <ul class="marquee-list">
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-bag"/></svg></span>Merchandising &amp; Instore Communication</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-compass"/></svg></span>People Leadership</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-clipboard"/></svg></span>Project Management</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-usercheck"/></svg></span>Customer Relationship Development</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-book"/></svg></span>Storytelling with Insight</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-timer"/></svg></span>Stress &amp; Time Management</li>
+        </ul>
+        <ul class="marquee-list" aria-hidden="true">
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-bag"/></svg></span>Merchandising &amp; Instore Communication</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-compass"/></svg></span>People Leadership</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-clipboard"/></svg></span>Project Management</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-usercheck"/></svg></span>Customer Relationship Development</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-book"/></svg></span>Storytelling with Insight</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-timer"/></svg></span>Stress &amp; Time Management</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- "Now" card: what I'm focused on at the moment. Update the date when editing. -->
+    <div class="container">
+      <div class="now-card reveal d2">
+        <div class="now-head">
+          <p class="now-label"><span class="now-dot" aria-hidden="true"></span>Now</p>
+          <p class="now-upd">Updated November 2026</p>
         </div>
-        <div class="course-card reveal d2">
-          <span class="course-icon">🗣️</span>
-          <p class="course-name">Communication Skills I – III</p>
+        <h3 class="now-title">What I’m into right now</h3>
+        <div class="now-grid">
+        <div class="now-item now-wide"><span class="now-icon" aria-hidden="true"><svg class="i"><use href="#i-briefcase"/></svg></span><p class="now-k">At work</p><p class="now-v">Leading marketing for <strong>DACH</strong>, <strong>Norway</strong> and the <strong>Netherlands</strong> in detail, including P&amp;L — and bringing in best practices that already work in other European regions.</p></div>
+        <div class="now-item "><span class="now-icon" aria-hidden="true"><svg class="i"><use href="#i-cpu"/></svg></span><p class="now-k">Exploring</p><p class="now-v"><strong>Automation with AI agents</strong> — and how it reshapes the way work gets done inside a large corporation.</p></div>
+        <div class="now-item "><span class="now-icon" aria-hidden="true"><svg class="i"><use href="#i-laptop"/></svg></span><p class="now-k">Building</p><p class="now-v">My own apps. I find it fascinating that these skills are now within everyone’s reach — this website included.</p></div>
+        <div class="now-item "><span class="now-icon" aria-hidden="true"><svg class="i"><use href="#i-book"/></svg></span><p class="now-k">Listening &amp; watching</p><p class="now-v">Travel, technology and investing.</p></div>
+        <div class="now-item "><span class="now-icon" aria-hidden="true"><svg class="i"><use href="#i-users"/></svg></span><p class="now-k">Off the clock</p><p class="now-v">Time with my family, regular sport and the occasional morning coffee with friends.</p></div>
         </div>
-        <div class="course-card reveal d3">
-          <span class="course-icon">👔</span>
-          <p class="course-name">Communication Skills for Managers</p>
-        </div>
-        <div class="course-card reveal d1">
-          <span class="course-icon">📱</span>
-          <p class="course-name">Facebook &amp; Corporate Communication</p>
-        </div>
-        <div class="course-card reveal d2">
-          <span class="course-icon">🤝</span>
-          <p class="course-name">Team Communication</p>
-        </div>
-        <div class="course-card reveal d3">
-          <span class="course-icon">📣</span>
-          <p class="course-name">Marketing Communication</p>
-        </div>
-        <div class="course-card reveal d1">
-          <span class="course-icon">🛍️</span>
-          <p class="course-name">Merchandising &amp; Instore Communication</p>
-        </div>
-        <div class="course-card reveal d2">
-          <span class="course-icon">🧭</span>
-          <p class="course-name">People Leadership</p>
-        </div>
-        <div class="course-card reveal d3">
-          <span class="course-icon">📋</span>
-          <p class="course-name">Project Management</p>
-        </div>
-        <div class="course-card reveal d1">
-          <span class="course-icon">💼</span>
-          <p class="course-name">Customer Relationship Development</p>
-        </div>
-        <div class="course-card reveal d2">
-          <span class="course-icon">💡</span>
-          <p class="course-name">Storytelling with Insight</p>
-        </div>
-        <div class="course-card reveal d3">
-          <span class="course-icon">⏱️</span>
-          <p class="course-name">Stress &amp; Time Management</p>
-        </div>
+        <div class="now-talk"><p class="now-k">Happy to talk about</p><span class="now-topic">AI agents in corporate marketing</span><span class="now-topic">European go-to-market</span><span class="now-topic">Marketing in DACH, Norway &amp; the Netherlands</span><span class="now-topic">Trade shows &amp; events</span><span class="now-topic">Building apps with AI</span><a href="#contact" class="now-talk-cta">Get in touch →</a></div>
       </div>
     </div>
   </section>
 
   <!-- ═══ PERSONAL ═══════════════════════════════ -->
-  <section id="personal">
+  <section class="personal" id="personal">
     <div class="container">
-      <p class="label reveal">Beyond the office</p>
-      <h2 class="section-title reveal d1">The whole picture</h2>
-      <p class="section-sub reveal d2">Work is only one piece of the LEGO set.</p>
+      <div class="split-head">
+        <div>
+          <p class="label reveal">Beyond the office</p>
+          <h2 class="section-title reveal d1">The whole picture</h2>
+        </div>
+        <div class="lego-quote reveal d2">
+          <span class="lego-thumb">
+            <img src="img/personal/family-2-thumb.webp" alt="Giant LEGO bricks" width="72" height="72" loading="lazy" decoding="async" />
+          </span>
+          <p class="section-sub">
+            Life is like LEGO — only when all the pieces fit together can the result be perfect.
+            Work is one of those pieces.
+          </p>
+        </div>
+      </div>
+      <div class="personal-layout">
+        <div class="personal-photo reveal">
+          <img src="img/personal/bellagio.webp" alt="Jakub Pešl in front of the Bellagio, Las Vegas" width="1200" height="1600" loading="lazy" decoding="async" />
+        </div>
       <div class="personal-grid">
         <div class="personal-card reveal d1">
-          <span class="personal-icon">💻</span>
-          <h3 class="personal-title">Tech Explorer</h3>
-          <p class="personal-text">Always chasing the next innovation. From AI to consumer gadgets — if it's new and interesting, I've probably already tried it.</p>
+          <div class="personal-head"><span class="personal-icon" aria-hidden="true"><svg class="i"><use href="#i-laptop"/></svg></span><span class="personal-title">Tech Explorer</span><button class="photo-fan" type="button" data-gallery="tech" aria-label="Open Tech Explorer photos (2)"><img src="img/personal/tech-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="img/personal/tech-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></button></div>
+          <p class="personal-text">I read about and try more technology than I probably need to — AI tools lately, consumer gadgets always. It's genuinely useful in this job.</p>
         </div>
         <div class="personal-card reveal d2">
-          <span class="personal-icon">🏃</span>
-          <h3 class="personal-title">Active Life</h3>
-          <p class="personal-text">Sport is my reset button. Movement keeps the mind sharp and the perspective fresh. Balance is everything.</p>
+          <div class="personal-head"><span class="personal-icon" aria-hidden="true"><svg class="i"><use href="#i-pulse"/></svg></span><span class="personal-title">Active Life</span><button class="photo-fan" type="button" data-gallery="active" aria-label="Open Active Life photos (2)"><img src="img/personal/active-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="img/personal/active-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></button></div>
+          <p class="personal-text">Sport is my reset button. After a week of calls across time zones, moving is what clears my head.</p>
         </div>
         <div class="personal-card reveal d3">
-          <span class="personal-icon">🌍</span>
-          <h3 class="personal-title">Family &amp; Travel</h3>
-          <p class="personal-text">Exploring Europe with family is the best kind of research. New cultures, new perspectives — broadening the lens through which I see everything.</p>
+          <div class="personal-head"><span class="personal-icon" aria-hidden="true"><svg class="i"><use href="#i-globe"/></svg></span><span class="personal-title">Family &amp; Travel</span><button class="photo-fan" type="button" data-gallery="family" aria-label="Open Family &amp; Travel photos (3)"><img src="img/personal/family-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="img/personal/family-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><span class="fan-more">+1</span></button></div>
+          <p class="personal-text">Travelling Europe with my family is also the best market research I get — you learn quickly that the same message doesn't land the same way everywhere.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ═══ TESTIMONIAL ════════════════════════════ -->
-  <section class="testimonial">
-    <div class="container">
-      <span class="testimonial-mark reveal">"</span>
-      <p class="testimonial-text reveal d1">
-        Jakub is consistently one of the top performers: clearly demonstrating a culture that inspires excellence in everyone in their team and network, actively empowering and encouraging colleagues to take ownership of their roles, and demonstrating exceptional empathy and consideration for the needs of other employees. Jakub articulates and delivers a compelling, inspired, and relatable vision, gains the confidence and trust of others easily, and builds excitement in others to explore creative options. Pursuing everything with energy, drive, and the need to finish, Jakub moves beyond traditional ways of doing things and pushes past the status quo.
-      </p>
-      <div class="testimonial-author reveal d2">
-        <span class="testimonial-name">Gabor Szegner</span>
-        <span class="testimonial-role">Senior Marketing Manager, Panasonic</span>
       </div>
     </div>
   </section>
 
-  <!-- ═══ CONTACT ════════════════════════════════ -->
+  <!-- ═══ CONTACT (testimonial + CTA) ════════════ -->
   <section class="contact" id="contact">
     <div class="container">
-      <p class="label reveal">Let's connect</p>
-      <h2 class="section-title reveal d1">Ready to build<br />something great?</h2>
-      <p class="section-sub reveal d2">
-        Whether you have a project in mind, a question, or just want to connect —
-        I'm always open to conversations that lead somewhere interesting.
-      </p>
-      <div class="contact-actions reveal d3">
-        <a href="https://www.linkedin.com/in/jakub-pe%C5%A1l" target="_blank" class="btn-primary">
-          Connect on LinkedIn →
-        </a>
-        <a href="mailto:pesljakub@gmail.com" class="btn-secondary" id="emailLink">
-          pesljakub@gmail.com
-        </a>
+
+      <figure class="testimonial">
+        <span class="testimonial-mark reveal" aria-hidden="true">“</span>
+        <blockquote class="testimonial-text reveal d1">
+          Jakub consistently inspires excellence, empowers colleagues to take ownership,
+          and builds trust across teams.
+        </blockquote>
+        <figcaption class="testimonial-author reveal d2">
+          <span class="testimonial-name">Gabor Szegner</span>
+          <span class="testimonial-role">Senior Marketing Manager, Panasonic</span>
+        </figcaption>
+      </figure>
+
+      <div class="cta-card reveal">
+        <p class="label">Contact</p>
+        <h2 class="section-title">Let's connect.</h2>
+        <p class="section-sub">
+          I'm always happy to connect with people in marketing, technology, international business
+          — and with anyone else who's interesting to talk&nbsp;to.
+        </p>
+        <div class="contact-actions">
+          <a href="https://www.linkedin.com/in/jakub-pe%C5%A1l" target="_blank" class="btn-primary">
+            Connect on LinkedIn →
+          </a>
+          <a href="mailto:pesljakub@gmail.com" class="btn-secondary" id="emailLink">
+            pesljakub@gmail.com
+          </a>
+        </div>
+        <div class="ask-ai">
+          <span class="ask-ai-lead"><svg class="i" aria-hidden="true"><use href="#i-cpu"/></svg>Or ask an AI about me</span>
+          <a href="https://chatgpt.com/?q=Tell%20me%20about%20Jakub%20Pe%C5%A1l%2C%20European%20Marketing%20Communications%20Manager%20at%20Panasonic%20%E2%80%94%20his%20experience%2C%20key%20projects%20and%20strengths.%20Use%20his%20profile%3A%20https%3A%2F%2Fjakubpesl.github.io%2Fjakub-pesl%2Fllms.txt" target="_blank" rel="noopener" class="ask-ai-link">ChatGPT</a>
+          <a href="https://claude.ai/new?q=Tell%20me%20about%20Jakub%20Pe%C5%A1l%2C%20European%20Marketing%20Communications%20Manager%20at%20Panasonic%20%E2%80%94%20his%20experience%2C%20key%20projects%20and%20strengths.%20Use%20his%20profile%3A%20https%3A%2F%2Fjakubpesl.github.io%2Fjakub-pesl%2Fllms.txt" target="_blank" rel="noopener" class="ask-ai-link">Claude</a>
+          <a href="https://www.perplexity.ai/search?q=Tell%20me%20about%20Jakub%20Pe%C5%A1l%2C%20European%20Marketing%20Communications%20Manager%20at%20Panasonic%20%E2%80%94%20his%20experience%2C%20key%20projects%20and%20strengths.%20Use%20his%20profile%3A%20https%3A%2F%2Fjakubpesl.github.io%2Fjakub-pesl%2Fllms.txt" target="_blank" rel="noopener" class="ask-ai-link">Perplexity</a>
+        </div>
       </div>
+
     </div>
   </section>
+
+  <!-- Photo preview: small card dialog (native <dialog>: Esc closes, focus stays inside) -->
+  <dialog class="lightbox" id="lightbox" aria-label="Photo preview">
+    <div class="lb-stage">
+      <img class="lb-img" alt="" />
+    </div>
+    <button class="lb-btn lb-side lb-prev" type="button" aria-label="Previous photo"><svg class="i"><use href="#i-left"/></svg></button>
+    <button class="lb-btn lb-side lb-next" type="button" aria-label="Next photo"><svg class="i"><use href="#i-right"/></svg></button>
+    <button class="lb-btn lb-close" type="button" aria-label="Close preview"><svg class="i"><use href="#i-x"/></svg></button>
+  </dialog>
 
   <button id="backToTop" aria-label="Back to top">↑</button>
 
   <!-- ═══ FOOTER ═════════════════════════════════ -->
   <footer>
-    <p class="footer-copy">© 2026 Jakub Pešl</p>
-    <div class="footer-links">
-      <a href="https://www.linkedin.com/in/jakub-pe%C5%A1l" target="_blank">LinkedIn</a>
+    <div class="footer-inner">
+      <a href="#" class="footer-brand" aria-label="Back to top">
+        <span class="nav-mark" aria-hidden="true">JP</span>
+        <span class="footer-name">Jakub Pešl, MBA</span>
+        <span class="footer-copy">© 2026 · Prague, CZ</span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/jakub-pe%C5%A1l" target="_blank">LinkedIn ↗</a></li>
+        <li><a href="mailto:pesljakub@gmail.com">pesljakub@gmail.com</a></li>
+        <li><a href="Jakub-Pesl-CV.pdf" target="_blank">CV (PDF) ↓</a></li>
+        <li class="lang-switch" aria-label="Language">
+          <a href="./" lang="en" aria-current="page">EN</a>
+          <a href="cs/" lang="cs" hreflang="cs">CZ</a>
+        </li>
+      </ul>
     </div>
   </footer>
 
@@ -1441,9 +2425,8 @@
     );
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // ── Scroll events: nav shadow, progress bar, scroll indicator, back-to-top
+    // ── Scroll events: nav shadow, progress bar, back-to-top
     const nav        = document.getElementById('nav');
-    const scrollInd  = document.querySelector('.scroll-indicator');
     const progressBar = document.getElementById('progressBar');
     const backToTop  = document.getElementById('backToTop');
 
@@ -1452,7 +2435,7 @@
       const docH = document.documentElement.scrollHeight - window.innerHeight;
 
       nav.style.boxShadow = y > 40 ? '0 1px 0 rgba(0,0,0,0.1)' : 'none';
-      if (scrollInd) scrollInd.classList.toggle('hidden', y > 80);
+      nav.classList.toggle('scrolled', y > 40);
       progressBar.style.width = (y / docH * 100) + '%';
       backToTop.classList.toggle('visible', y > 500);
     }, { passive: true });
@@ -1461,10 +2444,13 @@
 
     // ── Counter animation
     const counters = document.querySelectorAll('[data-target]');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const counterObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         const el = entry.target;
+        // Values are already rendered in the HTML — leave them alone if motion is unwanted.
+        if (reduceMotion) { counterObserver.unobserve(el); return; }
         const target = +el.dataset.target;
         const suffix = el.dataset.suffix || '';
         const duration = 1800;
@@ -1521,6 +2507,312 @@
 
     navLinksList.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
+    // ── Learning marquee rows: auto-scroll (alternate rows in opposite
+    //    directions), ease to a stop on hover, can be grabbed (mouse) or
+    //    swiped (touch) and flicked with inertia.
+    if (!reduceMotion) document.querySelectorAll('.marquee').forEach(function (marquee) {
+      // reduced motion: static wrapped list via CSS
+      const track = marquee.querySelector('.marquee-track');
+      const list = track.querySelector('.marquee-list');
+      marquee.classList.add('is-js');
+
+      const SPEED = +marquee.dataset.speed || 45;
+      const AUTO = marquee.dataset.dir === 'right' ? SPEED : -SPEED;   // px per second when idle
+      let x = 0, half = 0;         // half = width of one copy of the list
+      let auto = AUTO;             // current auto speed, eased toward target
+      let fling = 0;               // inertia after release, px/s
+      let hovering = false, dragging = false;
+      let lastX = 0, lastT = 0, vel = 0, prev = performance.now();
+
+      const measure = () => {
+        half = list.offsetWidth;
+        // Short rows on wide screens: add hidden copies so the loop never shows a gap
+        while (half && track.children.length * half < half + marquee.clientWidth) {
+          track.appendChild(track.lastElementChild.cloneNode(true));
+        }
+      };
+      measure();
+      window.addEventListener('resize', measure);
+      // Pills width depends on the web font — re-measure once it's in
+      if (document.fonts) document.fonts.ready.then(measure);
+
+      function frame(now) {
+        const dt = Math.min((now - prev) / 1000, 0.05);
+        prev = now;
+        if (!dragging) {
+          const target = hovering ? 0 : AUTO;
+          auto += (target - auto) * Math.min(dt * 4, 1);
+          fling *= Math.pow(0.04, dt);              // decay ~ within a second
+          if (Math.abs(fling) < 4) fling = 0;
+          x += (auto + fling) * dt;
+        }
+        if (half) x = ((x % half) - half) % half;   // keep in (-half, 0]
+        track.style.transform = 'translate3d(' + x + 'px,0,0)';
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+
+      marquee.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') hovering = true; });
+      marquee.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') hovering = false; });
+
+      marquee.addEventListener('pointerdown', e => {
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+        dragging = true;
+        fling = 0; vel = 0;
+        lastX = e.clientX; lastT = e.timeStamp;
+        marquee.setPointerCapture(e.pointerId);
+        marquee.classList.add('is-dragging');
+      });
+      marquee.addEventListener('pointermove', e => {
+        if (!dragging) return;
+        const dx = e.clientX - lastX;
+        const dtm = Math.max(e.timeStamp - lastT, 1) / 1000;
+        x += dx;
+        vel = vel * 0.6 + (dx / dtm) * 0.4;         // smoothed release speed
+        lastX = e.clientX; lastT = e.timeStamp;
+      });
+      function release(e) {
+        if (!dragging) return;
+        dragging = false;
+        marquee.classList.remove('is-dragging');
+        // Ignore a stale velocity if the finger/mouse paused before letting go
+        fling = (e.timeStamp - lastT) < 80 ? Math.max(-3000, Math.min(3000, vel)) : 0;
+        if (e.pointerType !== 'mouse') hovering = false;
+      }
+      marquee.addEventListener('pointerup', release);
+      marquee.addEventListener('pointercancel', release);
+    });
+
+    // ── Photo wall: the marquee captures the pointer, so a tap (not a drag)
+    //    on a tile is turned into a click on that tile here.
+    document.querySelectorAll('.work-wall.is-js').forEach(function (wall) {
+      let sx = 0, tile = null;
+      wall.addEventListener('pointerdown', e => { sx = e.clientX; tile = e.target.closest('.wall-tile'); });
+      wall.addEventListener('pointerup', e => { if (tile && Math.abs(e.clientX - sx) < 6) tile.click(); tile = null; });
+    });
+
+    // ── Personal photo galleries (lightbox)
+    (function () {
+      const galleries = {
+        "tv": [
+          {
+            "src": "img/work/tv-1.webp",
+            "alt": "Level Up Your Game — Panasonic gaming TV campaign with Diablo IV"
+          },
+          {
+            "src": "img/work/tv-2.webp",
+            "alt": "Panasonic TV with Fire TV — Watch your favourites. Control your home."
+          },
+          {
+            "src": "img/work/tv-3.webp",
+            "alt": "See it all. Feel it all. — Panasonic TV cinematic campaign"
+          },
+          {
+            "src": "img/work/tv-4.webp",
+            "alt": "TV three-pillar strategy: movies, gaming, Fire TV"
+          },
+          {
+            "src": "img/work/tv-5.webp",
+            "alt": "Panasonic TV product videos on YouTube"
+          }
+        ],
+        "technics": [
+          {
+            "src": "img/work/technics-1.webp",
+            "alt": "Technics TWS campaign with Ondřej Brzobohatý"
+          },
+          {
+            "src": "img/work/technics-2.webp",
+            "alt": "Technics AZ80 true wireless launch event"
+          },
+          {
+            "src": "img/work/technics-3.webp",
+            "alt": "Technics EAH-AZ100 launch event"
+          },
+          {
+            "src": "img/work/technics-4.webp",
+            "alt": "On set with Ondřej Brzobohatý"
+          },
+          {
+            "src": "img/work/technics-5.webp",
+            "alt": "Technics strategy presentation"
+          },
+          {
+            "src": "img/work/technics-6.webp",
+            "alt": "Technics survey evaluation across European countries"
+          }
+        ],
+        "lumix": [
+          {
+            "src": "img/work/lumix-1.webp",
+            "alt": "LUMIX Stories video series"
+          }
+        ],
+        "events": [
+          {
+            "src": "img/work/events-1.webp",
+            "alt": "Panasonic booth at CES"
+          },
+          {
+            "src": "img/work/events-2.webp",
+            "alt": "Panasonic team at CES"
+          },
+          {
+            "src": "img/work/events-3.webp",
+            "alt": "Panasonic hall at IFA Berlin"
+          },
+          {
+            "src": "img/work/events-4.webp",
+            "alt": "Panasonic TV Experience 2024 event"
+          },
+          {
+            "src": "img/work/events-5.webp",
+            "alt": "Panasonic TV Experience 2025 event"
+          }
+        ],
+        "audio": [
+          {
+            "src": "img/work/audio-1.webp",
+            "alt": "With the band Lake Malawi"
+          },
+          {
+            "src": "img/work/audio-2.webp",
+            "alt": "Lake Malawi with Panasonic party speakers"
+          },
+          {
+            "src": "img/work/audio-3.webp",
+            "alt": "Panasonic product placement on Óčko TV"
+          }
+        ],
+        "tech": [
+          {
+            "src": "img/personal/tech-1.webp",
+            "alt": "At Marketing Festival 2025"
+          },
+          {
+            "src": "img/personal/tech-2.webp",
+            "alt": "Panasonic at CES, Las Vegas"
+          }
+        ],
+        "active": [
+          {
+            "src": "img/personal/active-1.webp",
+            "alt": "Windsurfing"
+          },
+          {
+            "src": "img/personal/active-2.webp",
+            "alt": "Hiking below the Marmolada glacier, Dolomites"
+          }
+        ],
+        "family": [
+          {
+            "src": "img/personal/family-1.webp",
+            "alt": "Camper van in the mountains"
+          },
+          {
+            "src": "img/personal/family-2.webp",
+            "alt": "Giant LEGO bricks"
+          },
+          {
+            "src": "img/personal/family-3.webp",
+            "alt": "Overlooking a canyon in Arizona"
+          }
+        ]
+      };
+      const dlg = document.getElementById('lightbox');
+      const img = dlg.querySelector('.lb-img');
+      let list = [], idx = 0;
+      // View Transitions: the clicked thumbnail morphs into the preview.
+      // origin remembers it so closing can morph back (only if still on that photo).
+      const canVT = !!document.startViewTransition && !reduceMotion;
+      let origin = null;
+      const inView = el => { const r = el.getBoundingClientRect(); return r.width > 0 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth; };
+      function closeLb() {
+        if (!dlg.open) return;
+        const o = origin; origin = null;
+        if (!canVT || !o || o.idx !== idx || !inView(o.th)) { dlg.close(); return; }
+        img.style.viewTransitionName = 'lb-photo';
+        dlg.classList.add('vt');
+        const t = document.startViewTransition(() => {
+          img.style.viewTransitionName = '';
+          dlg.close();
+          o.th.style.viewTransitionName = 'lb-photo';
+        });
+        t.finished.finally(() => { o.th.style.viewTransitionName = ''; dlg.classList.remove('vt'); });
+      }
+
+      function show(i) {
+        idx = (i + list.length) % list.length;
+        const item = list[idx];
+        // Swap only once the next photo is decoded, so the card resizes in one step
+        const next = new Image();
+        next.src = item.src;
+        const swap = () => { if (list[idx] === item) { img.src = item.src; img.alt = item.alt; } };
+        (next.decode ? next.decode() : Promise.resolve()).then(swap, swap);
+        // Warm the next one so arrowing feels instant
+        if (list.length > 1) new Image().src = list[(idx + 1) % list.length].src;
+      }
+
+      document.querySelectorAll('[data-gallery]').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          if (dlg.open) return;
+          list = galleries[btn.dataset.gallery] || [];
+          if (!list.length) return;
+          dlg.classList.toggle('single', list.length < 2);
+          const start = +btn.dataset.index || 0;
+          const th = btn.querySelector('img');
+          origin = null;
+          if (!canVT || !th || !inView(th)) { show(start); dlg.showModal(); return; }
+          idx = start;
+          const item = list[idx];
+          const pre = new Image();
+          pre.src = item.src;
+          try { await pre.decode(); } catch (e) { /* show anyway */ }
+          if (dlg.open) return;
+          origin = { th, idx };
+          th.style.viewTransitionName = 'lb-photo';
+          dlg.classList.add('vt');
+          const t = document.startViewTransition(() => {
+            th.style.viewTransitionName = '';
+            img.src = item.src; img.alt = item.alt;
+            img.style.viewTransitionName = 'lb-photo';
+            dlg.showModal();
+          });
+          t.finished.finally(() => { img.style.viewTransitionName = ''; dlg.classList.remove('vt'); });
+          if (list.length > 1) new Image().src = list[(idx + 1) % list.length].src;
+        });
+      });
+
+      dlg.querySelector('.lb-prev').addEventListener('click', () => show(idx - 1));
+      dlg.querySelector('.lb-next').addEventListener('click', () => show(idx + 1));
+      dlg.querySelector('.lb-close').addEventListener('click', closeLb);
+      // Esc: run the same animated close instead of the instant default
+      dlg.addEventListener('cancel', e => { e.preventDefault(); closeLb(); });
+      // Click outside the card (on the dimmed page) closes
+      dlg.addEventListener('click', e => {
+        if (e.target !== dlg) return;            // clicks on the photo or buttons
+        const r = dlg.getBoundingClientRect();
+        if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeLb();
+      });
+      dlg.addEventListener('keydown', e => {
+        if (list.length < 2) return;
+        if (e.key === 'ArrowLeft')  show(idx - 1);
+        if (e.key === 'ArrowRight') show(idx + 1);
+      });
+
+      // Swipe on touch / drag with mouse
+      const stage = dlg.querySelector('.lb-stage');
+      let startX = null;
+      stage.addEventListener('pointerdown', e => { startX = e.clientX; });
+      stage.addEventListener('pointerup', e => {
+        if (startX === null || list.length < 2) return;
+        const dx = e.clientX - startX;
+        startX = null;
+        if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+      });
+      stage.addEventListener('pointercancel', () => { startX = null; });
+    })();
+
     // ── Copy email on click
     const emailLink = document.getElementById('emailLink');
     if (emailLink) {
@@ -1539,7 +2831,7 @@
 
     function applyTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
-      toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      toggleBtn.querySelector('use').setAttribute('href', theme === 'dark' ? '#i-sun' : '#i-moon');
       toggleBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
     }
 
