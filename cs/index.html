@@ -1,0 +1,2844 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var sys = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', saved || sys);
+    })();
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230071E3'/><text x='50%25' y='54%25' font-family='Inter,system-ui,sans-serif' font-size='13' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'>JP</text></svg>" />
+  <title>Jakub Pešl — European Marketing Communications Manager</title>
+  <meta name="description" content="European Marketing Communications Manager v Panasonic Marketing Europe — go-to-market komunikace, tvorba kampaní a trade marketing ve více než 20 evropských zemích." />
+
+  <link rel="alternate" hreflang="en" href="https://jakubpesl.github.io/jakub-pesl/" />
+  <link rel="alternate" hreflang="cs" href="https://jakubpesl.github.io/jakub-pesl/cs/" />
+  <link rel="alternate" type="text/plain" title="Profile for AI assistants" href="https://jakubpesl.github.io/jakub-pesl/llms.txt" />
+  <link rel="alternate" hreflang="x-default" href="https://jakubpesl.github.io/jakub-pesl/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="profile" />
+  <meta property="og:url"         content="https://jakubpesl.github.io/jakub-pesl/cs/" />
+  <meta property="og:title"       content="Jakub Pešl — European Marketing Communications Manager" />
+  <meta property="og:description" content="Go-to-market komunikace, kampaně a trade marketing ve 20+ evropských zemích. 19 let v Panasonicu. CES a IFA." />
+  <meta property="og:image"       content="https://jakubpesl.github.io/jakub-pesl/og.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"    content="Jakub Pešl, MBA — European Marketing Communications Manager v Panasonic Marketing Europe" />
+  <meta property="og:locale"      content="cs_CZ" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Jakub Pešl — European Marketing Communications Manager" />
+  <meta name="twitter:description" content="Go-to-market komunikace, kampaně a trade marketing ve 20+ evropských zemích. 19 let v Panasonicu. CES a IFA." />
+  <meta name="twitter:image"       content="https://jakubpesl.github.io/jakub-pesl/og.png" />
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jakub Pešl",
+    "jobTitle": "European Marketing Communications Manager",
+    "url": "https://jakubpesl.github.io/jakub-pesl/cs/",
+    "image": "https://jakubpesl.github.io/jakub-pesl/JakubP.png",
+    "email": "mailto:pesljakub@gmail.com",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Panasonic Marketing Europe"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "British Business School"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Prague",
+      "addressCountry": "CZ"
+    },
+    "knowsAbout": [
+      "Marketing Communications",
+      "Go-to-Market Strategy",
+      "Trade Marketing",
+      "Brand Communication",
+      "Event Marketing"
+    ],
+    "sameAs": ["https://www.linkedin.com/in/jakub-pe%C5%A1l"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #1D1D1F;
+      --white:   #FFFFFF;
+      --gray-1:  #F5F5F7;
+      --gray-2:  #E8E8ED;
+      --gray-3:  #707073;
+      --gray-4:  #515154;
+      --accent:  #0071E3;
+      --font:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── NAV ─────────────────────────────────── */
+    /* Height lives in a custom property so the mobile dropdown and the
+       anchor scroll offset follow the bar when it shrinks on scroll. */
+    :root { --nav-h: 74px; }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      transition: height 0.35s cubic-bezier(.16,1,.3,1), border-color 0.3s, background 0.3s;
+    }
+    nav.scrolled { --nav-h: 58px; }
+
+    /* ── Logo lockup: monogram + name + role ── */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-mark {
+      width: 32px; height: 32px;
+      border-radius: 9px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s cubic-bezier(.16,1,.3,1);
+    }
+    .nav-logo:hover .nav-mark { transform: rotate(-6deg) scale(1.06); }
+
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+
+    .nav-logo-name {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: var(--black);
+    }
+
+    .nav-logo-role {
+      font-size: 11.5px;
+      font-weight: 400;
+      color: var(--gray-3);
+      letter-spacing: 0.01em;
+      max-height: 16px;
+      opacity: 1;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(.16,1,.3,1), opacity 0.25s;
+    }
+    nav.scrolled .nav-logo-role { max-height: 0; opacity: 0; }
+
+    /* ── Links: centred, so the bar doesn't read as two islands ── */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      list-style: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav-links a {
+      position: relative;
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--black);
+      text-decoration: none;
+      opacity: 0.7;
+      padding: 6px 0;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s cubic-bezier(.16,1,.3,1);
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a:hover::after,
+    .nav-links a.nav-active::after { transform: scaleX(1); }
+    .nav-links .nav-cta::after { display: none; }
+
+    .nav-cv {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--black);
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid var(--gray-2);
+      border-radius: 980px;
+      white-space: nowrap;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .nav-cv:hover { border-color: var(--gray-4); background: var(--gray-1); }
+
+    .nav-cta {
+      background: var(--black) !important;
+      color: var(--white) !important;
+      opacity: 1 !important;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 9px 20px;
+      border-radius: 980px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover { background: #444 !important; transform: translateY(-1px); }
+
+    /* ─── HERO ────────────────────────────────── */
+    /* Leaves a clean strip of the dark stat band peeking above the fold —
+       it does the job a "scroll" hint would. The strip stays shorter than
+       the band's top padding so no numbers are cut in half. Content height
+       wins on short screens. */
+    .hero {
+      min-height: calc(100svh - 72px);
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      align-items: center;
+      gap: 80px;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 124px 48px 64px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: -10% -20%;
+      background: radial-gradient(ellipse 70% 55% at 62% 32%, rgba(0,113,227,0.07) 0%, transparent 62%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Avatar */
+    .hero-avatar-wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      flex-shrink: 0;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.1s forwards;
+    }
+
+    /* Photo and credential card stack vertically; the accent plate is scoped
+       to the photo only so it can't bleed behind the card below it. */
+    .hero-photo-stack { position: relative; }
+
+    /* Accent plate offset behind the photo — gives the column depth
+       instead of a single flat rectangle floating in white space. */
+    .hero-photo-stack::before {
+      content: '';
+      position: absolute;
+      inset: 24px -20px -24px 20px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(0,113,227,0.16), rgba(0,113,227,0.02));
+      z-index: 1;
+    }
+
+    .hero-avatar-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 32px 64px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
+    }
+
+    .hero-avatar {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+      transition: transform 0.6s cubic-bezier(.16,1,.3,1);
+    }
+
+    .hero-avatar-inner:hover .hero-avatar {
+      transform: scale(1.04);
+    }
+
+    /* Credential card sits under the photo — never over the face */
+    .hero-award {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 34px;
+      padding: 15px 18px;
+      background: var(--white);
+      border: 1px solid var(--gray-2);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 1s forwards;
+    }
+    .hero-award-icon {
+      width: 40px; height: 40px; border-radius: 12px; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #B5782F; background: rgba(181,120,47,0.12);   /* bronze */
+    }
+    .hero-award-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--black);
+      margin-bottom: 2px;
+    }
+    .hero-award-sub {
+      font-size: 11.5px;
+      line-height: 1.45;
+      color: var(--gray-3);
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    /* Quiet status line under the CTAs — kept away from the name */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 30px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-3);
+      letter-spacing: 0.01em;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 1s forwards;
+    }
+    .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #34c759; flex-shrink: 0; }
+
+    .hero-name {
+      font-size: clamp(44px, 6vw, 80px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      color: var(--black);
+      margin-bottom: 8px;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.4s forwards;
+    }
+
+    .hero-degree {
+      font-size: 0.418em;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      vertical-align: bottom;
+      margin-left: 10px;
+      margin-bottom: 0.15em;
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-size: clamp(19px, 2.1vw, 25px);
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 14px;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.55s forwards;
+    }
+    .hero-title strong { color: var(--black); font-weight: 600; }
+
+    .hero-tagline {
+      font-size: clamp(15px, 1.5vw, 17px);
+      font-weight: 400;
+      color: var(--gray-4);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.7s forwards;
+    }
+    .hero-tagline em { font-style: normal; color: var(--accent); font-weight: 500; }
+
+    /* Keyword strip — quick scan of scope, no numbers (those live in the stat bar) */
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      max-width: 540px;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.78s forwards;
+    }
+    .hero-meta li {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--gray-4);
+      background: var(--gray-1);
+      border: 1px solid var(--gray-2);
+      border-radius: 980px;
+      padding: 5px 13px;
+      white-space: nowrap;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.85s forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--black);
+      color: var(--white);
+      padding: 15px 28px;
+      border-radius: 980px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(.16,1,.3,1);
+    }
+    .btn-primary:hover {
+      background: #333;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      color: var(--accent);
+      padding: 15px 28px;
+      border-radius: 980px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(.16,1,.3,1);
+    }
+    .btn-secondary:hover {
+      background: rgba(0,113,227,0.06);
+      transform: translateY(-2px);
+    }
+
+    /* ─── STAT BAR ────────────────────────────── */
+    .stat-bar {
+      background: var(--black);
+      padding: 56px 24px 44px;
+    }
+    .stat-bar-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+    .stat {
+      text-align: center;
+      padding: 32px 16px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-number {
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 400;
+    }
+    .stat-text {
+      font-size: clamp(28px, 3.5vw, 40px) !important;
+      letter-spacing: -0.02em !important;
+    }
+
+    /* Brands sit under the numbers, separated by a hairline */
+    .stat-brands {
+      max-width: 1080px;
+      margin: 28px auto 0;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px 44px;
+    }
+    .stat-brands-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .brand-mark {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      opacity: 0.42;
+      transition: opacity 0.3s;
+      white-space: nowrap;
+    }
+    .brand-mark:hover { opacity: 0.95; }
+
+    /* ─── ICONS ───────────────────────────────── */
+    svg.i {
+      width: 20px; height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+    /* Accent-tinted rounded square behind value / personal icons */
+    .tile-value-icon, .personal-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+    }
+    .personal-icon .i { width: 18px; height: 18px; }
+
+    /* ─── SHARED LAYOUT ──────────────────────── */
+    section { padding: 96px 24px; }
+    .container { max-width: 1080px; margin: 0 auto; }
+
+    /* Anchor targets must clear the fixed bar */
+    section[id], div[id].stat-bar { scroll-margin-top: 70px; }
+
+    .label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--gray-3);
+      max-width: 580px;
+    }
+
+    /* ─── ABOUT (bento) ──────────────────────── */
+    /* About, mindset and values share one grid of tiles: photo spans two
+       rows, intro spans two columns, values close the grid as one row. */
+    .about { background: var(--gray-1); }
+
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .tile {
+      position: relative;
+      background: var(--white);
+      border-radius: 28px;
+      padding: 40px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      transition: transform 0.45s cubic-bezier(.16,1,.3,1), box-shadow 0.45s cubic-bezier(.16,1,.3,1);
+    }
+
+    .tile-kicker {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      margin-bottom: 14px;
+    }
+
+    /* Photo */
+    .tile-photo { grid-row: span 2; padding: 0; min-height: 420px; }
+    .tile-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform 0.8s cubic-bezier(.16,1,.3,1);
+    }
+    .tile-photo:hover img { transform: scale(1.04); }
+
+    /* Intro */
+    .tile-intro { grid-column: span 2; padding: 48px; }
+    .about-quote {
+      font-size: clamp(28px, 3.4vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--black);
+      margin-bottom: 22px;
+    }
+    .about-quote em { font-style: normal; color: var(--accent); }
+    .tile-body {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--gray-4);
+      max-width: 620px;
+    }
+    .tile-body p + p { margin-top: 14px; }
+
+    /* Mindset quote — the one saturated tile in the grid */
+    .tile-quote {
+      background:
+        radial-gradient(120% 90% at 100% 0%, rgba(255,255,255,0.18) 0%, transparent 55%),
+        linear-gradient(150deg, #0A84FF 0%, #0060C7 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .tile-quote .tile-kicker { color: rgba(255,255,255,0.65); }
+    .tile-quote-text {
+      font-size: clamp(22px, 2.2vw, 26px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.22;
+      margin-bottom: 20px;
+    }
+    .tile-quote-sub {
+      margin-top: auto;
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.8);
+      padding-left: 14px;
+      border-left: 2px solid rgba(255,255,255,0.45);
+    }
+
+    /* Location */
+    .tile-place { display: flex; flex-direction: column; }
+    .tile-place-city {
+      font-size: clamp(36px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+    .tile-place-text {
+      margin-top: auto;
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--gray-3);
+    }
+
+    /* Values */
+    .tile-value { padding: 32px 32px 34px; }
+    .tile-value:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 44px rgba(0,0,0,0.08);
+    }
+    .tile-value-icon  { margin-bottom: 18px; }
+    .tile-value-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; color: var(--black); margin-bottom: 8px; }
+    .tile-value-desc  { font-size: 14px; line-height: 1.6; color: var(--gray-3); }
+
+    /* ─── EXPERTISE ───────────────────────────── */
+    .expertise { background: var(--black); }
+    .expertise .label { color: rgba(255,255,255,0.35); }
+    .expertise .section-title { color: var(--white); }
+    .expertise .section-sub   { color: rgba(255,255,255,0.45); }
+
+    /* Header: title left, intro right — one row instead of a stacked block */
+    .exp-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+    }
+    .exp-head .section-title { margin-bottom: 0; }
+    .exp-head .section-sub { margin-bottom: 6px; }
+
+    /* Bento on a 12-col track, two rows. Row one is even thirds; row two
+       sizes tiles by content length so their bottoms line up. */
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      margin-top: 56px;
+    }
+    .exp-third  { grid-column: span 4; }
+    .exp-wide   { grid-column: span 5; }
+    .exp-mid    { grid-column: span 4; }
+    .exp-narrow { grid-column: span 3; }
+
+    .exp-item {
+      position: relative;
+      overflow: hidden;
+      background: #161617;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 26px;
+      padding: 36px 32px 38px;
+      transition: border-color 0.45s, transform 0.45s cubic-bezier(.16,1,.3,1);
+    }
+    /* Soft accent glow from the top edge on hover */
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(90% 60% at 50% 0%, rgba(41,151,255,0.16), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.45s;
+      pointer-events: none;
+    }
+    .exp-item:hover { border-color: rgba(255,255,255,0.16); transform: translateY(-3px); }
+    .exp-item:hover::before { opacity: 1; }
+    .exp-item > * { position: relative; }
+
+    /* Project list inside a tile */
+    .exp-list { list-style: none; margin-top: 4px; }
+    .exp-list li {
+      position: relative;
+      padding-left: 17px;
+      margin-bottom: 11px;
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.46);
+    }
+    .exp-list li:last-child { margin-bottom: 0; }
+    .exp-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 9px;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.75;
+    }
+    .exp-list strong { color: rgba(255,255,255,0.88); font-weight: 600; }
+    .exp-list .yr { color: rgba(255,255,255,0.32); font-size: 13px; white-space: nowrap; }
+
+    /* Number row with the tile's photo fan on the right */
+    .exp-top { display: flex; align-items: center; min-height: 44px; margin: -10px -4px 4px 0; }
+    .exp-top .exp-num { margin-bottom: 0; }
+    .exp-item .photo-fan > img,
+    .exp-item .fan-more { border-color: #161617; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+    .exp-item .fan-more { background: #2C2C2E; color: rgba(255,255,255,0.6); }
+    .exp-num   { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 14px; }
+    .exp-title { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--white); margin-bottom: 16px; }
+    .exp-desc  { font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.42); }
+
+    /* Optional line for a concrete project name / scope / year.
+       Add under .exp-title, e.g. <p class="exp-meta">LUMIX S5 II · 20+ markets · 2023</p> */
+    .exp-meta {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.72);
+      letter-spacing: -0.01em;
+      margin: -6px 0 14px;
+      padding-left: 11px;
+      border-left: 2px solid var(--accent);
+      line-height: 1.5;
+    }
+
+    /* ─── JOURNEY / TIMELINE ─────────────────── */
+    .journey { background: var(--gray-1); }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .journey-intro {
+      position: sticky;
+      top: calc(var(--nav-h) + 48px);
+    }
+    .journey-intro .section-sub { font-size: 16px; }
+
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 10px;
+      bottom: 30px;
+      width: 1px;
+      background: var(--gray-2);
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: -32px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--gray-1), 0 0 0 7px rgba(0,113,227,0.15);
+    }
+
+    .tl-period {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    /* Current role — fully open */
+    .tl-current {
+      position: relative;
+      padding-bottom: 40px;
+    }
+    .tl-current .tl-dot { top: 4px; }
+
+    .timeline-role {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+    .timeline-company {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gray-3);
+      margin-bottom: 16px;
+    }
+    .timeline-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--gray-4);
+      max-width: 680px;
+    }
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+    .tag {
+      background: var(--white);
+      border: 1px solid var(--gray-2);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gray-4);
+    }
+
+    /* Earlier roles — one-line rows that expand */
+    .tl-row {
+      position: relative;
+      border-top: 1px solid var(--gray-2);
+    }
+    .tl-row summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 22px 0;
+      outline: none;
+    }
+    .tl-row summary::-webkit-details-marker { display: none; }
+    .tl-row summary:focus-visible { box-shadow: 0 0 0 2px var(--accent); border-radius: 12px; }
+    .tl-row .tl-dot { top: 30px; background: var(--gray-3); box-shadow: 0 0 0 4px var(--gray-1); transition: background 0.3s; }
+    .tl-row[open] .tl-dot,
+    .tl-row summary:hover .tl-dot { background: var(--accent); }
+
+    .tl-head { flex: 1; display: flex; flex-direction: column; }
+    .tl-head .tl-period { margin-bottom: 6px; color: var(--gray-3); transition: color 0.3s; }
+    .tl-row[open] .tl-period { color: var(--accent); }
+    .tl-role { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; color: var(--black); }
+    .tl-company { font-size: 14px; font-weight: 500; color: var(--gray-3); margin-top: 3px; }
+
+    /* Plus that turns into a cross */
+    .tl-toggle {
+      position: relative;
+      flex-shrink: 0;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--gray-2);
+      background: var(--white);
+      transition: transform 0.45s cubic-bezier(.16,1,.3,1), background 0.3s, border-color 0.3s;
+    }
+    .tl-toggle::before,
+    .tl-toggle::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 12px; height: 1.5px;
+      margin: -0.75px 0 0 -6px;
+      border-radius: 2px;
+      background: var(--black);
+    }
+    .tl-toggle::after { transform: rotate(90deg); }
+    .tl-row summary:hover .tl-toggle { border-color: var(--gray-4); }
+    .tl-row[open] .tl-toggle { transform: rotate(45deg); background: var(--black); border-color: var(--black); }
+    .tl-row[open] .tl-toggle::before,
+    .tl-row[open] .tl-toggle::after { background: var(--white); }
+
+    .tl-body { padding: 0 58px 28px 0; }
+
+    /* Smooth height animation where supported; instant open elsewhere */
+    :root { interpolate-size: allow-keywords; }
+    .tl-row::details-content {
+      block-size: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: block-size 0.5s cubic-bezier(.16,1,.3,1), opacity 0.4s, content-visibility 0.5s allow-discrete;
+    }
+    .tl-row[open]::details-content { block-size: auto; opacity: 1; }
+
+    /* Education */
+    .tl-sep {
+      position: relative;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #a855f7;
+      padding: 36px 0 14px;
+      border-top: 1px solid var(--gray-2);
+    }
+    .tl-edu .tl-dot { background: #a855f7 !important; }
+    .tl-edu[open] .tl-period { color: #a855f7; }
+    .tl-edu:last-child { border-bottom: 1px solid var(--gray-2); }
+
+    /* ─── PERSONAL ────────────────────────────── */
+    .personal { padding-bottom: 48px; }
+
+    /* Title left, intro right (shared by Personal) */
+    .split-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+    }
+    .split-head .section-title { margin-bottom: 0; }
+    .split-head .section-sub { margin-bottom: 6px; }
+
+    /* Photo left, cards stacked right (bento) */
+    .personal-layout {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .personal-photo {
+      position: relative;
+      min-height: 480px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--gray-1);
+    }
+    .personal-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      transition: transform 0.8s cubic-bezier(.16,1,.3,1);
+    }
+    .personal-photo:hover img { transform: scale(1.04); }
+    .personal-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: 1fr;
+      gap: 16px;
+    }
+    .personal-card { display: flex; flex-direction: column; justify-content: center; }
+    .personal-card {
+      border: 1px solid var(--gray-2);
+      border-radius: 24px;
+      padding: 28px 28px 30px;
+      transition: border-color 0.35s, transform 0.35s cubic-bezier(.16,1,.3,1), box-shadow 0.35s;
+    }
+    .personal-card:hover {
+      border-color: var(--gray-4);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+    }
+    .personal-head  { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .personal-icon  { width: 34px; height: 34px; border-radius: 10px; }
+    .personal-title { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; color: var(--black); white-space: nowrap; }
+    .personal-text  { font-size: 14.5px; color: var(--gray-3); line-height: 1.65; }
+
+    /* Photo fan: small overlapping thumbs beside the card title.
+       Opens the card's gallery; spreads out on hover. */
+    .personal-head { justify-content: flex-start; }
+    .photo-fan {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      padding: 4px;
+      border: 0;
+      background: none;
+      cursor: zoom-in;
+      border-radius: 14px;
+    }
+    .photo-fan > img,
+    .fan-more {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid var(--white);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      transition: transform 0.45s cubic-bezier(.16,1,.3,1);
+    }
+    .photo-fan > * + * { margin-left: -14px; }
+    .photo-fan > :nth-child(1) { transform: rotate(-7deg); }
+    .photo-fan > :nth-child(2) { transform: rotate(4deg) translateY(-2px); }
+    .photo-fan > :nth-child(3) { transform: rotate(-3deg); }
+    /* Spread with transforms (anchored right) so the title never reflows */
+    .photo-fan:hover > :nth-last-child(3), .photo-fan:focus-visible > :nth-last-child(3) { transform: translate(-18px, -3px); }
+    .photo-fan:hover > :nth-last-child(2), .photo-fan:focus-visible > :nth-last-child(2) { transform: translate(-9px, -3px); }
+    .photo-fan:hover > :last-child,        .photo-fan:focus-visible > :last-child        { transform: translateY(-3px); }
+    .photo-fan:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .fan-more {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-4);
+      background: var(--gray-1);
+    }
+
+    /* LEGO photo beside the LEGO quote */
+    .lego-quote { display: flex; align-items: center; gap: 18px; }
+    .lego-quote .section-sub { margin-bottom: 0; }
+    .lego-thumb {
+      flex-shrink: 0;
+      border-radius: 50%;
+    }
+    .lego-thumb img {
+      display: block;
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 0 3px var(--white), 0 0 0 4px var(--gray-2), 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+
+    /* ─── WORK PHOTO WALL ─────────────────────── */
+    .expertise { overflow: hidden; }
+    .work-wall-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-top: 72px; }
+    .work-wall-head .label { margin-bottom: 0; }
+    .work-wall-meta { font-size: 14px; color: rgba(255,255,255,0.38); }
+    .marquee.work-wall { margin-top: 22px; }
+    .marquee.work-wall + .marquee.work-wall { margin-top: 14px; }
+    .work-wall .marquee-list { gap: 14px; padding-right: 14px; }
+    .wall-tile {
+      position: relative;
+      display: block;
+      height: 180px;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #1C1C1E;
+      cursor: zoom-in;
+      transition: border-color 0.4s;
+    }
+    .wall-tile img { display: block; height: 100%; width: auto; transition: transform 0.7s cubic-bezier(.16,1,.3,1), filter 0.4s; filter: saturate(0.92) brightness(0.92); -webkit-user-drag: none; }
+    .wall-tile:hover { border-color: rgba(255,255,255,0.22); }
+    .wall-tile:hover img { transform: scale(1.045); filter: none; }
+    .wall-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .wall-tag {
+      position: absolute; left: 10px; bottom: 10px;
+      padding: 5px 10px;
+      border-radius: 980px;
+      font-size: 11.5px; font-weight: 600; letter-spacing: 0.01em;
+      color: #fff;
+      background: rgba(0,0,0,0.5);
+      -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    }
+    .marquee.is-dragging .wall-tile { pointer-events: none; }
+    @media (prefers-reduced-motion: reduce) { .work-wall .marquee-list { justify-content: center; } }
+    @media (max-width: 768px) {
+      .work-wall-head { flex-direction: column; gap: 6px; margin-top: 48px; }
+      .wall-tile { height: 128px; border-radius: 14px; }
+      .marquee.work-wall { margin-top: 18px; }
+      .marquee.work-wall + .marquee.work-wall { margin-top: 10px; }
+      .work-wall .marquee-list { gap: 10px; padding-right: 10px; }
+    }
+    /* Bigger, easier-to-spot photo fans on the project cards */
+    .exp-top { min-height: 52px; }
+    .exp-item .photo-fan > img, .exp-item .fan-more { width: 44px; height: 44px; border-radius: 12px; }
+    .exp-item .photo-fan > * + * { margin-left: -16px; }
+
+
+    /* ─── VIEW TRANSITIONS ────────────────────── */
+    /* EN ⇄ CZ: cross-fade between the two pages instead of a hard reload */
+    @view-transition { navigation: auto; }
+    /* Thumbnail grows into the preview (and back). The dialog's own fade is
+       switched off while a transition runs so the two don't fight. */
+    .lightbox.vt, .lightbox.vt::backdrop { transition: none; }
+    ::view-transition-group(lb-photo) { animation-duration: 0.55s; animation-timing-function: cubic-bezier(.16,1,.3,1); }
+    ::view-transition-old(lb-photo), ::view-transition-new(lb-photo) { height: 100%; width: 100%; object-fit: cover; animation-duration: 0.55s; }
+    ::view-transition-group(root) { animation-duration: 0.35s; }
+    @media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+
+    /* ─── PHOTO PREVIEW ───────────────────────── */
+    /* Just the photo, centred over a lightly dimmed page; controls sit on it */
+    .lightbox {
+      margin: auto;              /* the global * reset would pin it top-left */
+      width: fit-content;
+      max-width: calc(100vw - 32px);
+      padding: 0;
+      border: 0;
+      background: transparent;
+      overflow: visible;
+      opacity: 0;
+      transform: translateY(8px) scale(0.98);
+      transition: opacity 0.3s, transform 0.4s cubic-bezier(.16,1,.3,1), overlay 0.3s allow-discrete, display 0.3s allow-discrete;
+    }
+    .lightbox[open] { opacity: 1; transform: none; }
+    @starting-style { .lightbox[open] { opacity: 0; transform: translateY(8px) scale(0.98); } }
+    .lightbox::backdrop {
+      background: rgba(0,0,0,0.32);
+      -webkit-backdrop-filter: blur(4px);
+              backdrop-filter: blur(4px);
+    }
+
+    .lb-stage {
+      touch-action: pan-y;
+      user-select: none;
+    }
+    .lb-img {
+      display: block;
+      width: auto; height: auto;
+      max-width: min(560px, calc(100vw - 32px));
+      max-height: min(480px, 70vh);
+      min-width: 220px;
+      min-height: 160px;
+      border-radius: 20px;
+      background: var(--gray-1);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      -webkit-user-drag: none;
+    }
+
+    .lb-btn {
+      position: absolute;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 0;
+      background: rgba(0,0,0,0.42);
+      color: #fff;
+      -webkit-backdrop-filter: blur(8px);
+              backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.25s;
+    }
+    .lb-btn .i { width: 18px; height: 18px; }
+    .lb-btn:hover { background: rgba(0,0,0,0.65); }
+    .lb-btn:focus-visible { outline: 2px solid #2997FF; outline-offset: 2px; }
+    .lb-close { top: 12px; right: 12px; }
+    .lb-side { top: 50%; transform: translateY(-50%); }
+    .lb-prev { left: 12px; }
+    .lb-next { right: 12px; }
+    .lightbox.single .lb-side { display: none; }
+
+    /* ─── CONTACT: testimonial + CTA card ───── */
+    .contact { padding-top: 48px; }
+
+    .testimonial {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 32px 0 72px;
+      text-align: center;
+    }
+    .testimonial-mark {
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 88px;
+      line-height: 0.5;
+      color: var(--accent);
+      margin-bottom: 0;
+      user-select: none;
+    }
+    .testimonial-text {
+      font-size: clamp(22px, 2.6vw, 30px);
+      font-weight: 500;
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 28px;
+    }
+    .testimonial-author { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .testimonial-name { font-size: 15px; font-weight: 600; color: var(--black); }
+    .testimonial-role { font-size: 14px; color: var(--gray-3); }
+
+    /* Dark closing panel — stays dark in both themes */
+    .cta-card {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 32px;
+      padding: 72px 32px 76px;
+      background:
+        radial-gradient(70% 90% at 50% 0%, rgba(41,151,255,0.22), transparent 65%),
+        #1D1D1F;
+    }
+    .cta-card .label { color: #2997FF; }
+    .cta-card .section-title { color: #F5F5F7; }
+    .cta-card .section-sub { color: rgba(255,255,255,0.6); margin: 0 auto; }
+    .cta-card .btn-primary { background: #F5F5F7; color: #1D1D1F; }
+    .cta-card .btn-primary:hover { background: #fff; box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+    .cta-card .btn-secondary { color: #2997FF; }
+    .cta-card .btn-secondary:hover { background: rgba(41,151,255,0.12); }
+    .contact-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    /* "Ask an AI about me": opens ChatGPT / Claude / Perplexity with a prompt
+       pointing at llms.txt (plain-text profile for AI assistants) */
+    .ask-ai { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 10px; margin-top: 30px; }
+    .ask-ai-lead { display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; color: rgba(255,255,255,0.45); margin-right: 4px; }
+    .ask-ai-lead .i { width: 15px; height: 15px; color: #2997FF; }
+    .ask-ai-link {
+      font-size: 13.5px; font-weight: 600; color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      padding: 7px 14px; border-radius: 980px;
+      border: 1px solid rgba(255,255,255,0.16);
+      transition: border-color 0.25s, color 0.25s, background 0.25s;
+    }
+    .ask-ai-link:hover { border-color: #2997FF; color: #fff; background: rgba(41,151,255,0.12); }
+    .ask-ai-link:focus-visible { outline: 2px solid #2997FF; outline-offset: 2px; }
+    @media (max-width: 768px) { .ask-ai-lead { flex-basis: 100%; justify-content: center; margin: 0 0 4px; } }
+    [data-theme="dark"] .cta-card {
+      background:
+        radial-gradient(70% 90% at 50% 0%, rgba(41,151,255,0.2), transparent 65%),
+        #1C1C1E;
+    }
+
+    /* ─── FOOTER ────────────────────────────── */
+    /* One slim row: everything it used to list is already directly above */
+    footer {
+      border-top: 1px solid var(--gray-2);
+      padding: 28px 24px;
+    }
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px 32px;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .footer-brand .nav-mark { width: 28px; height: 28px; border-radius: 8px; font-size: 11.5px; }
+    .footer-name { font-size: 15px; font-weight: 600; letter-spacing: -0.02em; color: var(--black); }
+    .footer-copy { font-size: 13px; color: var(--gray-3); }
+    .footer-links { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 28px; }
+    .footer-links a {
+      font-size: 14px;
+      color: var(--gray-4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* EN | CZ segmented switch */
+    .footer-links .lang-switch {
+      display: inline-flex;
+      gap: 2px;
+      padding: 3px;
+      border: 1px solid var(--gray-2);
+      border-radius: 980px;
+    }
+    .footer-links .lang-switch a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 4px 11px;
+      border-radius: 980px;
+      color: var(--gray-3);
+      transition: background 0.2s, color 0.2s;
+    }
+    .footer-links .lang-switch a:hover { color: var(--black); }
+    .footer-links .lang-switch a[aria-current="page"] { background: var(--black); color: var(--white); }
+
+    /* ─── ANIMATIONS ──────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.65s cubic-bezier(.16,1,.3,1), transform 0.65s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.08s; }
+    .d2 { transition-delay: 0.16s; }
+    .d3 { transition-delay: 0.24s; }
+    .d4 { transition-delay: 0.32s; }
+
+
+    /* ─── SCROLL-DRIVEN MOTION (CSS only) ─────── */
+    /* Browsers without scroll timelines keep the static layout untouched. */
+    @supports (animation-timeline: view()) {
+      @media (prefers-reduced-motion: no-preference) {
+        /* Career: an accent line fills the timeline as it passes mid-screen,
+           and each dot lights up when the line reaches it. */
+        .timeline::after {
+          content: '';
+          position: absolute;
+          left: 4px; top: 10px; bottom: 30px;
+          width: 1px;
+          background: linear-gradient(var(--accent), #2997FF);
+          box-shadow: 0 0 8px rgba(41,151,255,0.55);
+          transform-origin: top;
+          animation: tl-fill linear both;
+          animation-timeline: view();
+          animation-range: cover 50vh cover calc(100% - 50vh);
+          pointer-events: none;
+        }
+        @keyframes tl-fill { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+        .tl-row .tl-dot {
+          animation: tl-dot-on linear both;
+          animation-timeline: view();
+          animation-range: cover calc(50vh - 4px) cover calc(50vh + 6px);
+        }
+        @keyframes tl-dot-on {
+          from { background: var(--gray-3); }
+          to   { background: var(--accent); box-shadow: 0 0 0 4px var(--gray-1), 0 0 0 7px rgba(0,113,227,0.15); }
+        }
+
+        /* Section titles gain weight as they scroll in (Inter is variable,
+           so the weight changes smoothly; it ends on the original 700). */
+        .section-title {
+          animation: title-weight linear both;
+          animation-timeline: view();
+          animation-range: entry 0% cover 30%;
+        }
+        @keyframes title-weight {
+          from { font-weight: 300; letter-spacing: -0.02em; }
+          to   { font-weight: 700; letter-spacing: -0.035em; }
+        }
+      }
+    }
+    /* Hero name: weight sweeps up as it fades in */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-name { animation: fadeUp 0.9s cubic-bezier(.16,1,.3,1) 0.4s forwards, name-weight 1.6s cubic-bezier(.16,1,.3,1) 0.4s both; }
+      @keyframes name-weight { from { font-weight: 200; } to { font-weight: 800; } }
+    }
+
+
+    /* ─── NOW CARD (end of Learning) ──────────── */
+    .now-card {
+      margin-top: 56px;
+      background: var(--white);
+      border: 1px solid var(--gray-2);
+      border-radius: 28px;
+      padding: 36px 36px 38px;
+    }
+    .now-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .now-label {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .now-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #30D158; }
+    .now-dot::after {
+      content: ''; position: absolute; inset: 0; border-radius: 50%; background: #30D158;
+      animation: now-ping 2.4s cubic-bezier(0,0,.2,1) infinite;
+    }
+    @keyframes now-ping { 0% { transform: scale(1); opacity: .6; } 80%, 100% { transform: scale(2.8); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .now-dot::after { animation: none; } }
+    .now-upd { font-size: 13px; color: var(--gray-3); }
+    .now-title { font-size: 26px; font-weight: 700; letter-spacing: -0.025em; color: var(--black); margin: 10px 0 26px; }
+    .now-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .now-item {
+      background: var(--gray-1);
+      border-radius: 20px;
+      padding: 22px 22px 24px;
+      transition: transform 0.45s cubic-bezier(.16,1,.3,1);
+    }
+    .now-item:hover { transform: translateY(-2px); }
+    .now-wide { grid-column: span 2; }
+    .now-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 10px;
+      background: rgba(0,113,227,0.1); color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .now-icon .i { width: 17px; height: 17px; }
+    .now-k { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-3); margin-bottom: 6px; }
+    .now-v { font-size: 15px; line-height: 1.6; color: var(--gray-4); }
+    .now-v strong { color: var(--black); font-weight: 600; }
+    .now-wide .now-v { font-size: 17px; }
+    .now-talk {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px;
+      margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--gray-2);
+    }
+    .now-talk .now-k { margin: 0 6px 0 0; }
+    .now-topic {
+      font-size: 13.5px; font-weight: 500; color: var(--black);
+      padding: 7px 14px; border-radius: 980px;
+      background: var(--gray-1);
+    }
+    .now-talk-cta { margin-left: auto; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; white-space: nowrap; }
+    .now-talk-cta:hover { text-decoration: underline; }
+    @media (max-width: 768px) {
+      .now-talk .now-k { flex-basis: 100%; }
+      .now-talk-cta { margin-left: 0; flex-basis: 100%; margin-top: 4px; }
+    }
+    @media (max-width: 900px) { .now-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) {
+      .now-card { margin-top: 40px; padding: 28px 20px 24px; border-radius: 24px; }
+      .now-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .now-title { font-size: 22px; margin-bottom: 20px; }
+      .now-grid { grid-template-columns: 1fr; gap: 10px; }
+      .now-wide { grid-column: auto; }
+      .now-item { padding: 18px 18px 20px; }
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────── */
+
+    /* ─── LEARNING (marquee) ─────────────────── */
+    .learning { background: var(--gray-1); padding-top: 88px; padding-bottom: 88px; overflow: hidden; }
+
+    .learning-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+    }
+    .learning-head .section-title { margin-bottom: 0; }
+    .learning-head .section-sub { margin-bottom: 6px; }
+
+    .marquee {
+      margin-top: 48px;
+      /* Pills fade out at both edges instead of being cut off */
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+              mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 60s linear infinite;
+    }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee + .marquee { margin-top: 12px; }
+    .marquee[data-dir="right"] .marquee-track { animation-direction: reverse; }
+
+    /* With JS the track is driven by script so it can be grabbed and flicked.
+       pan-y keeps vertical page scrolling on touch; horizontal swipes drag. */
+    .marquee.is-js { cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+    .marquee.is-js .marquee-track { animation: none; will-change: transform; }
+    .marquee.is-dragging { cursor: grabbing; }
+    .marquee.is-dragging .course-pill { pointer-events: none; }
+    .marquee-list {
+      display: flex;
+      gap: 12px;
+      padding-right: 12px;
+      list-style: none;
+    }
+    .course-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      background: var(--white);
+      border: 1px solid var(--gray-2);
+      border-radius: 980px;
+      padding: 13px 22px 13px 18px;
+      font-size: 14.5px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .course-pill span { display: inline-flex; color: var(--accent); }
+    .course-pill .i { width: 17px; height: 17px; }
+    .course-pill:hover { border-color: var(--accent); color: var(--accent); }
+
+    @keyframes marquee {
+      to { transform: translateX(-50%); }
+    }
+
+    /* No motion: show every course once, wrapped and centred */
+    @media (prefers-reduced-motion: reduce) {
+      .marquee { -webkit-mask-image: none; mask-image: none; max-width: 1080px; margin-left: auto; margin-right: auto; }
+      .marquee-track { animation: none; width: auto; }
+      .marquee-list { flex-wrap: wrap; padding-right: 0; }
+      .marquee-list[aria-hidden="true"] { display: none; }
+    }
+
+    @media (max-width: 1100px) and (min-width: 769px) {
+      .journey-grid { grid-template-columns: 260px 1fr; gap: 48px; }
+      .exp-grid { grid-template-columns: repeat(2, 1fr); }
+      .exp-third, .exp-wide, .exp-mid, .exp-narrow { grid-column: auto; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-logo-role { display: none; }
+      .nav-links {
+        position: fixed;
+        top: var(--nav-h); left: 0; right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 0 20px;
+        background: var(--white);
+        border-bottom: 1px solid var(--gray-2);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-6px);
+        transition: opacity 0.25s, transform 0.25s cubic-bezier(.16,1,.3,1);
+        z-index: 99;
+      }
+      .nav-links.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 13px 24px; font-size: 16px; opacity: 1 !important; }
+      .nav-links a::after { display: none; }
+      .nav-cta { padding: 8px 15px; font-size: 13px; }
+      section { padding: 80px 20px; }
+      .hero { grid-template-columns: 1fr; text-align: center; padding: 110px 24px 80px; gap: 40px; justify-items: center; }
+      /* Glow must not extend past the screen edge, or phones widen the layout viewport */
+      .hero::after { inset: -10% 0; }
+      .hero-avatar-wrap { max-width: 300px; order: 2; }
+      .hero-photo-stack::before { inset: 18px -13px -18px 13px; }
+      .hero-award { margin-top: 28px; text-align: left; }
+      .hero-content { order: 1; }
+      .hero-actions { justify-content: center; }
+      .hero-meta { justify-content: center; }
+      .bento { grid-template-columns: 1fr; gap: 12px; }
+      .tile, .tile-intro { padding: 32px 26px; border-radius: 24px; }
+      .tile-intro { grid-column: auto; order: -1; }
+      .tile-photo { grid-row: auto; min-height: 0; aspect-ratio: 1/1; padding: 0; }
+      .tile-value {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 12px;
+        align-items: center;
+        padding: 24px 24px 26px;
+      }
+      .tile-value-icon  { margin-bottom: 0; width: 36px; height: 36px; }
+      .tile-value-title { margin-bottom: 0; }
+      .tile-value-desc  { grid-column: 1 / -1; margin-top: 8px; }
+      .exp-head { grid-template-columns: 1fr; gap: 16px; }
+      .exp-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 40px; }
+      .exp-third, .exp-wide, .exp-mid, .exp-narrow { grid-column: auto; }
+      .exp-item { padding: 30px 26px 32px; border-radius: 24px; }
+      .personal-layout { grid-template-columns: 1fr; gap: 12px; margin-top: 36px; }
+      .personal-photo { min-height: 0; aspect-ratio: 4/5; }
+      .personal-grid { gap: 12px; grid-auto-rows: auto; }
+      .split-head { grid-template-columns: 1fr; gap: 16px; }
+      .lego-quote { gap: 14px; }
+      .lego-thumb img { width: 60px; height: 60px; }
+      .testimonial { padding: 32px 0 56px; }
+      .cta-card { padding: 56px 22px 60px; border-radius: 26px; }
+      .journey-grid { grid-template-columns: 1fr; gap: 40px; }
+      .journey-intro { position: static; }
+      .timeline-role { font-size: 21px; }
+      .tl-row summary { gap: 14px; }
+      .tl-body { padding-right: 0; }
+      .learning-head { grid-template-columns: 1fr; gap: 16px; }
+      .marquee { margin: 36px -20px 0; }
+      .course-pill { padding: 11px 18px 11px 15px; font-size: 14px; }
+      .stat-bar-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .stat:nth-child(3), .stat:last-child { border-bottom: none; }
+      .stat-brands { gap: 12px 26px; margin-top: 20px; padding-top: 26px; }
+      .stat-brands-label { flex-basis: 100%; text-align: center; }
+      .brand-mark { font-size: 14px; }
+      /* Extra bottom room so the fixed back-to-top button never covers a link */
+      footer { padding: 28px 20px 96px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; gap: 8px 22px; }
+    }
+
+    /* ─── DARK MODE ───────────────────────────── */
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --black:  #F5F5F7;
+      --white:  #000000;
+      --gray-1: #1C1C1E;
+      --gray-2: #3A3A3C;
+      --gray-3: #8E8E93;
+      --gray-4: #AEAEB2;
+      --accent: #2997FF;
+    }
+
+    /* Nav */
+    [data-theme="dark"] nav {
+      background: rgba(0, 0, 0, 0.85);
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Dark panels — stat bar & expertise stay visually dark in both modes */
+    [data-theme="dark"] .stat-bar        { background: #1C1C1E; }
+    [data-theme="dark"] .stat-number     { color: #F5F5F7; }
+    [data-theme="dark"] .expertise       { background: #111111; }
+    [data-theme="dark"] .exp-item        { background: #1C1C1E; }
+    [data-theme="dark"] .expertise .section-title { color: #F5F5F7; }
+    [data-theme="dark"] .expertise .label         { color: rgba(255,255,255,0.35); }
+    [data-theme="dark"] .expertise .section-sub   { color: rgba(255,255,255,0.5); }
+    [data-theme="dark"] .exp-title       { color: #F5F5F7; }
+    [data-theme="dark"] .exp-desc        { color: rgba(255,255,255,0.5); }
+
+    /* Hero accent glow stronger in dark */
+    [data-theme="dark"] .hero::after {
+      background: radial-gradient(ellipse 80% 60% at 65% 30%, rgba(41,151,255,0.08) 0%, transparent 65%);
+    }
+
+    /* Photo shadows on dark bg */
+    [data-theme="dark"] .hero-avatar-inner {
+      box-shadow: 0 32px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+    }
+    /* Bento: black page, raised graphite tiles (Apple-style) */
+    [data-theme="dark"] .about { background: #000; }
+    [data-theme="dark"] .tile:not(.tile-quote):not(.tile-photo) { background: #1C1C1E; }
+    [data-theme="dark"] .hero-award-icon { color: #D9A066; background: rgba(217,160,102,0.14); }
+    [data-theme="dark"] .tile-value:hover { box-shadow: 0 20px 44px rgba(0,0,0,0.5); }
+
+    /* ─── PROGRESS BAR ──────────────────────── */
+    #progressBar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: var(--accent);
+      z-index: 200;
+      border-radius: 0 2px 2px 0;
+      transition: width 0.08s linear;
+      pointer-events: none;
+    }
+
+    /* ─── ACTIVE NAV LINK ────────────────────── */
+    .nav-links a.nav-active { opacity: 1; color: var(--accent); }
+
+    /* ─── PULSING STATUS DOT ─────────────────── */
+    @keyframes statusPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.5); }
+      60%       { box-shadow: 0 0 0 5px rgba(52, 199, 89, 0); }
+    }
+    .hero-badge .dot { animation: statusPulse 2.5s ease-in-out infinite; }
+
+    /* ─── BACK TO TOP ────────────────────────── */
+    #backToTop {
+      position: fixed;
+      bottom: 32px; right: 32px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      line-height: 1;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 99;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    #backToTop.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    #backToTop:hover   { transform: translateY(-3px); }
+
+    /* ─── NAV CONTROLS WRAPPER ───────────────── */
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    /* ─── HAMBURGER ──────────────────────────── */
+    .hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--gray-2);
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 7px 8px;
+      flex-direction: column;
+      gap: 4px;
+      color: var(--black);
+      transition: background 0.2s;
+    }
+    .hamburger:hover { background: var(--gray-1); }
+    .hamburger span {
+      display: block;
+      width: 18px; height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+      transition: transform 0.3s cubic-bezier(.16,1,.3,1), opacity 0.2s;
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+    /* Must come after the base rule above, or the base display:none wins */
+    @media (max-width: 768px) { .hamburger { display: flex; } }
+    /* Small phones: the menu button needs the room; LinkedIn is in Contact and the footer */
+    @media (max-width: 480px) {
+      .nav-controls .nav-cta { display: none; }
+      .nav-cv { padding: 7px 12px; font-size: 13px; }
+    }
+
+    body.nav-open { overflow: hidden; }
+
+    /* ─── COPY EMAIL TOOLTIP ─────────────────── */
+    .email-copied {
+      position: relative;
+    }
+    .email-copied::after {
+      content: 'Zkopírováno!';
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: var(--black);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      animation: tooltipPop 1.8s ease forwards;
+      pointer-events: none;
+    }
+    @keyframes tooltipPop {
+      0%   { opacity: 0; transform: translateX(-50%) translateY(4px); }
+      15%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+      75%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+      100% { opacity: 0; transform: translateX(-50%) translateY(-4px); }
+    }
+
+    /* ─── THEME TOGGLE BUTTON ─────────────────── */
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--gray-2);
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      color: var(--black);
+      transition: background 0.2s, border-color 0.2s;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .theme-toggle:hover { background: var(--gray-1); }
+    .theme-toggle .i { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+
+  <!-- Icon sprite: line icons (Lucide geometry), referenced via <use> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></symbol>
+    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect x="2" y="6" width="20" height="14" rx="2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4M12 16h4M8 11h.01M8 16h.01"/></symbol>
+    <symbol id="i-usercheck" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><path d="M10 2h4"/><path d="m12 14 3-3"/><circle cx="12" cy="14" r="8"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41M17.66 6.34l1.41-1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 19.07l-1.41-1.41"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  </svg>
+
+  <div id="progressBar" role="progressbar" aria-hidden="true"></div>
+
+  <!-- ═══ NAV ═══════════════════════════════════ -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">
+      <span class="nav-mark" aria-hidden="true">JP</span>
+      <span class="nav-logo-text">
+        <span class="nav-logo-name">Jakub Pešl</span>
+        <span class="nav-logo-role">Marketingová komunikace</span>
+      </span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">O&nbsp;mně</a></li>
+      <li><a href="#expertise">Projekty</a></li>
+      <li><a href="#journey">Kariéra</a></li>
+      <li><a href="#learning">Vzdělávání</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+    <div class="nav-controls">
+      <a href="../Jakub-Pesl-CV-CZ.pdf" target="_blank" class="nav-cv">CV ↓</a>
+      <a href="https://www.linkedin.com/in/jakub-pe%C5%A1l" target="_blank" class="nav-cta">LinkedIn ↗</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Přepnout tmavý režim"><svg class="i"><use href="#i-moon"/></svg></button>
+      <button class="hamburger" id="hamburger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ══════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-avatar-wrap">
+      <div class="hero-photo-stack">
+        <div class="hero-avatar-inner">
+          <img src="../JakubP.png" alt="Jakub Pešl" class="hero-avatar" />
+        </div>
+      </div>
+      <div class="hero-award">
+        <span class="hero-award-icon" aria-hidden="true"><svg class="i"><use href="#i-award"/></svg></span>
+        <div>
+          <p class="hero-award-title">Bronze Individual Award</p>
+          <p class="hero-award-sub">Top 3 z&nbsp;~150 zaměstnanců ze 17 zemí, Panasonic CEE</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-name">Jakub Pešl<span class="hero-degree">, MBA</span></h1>
+      <p class="hero-title">
+        European Marketing Communications Manager
+      </p>
+      <p class="hero-tagline">
+        Buduji a&nbsp;realizuji go-to-market komunikaci ve
+        <em>20+ evropských zemích</em> — od master strategie s&nbsp;globálním vedením v&nbsp;Japonsku
+        až po kampaně, které fungují v&nbsp;každé jednotlivé zemi.
+      </p>
+      <ul class="hero-meta">
+        <li>Evropský GTM</li>
+        <li>Produktový marketing</li>
+        <li>Tvorba kampaní</li>
+        <li>Trade marketing</li>
+        <li>Brand komunikace</li>
+        <li>CES / IFA</li>
+      </ul>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Spojme se →</a>
+        <a href="#about" class="btn-secondary">Zjistit víc</a>
+      </div>
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Panasonic Marketing Europe · Praha / Wiesbaden
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STAT BAR ═══════════════════════════════ -->
+  <div class="stat-bar">
+    <div class="stat-bar-inner">
+      <!-- Final values live in the HTML so crawlers and slow/blocked JS never see a 0.
+           The counter animation overwrites them only once the bar scrolls into view. -->
+      <div class="stat reveal">
+        <div class="stat-number" data-target="19" data-suffix="">19</div>
+        <div class="stat-label">Let v&nbsp;Panasonicu</div>
+      </div>
+      <div class="stat reveal d1">
+        <div class="stat-number" data-target="20" data-suffix="+">20+</div>
+        <div class="stat-label">Evropských trhů</div>
+      </div>
+      <div class="stat reveal d2">
+        <div class="stat-number" data-target="5" data-suffix="+">5+</div>
+        <div class="stat-label">Světových veletrhů a&nbsp;akcí — CES, IFA a&nbsp;další</div>
+      </div>
+      <div class="stat reveal d3">
+        <div class="stat-number" data-target="20" data-suffix="+">20+</div>
+        <div class="stat-label">Kurzů a&nbsp;certifikací</div>
+      </div>
+    </div>
+    <div class="stat-brands reveal d2">
+      <span class="stat-brands-label">Značky a&nbsp;veletrhy</span>
+      <span class="brand-mark">Panasonic</span>
+      <span class="brand-mark">Technics</span>
+      <span class="brand-mark">Lumix</span>
+      <span class="brand-mark">CES</span>
+      <span class="brand-mark">IFA</span>
+    </div>
+  </div>
+
+  <!-- ═══ ABOUT (bento: about + mindset + values) ═══ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="bento">
+
+        <div class="tile tile-photo reveal">
+          <img src="../MicrosoftTeams-image.jpg" alt="Jakub Pešl" loading="lazy" />
+        </div>
+
+        <div class="tile tile-intro reveal d1">
+          <p class="label">Filozofie</p>
+          <h2 class="about-quote">Evropská strategie, <em>lokální</em> realizace</h2>
+          <div class="tile-body">
+            <p>Většinu kariéry propojuji evropskou strategii s&nbsp;realizací na lokálních trzích — tvorba kampaní, go-to-market komunikace, retail a&nbsp;trade marketing a&nbsp;koordinace mezi evropskými trhy a&nbsp;globálním vedením v&nbsp;Japonsku.</p>
+            <p>V&nbsp;praxi to znamená upravit centrálně vytvořené sdělení tak, aby dávalo smysl v&nbsp;každé zemi, řídit agentury, vést retailové a&nbsp;partnerské aktivity, nést odpovědnost za P&amp;L, udržet 20+ trhů v&nbsp;pohybu požadovaným směrem a&nbsp;další neméně fascinující aktivity.</p>
+          </div>
+        </div>
+
+        <div class="tile tile-quote reveal d2">
+          <p class="tile-kicker">Mindset</p>
+          <p class="tile-quote-text">Marketing je moje každodenní výzva – každodenní vášeň.</p>
+          <p class="tile-quote-sub">„Hledám způsoby, jak věci vymyslet, realizovat a&nbsp;úspěšně dotáhnout do nejmenšího detailu. Žádné výmluvy, proč to nejde.“</p>
+        </div>
+
+        <div class="tile tile-place reveal d3">
+          <p class="tile-kicker">Působím v</p>
+          <p class="tile-place-city">Praze</p>
+          <p class="tile-place-text">Spolupracuji s&nbsp;týmy ve Wiesbadenu, napříč Evropou i&nbsp;s kolegy v&nbsp;Japonsku. Mezinárodní rozměr je na mé práci to, čeho si cením nejvíc.</p>
+        </div>
+
+        <div class="tile tile-value reveal d1">
+          <span class="tile-value-icon" aria-hidden="true"><svg class="i"><use href="#i-scale"/></svg></span>
+          <h3 class="tile-value-title">Fair Play</h3>
+          <p class="tile-value-desc">Co slíbím, to udělám. Na tom stojí dlouhodobé vztahy s&nbsp;agenturami, obchodníky i&nbsp;týmy — ne na tlaku.</p>
+        </div>
+        <div class="tile tile-value reveal d2">
+          <span class="tile-value-icon" aria-hidden="true"><svg class="i"><use href="#i-bulb"/></svg></span>
+          <h3 class="tile-value-title">Tah na branku</h3>
+          <p class="tile-value-desc">Rozpočet, termíny, více než 20 různých trhů. Omezení a&nbsp;proměnlivost vnímám jako normální stav, kterému je třeba dodat to, co potřebuje – s&nbsp;efektivitou, zásahem a&nbsp;kreativním přístupem.</p>
+        </div>
+        <div class="tile tile-value reveal d3">
+          <span class="tile-value-icon" aria-hidden="true"><svg class="i"><use href="#i-sprout"/></svg></span>
+          <h3 class="tile-value-title">Rozvoj lidí</h3>
+          <p class="tile-value-desc">Většinu toho, co umím, jsem se naučil od lidí, se kterými jsem pracoval. Cílem je tým, který věci zvládne i&nbsp;beze mě.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EXPERTISE ══════════════════════════════ -->
+  <section class="expertise" id="expertise">
+    <div class="container">
+      <div class="exp-head">
+        <div>
+          <p class="label reveal">Vybrané projekty</p>
+          <h2 class="section-title reveal d1">To nejlepší<br />z&nbsp;posledních let</h2>
+        </div>
+        <p class="section-sub reveal d2">
+          Kampaně, uvedení produktů a&nbsp;akce napříč evropským portfoliem — od master strategie
+          dohodnuté s&nbsp;globálním vedením v&nbsp;Japonsku po aktivaci na jednotlivých trzích.
+        </p>
+      </div>
+      <div class="exp-grid">
+
+        <div class="exp-item exp-third reveal d1">
+          <div class="exp-top"><p class="exp-num">01</p><button class="photo-fan" type="button" data-gallery="tv" aria-label="Otevřít fotky: TV (5)"><img src="../img/work/tv-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="../img/work/tv-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><span class="fan-more">+3</span></button></div>
+          <h3 class="exp-title">TV</h3>
+          <ul class="exp-list">
+            <li>Evropská <strong>GTM strategie pro TV portfolio</strong></li>
+            <li>Partnerství s&nbsp;<strong>Activision Blizzard</strong> a&nbsp;<strong>Amazon</strong> — evropská komunikace následně využitá globálně</li>
+            <li>Aktivace herní TV strategie napříč evropským kontinentem</li>
+            <li>Tvorba <strong>200+ produktových videí ročně</strong> pro globální využití</li>
+          </ul>
+        </div>
+
+        <div class="exp-item exp-third reveal d2">
+          <div class="exp-top"><p class="exp-num">02</p><button class="photo-fan" type="button" data-gallery="technics" aria-label="Otevřít fotky: Technics (4)"><img src="../img/work/technics-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="../img/work/technics-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><span class="fan-more">+2</span></button></div>
+          <h3 class="exp-title">Technics</h3>
+          <ul class="exp-list">
+            <li><strong>Evropská strategie Technics TWS</strong> a&nbsp;aktivace kampaní <span class="yr">2023–2025</span></li>
+            <li>Produkční tým <strong>globálních eventů Technics TWS</strong> <span class="yr">2023, 2024, 2025</span></li>
+            <li>Česká aktivace s&nbsp;<strong>Ondřejem Brzobohatým</strong> — „Bohatý zvuk, luxusní design“</li>
+          </ul>
+        </div>
+
+        <div class="exp-item exp-third reveal d3">
+          <div class="exp-top"><p class="exp-num">03</p><button class="photo-fan" type="button" data-gallery="lumix" aria-label="Otevřít fotku: LUMIX"><img src="../img/work/lumix-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></button></div>
+          <h3 class="exp-title">LUMIX</h3>
+          <ul class="exp-list">
+            <li><strong>LUMIX Stories</strong> — influencerský a&nbsp;ambasadorský program postavený na autentickém storytellingu, který ukazuje, co fotoaparáty opravdu umí</li>
+            <li>Tvůrci z&nbsp;programu se uplatnili i&nbsp;v interní produkci</li>
+          </ul>
+        </div>
+
+        <div class="exp-item exp-mid reveal d1">
+          <div class="exp-top"><p class="exp-num">04</p><button class="photo-fan" type="button" data-gallery="events" aria-label="Otevřít fotky: Výstavy a eventy (5)"><img src="../img/work/events-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="../img/work/events-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><span class="fan-more">+3</span></button></div>
+          <h3 class="exp-title">Výstavy a&nbsp;eventy</h3>
+          <ul class="exp-list">
+            <li><strong>CES 2024 &amp; CES 2025</strong> — projektový lídr sekce Consumer, který dal stánku Panasonic život</li>
+            <li><strong>IFA Berlín</strong> — category owner haly Panasonic <span class="yr">2020–2025</span></li>
+            <li>Range Review akce pro obchodníky — Praha, Milán</li>
+            <li>Představení TV portfolia <span class="yr">2024, 2025</span></li>
+          </ul>
+        </div>
+
+        <div class="exp-item exp-wide reveal d2">
+          <div class="exp-top"><p class="exp-num">05</p></div>
+          <h3 class="exp-title">P&amp;L, rozpočet a&nbsp;ROI</h3>
+          <ul class="exp-list">
+            <li>Plná odpovědnost za <strong>evropský multikanálový marketingový rozpočet</strong> včetně nastavení P&amp;L</li>
+            <li>Vybudování systému řízení marketingových investic — vyhodnocení ROI a&nbsp;pravidelný reporting vedení</li>
+            <li>Optimalizace spolupráce s&nbsp;agenturami — vyšší efektivita a&nbsp;ROI <span class="yr">2024–dosud</span></li>
+            <li>Provoz merchandisingového týmu CEEG — webové systémy, nastavení, interní komunikace a&nbsp;propojení s&nbsp;obchodem <span class="yr">2022–2023</span></li>
+          </ul>
+        </div>
+
+        <div class="exp-item exp-narrow reveal d3">
+          <div class="exp-top"><p class="exp-num">06</p><button class="photo-fan" type="button" data-gallery="audio" aria-label="Otevřít fotky: Audio (3)"><img src="../img/work/audio-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="../img/work/audio-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><span class="fan-more">+1</span></button></div>
+          <h3 class="exp-title">Audio</h3>
+          <ul class="exp-list">
+            <li>Česká spolupráce s&nbsp;kapelou <strong>Lake Malawi</strong> — aktivace Technics a&nbsp;party reproduktorů</li>
+            <li>Party reproduktory — dlouhodobá spolupráce a&nbsp;partnerství s&nbsp;<strong>Óčko&nbsp;TV</strong></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Photo wall: a moving strip of project photos; each opens its card gallery -->
+    <div class="container work-wall-head reveal d1"><p class="label">Za&nbsp;scénou</p><p class="work-wall-meta">Kampaně, launche, veletrhy — výběr</p></div>
+    <div class="marquee work-wall reveal d2" data-dir="left" data-speed="28">
+      <div class="marquee-track">
+        <ul class="marquee-list"><li><button class="wall-tile" type="button" data-gallery="events" data-index="0" aria-label="Otevřít fotku: Stánek Panasonic na CES"><img src="../img/work/events-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Akce</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="0" aria-label="Otevřít fotku: Level Up Your Game — kampaň na herní TV Panasonic s Diablo IV"><img src="../img/work/tv-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="technics" data-index="0" aria-label="Otevřít fotku: Kampaň Technics TWS s Ondřejem Brzobohatým"><img src="../img/work/technics-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="audio" data-index="0" aria-label="Otevřít fotku: S kapelou Lake Malawi"><img src="../img/work/audio-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Audio</span></button></li><li><button class="wall-tile" type="button" data-gallery="lumix" data-index="0" aria-label="Otevřít fotku: Videosérie LUMIX Stories"><img src="../img/work/lumix-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">LUMIX</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="2" aria-label="Otevřít fotku: Hala Panasonic na IFA Berlín"><img src="../img/work/events-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Akce</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="2" aria-label="Otevřít fotku: See it all. Feel it all. — filmová kampaň Panasonic TV"><img src="../img/work/tv-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="technics" data-index="1" aria-label="Otevřít fotku: Launch event Technics AZ80"><img src="../img/work/technics-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="3" aria-label="Otevřít fotku: Akce Panasonic TV Experience 2024"><img src="../img/work/events-4-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Akce</span></button></li></ul>
+        <ul class="marquee-list" aria-hidden="true"><li><button class="wall-tile" type="button" data-gallery="events" data-index="0" tabindex="-1" aria-label="Otevřít fotku: Stánek Panasonic na CES"><img src="../img/work/events-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Akce</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="0" tabindex="-1" aria-label="Otevřít fotku: Level Up Your Game — kampaň na herní TV Panasonic s Diablo IV"><img src="../img/work/tv-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="technics" data-index="0" tabindex="-1" aria-label="Otevřít fotku: Kampaň Technics TWS s Ondřejem Brzobohatým"><img src="../img/work/technics-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="audio" data-index="0" tabindex="-1" aria-label="Otevřít fotku: S kapelou Lake Malawi"><img src="../img/work/audio-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Audio</span></button></li><li><button class="wall-tile" type="button" data-gallery="lumix" data-index="0" tabindex="-1" aria-label="Otevřít fotku: Videosérie LUMIX Stories"><img src="../img/work/lumix-1-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">LUMIX</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="2" tabindex="-1" aria-label="Otevřít fotku: Hala Panasonic na IFA Berlín"><img src="../img/work/events-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Akce</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="2" tabindex="-1" aria-label="Otevřít fotku: See it all. Feel it all. — filmová kampaň Panasonic TV"><img src="../img/work/tv-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="technics" data-index="1" tabindex="-1" aria-label="Otevřít fotku: Launch event Technics AZ80"><img src="../img/work/technics-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="3" tabindex="-1" aria-label="Otevřít fotku: Akce Panasonic TV Experience 2024"><img src="../img/work/events-4-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Akce</span></button></li></ul>
+      </div>
+    </div>
+    <div class="marquee work-wall reveal d3" data-dir="right" data-speed="28">
+      <div class="marquee-track">
+        <ul class="marquee-list"><li><button class="wall-tile" type="button" data-gallery="technics" data-index="3" aria-label="Otevřít fotku: Na natáčení s Ondřejem Brzobohatým"><img src="../img/work/technics-4-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="1" aria-label="Otevřít fotku: Tým Panasonic na CES"><img src="../img/work/events-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Akce</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="1" aria-label="Otevřít fotku: Panasonic TV s Fire TV — Watch your favourites. Control your home."><img src="../img/work/tv-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="audio" data-index="1" aria-label="Otevřít fotku: Lake Malawi s party reproduktory Panasonic"><img src="../img/work/audio-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Audio</span></button></li><li><button class="wall-tile" type="button" data-gallery="technics" data-index="2" aria-label="Otevřít fotku: Launch event Technics EAH-AZ100"><img src="../img/work/technics-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="4" aria-label="Otevřít fotku: Akce Panasonic TV Experience 2025"><img src="../img/work/events-5-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Akce</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="4" aria-label="Otevřít fotku: Produktová videa Panasonic TV na YouTube"><img src="../img/work/tv-5-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="audio" data-index="2" aria-label="Otevřít fotku: Product placement Panasonic na Óčko TV"><img src="../img/work/audio-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Audio</span></button></li></ul>
+        <ul class="marquee-list" aria-hidden="true"><li><button class="wall-tile" type="button" data-gallery="technics" data-index="3" tabindex="-1" aria-label="Otevřít fotku: Na natáčení s Ondřejem Brzobohatým"><img src="../img/work/technics-4-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="1" tabindex="-1" aria-label="Otevřít fotku: Tým Panasonic na CES"><img src="../img/work/events-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Akce</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="1" tabindex="-1" aria-label="Otevřít fotku: Panasonic TV s Fire TV — Watch your favourites. Control your home."><img src="../img/work/tv-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="audio" data-index="1" tabindex="-1" aria-label="Otevřít fotku: Lake Malawi s party reproduktory Panasonic"><img src="../img/work/audio-2-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Audio</span></button></li><li><button class="wall-tile" type="button" data-gallery="technics" data-index="2" tabindex="-1" aria-label="Otevřít fotku: Launch event Technics EAH-AZ100"><img src="../img/work/technics-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Technics</span></button></li><li><button class="wall-tile" type="button" data-gallery="events" data-index="4" tabindex="-1" aria-label="Otevřít fotku: Akce Panasonic TV Experience 2025"><img src="../img/work/events-5-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Akce</span></button></li><li><button class="wall-tile" type="button" data-gallery="tv" data-index="4" tabindex="-1" aria-label="Otevřít fotku: Produktová videa Panasonic TV na YouTube"><img src="../img/work/tv-5-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">TV</span></button></li><li><button class="wall-tile" type="button" data-gallery="audio" data-index="2" tabindex="-1" aria-label="Otevřít fotku: Product placement Panasonic na Óčko TV"><img src="../img/work/audio-3-wall.webp" alt="" height="180" loading="lazy" decoding="async" draggable="false" /><span class="wall-tag">Audio</span></button></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ JOURNEY / TIMELINE ═════════════════════ -->
+  <section class="journey" id="journey">
+    <div class="container journey-grid">
+
+      <!-- Intro stays pinned while the timeline scrolls past it -->
+      <div class="journey-intro">
+        <p class="label reveal">Kariéra</p>
+        <h2 class="section-title reveal d1">Dosavadní cesta</h2>
+        <p class="section-sub reveal d2">Devatenáct let v&nbsp;Panasonicu — od budování českého zákaznického oddělení po řízení komunikace pro 20+ evropských trhů.</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="tl-current reveal d1">
+          <span class="tl-dot" aria-hidden="true"></span>
+          <p class="tl-period">Dub 2021 – dosud · Praha, CZ · hybridně z&nbsp;Wiesbadenu, DE</p>
+          <h3 class="timeline-role">European Marketing Communications Manager</h3>
+          <p class="timeline-company">Panasonic Marketing Europe</p>
+          <p class="timeline-desc">Centrální evropská role s&nbsp;odpovědností za celý kontinent. Tvorba panevropské master strategie marketingové komunikace a&nbsp;materiálů, na kterých stojí evropské trhy. Kompletní řízení evropských kampaní včetně nastavení P&amp;L, odpovědnosti za rozpočet a&nbsp;vyhodnocení ROI. Přímá koordinace s&nbsp;globálním vedením v&nbsp;Japonsku, metodické vedení a&nbsp;podpora národních obchodních organizací (LSO) v&nbsp;Evropě, globální akce (CES &amp; IFA) a&nbsp;vedení marketingového týmu spolu s&nbsp;externími agenturami a&nbsp;dodavateli.</p>
+          <div class="timeline-tags">
+            <span class="tag">Evropský go-to-market</span>
+            <span class="tag">Řízení kampaní</span>
+            <span class="tag">Spolupráce s&nbsp;globálním HQ</span>
+            <span class="tag">Podpora LSO</span>
+            <span class="tag">CES &amp; IFA</span>
+            <span class="tag">P&amp;L a&nbsp;rozpočet</span>
+            <span class="tag">Vedení týmu</span>
+          </div>
+        </div>
+
+        <!-- Earlier roles collapse to one line each; native <details>, no JS -->
+          <details class="tl-row reveal d1">
+            <summary>
+              <span class="tl-dot" aria-hidden="true"></span>
+              <span class="tl-head">
+                <span class="tl-period">2019 – led 2021 · Praha, CZ</span>
+                <span class="tl-role">Trade &amp; Marketing Communications Manager</span>
+                <span class="tl-company">Panasonic Marketing Europe GmbH, česká pobočka</span>
+              </span>
+              <span class="tl-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="tl-body">
+              <p class="timeline-desc">Plná odpovědnost za marketingovou komunikaci, trade marketing a&nbsp;merchandising pro český trh. Vedení týmu Training &amp; Promotion, řízení ATL a&nbsp;BTL kampaní v&nbsp;segmentech B2E, B2B a&nbsp;B2C. Výběr a&nbsp;řízení agentur, kontrola rozpočtu, PR akce a&nbsp;aktivní komunikace v&nbsp;rámci evropské sítě.</p>
+              <div class="timeline-tags">
+                <span class="tag">Trade marketing</span>
+                <span class="tag">ATL / BTL</span>
+                <span class="tag">B2B · B2C · B2E</span>
+                <span class="tag">Řízení agentur</span>
+                <span class="tag">Merchandising</span>
+                <span class="tag">Nábor</span>
+              </div>
+            </div>
+          </details>
+          <details class="tl-row reveal d2">
+            <summary>
+              <span class="tl-dot" aria-hidden="true"></span>
+              <span class="tl-head">
+                <span class="tl-period">Dub 2011 – 2019 · Praha, CZ</span>
+                <span class="tl-role">Trade Marketing Manager</span>
+                <span class="tl-company">Panasonic Marketing Europe GmbH, česká pobočka</span>
+              </span>
+              <span class="tl-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="tl-body">
+              <p class="timeline-desc">Vedení lokálního týmu Trade Marketing, Merchandising a&nbsp;Training &amp; Promotion — včetně regionální odpovědnosti za východní Evropu v&nbsp;roli Regional Trade Marketing Manager (2011–2013). Odpovědnost za ATL a&nbsp;BTL marketingovou komunikaci spotřební elektroniky v&nbsp;kanálech B2E, B2B a&nbsp;B2C. Tvorba a&nbsp;realizace plánů podpory prodeje pro jednotlivé produktové kategorie, organizace interních i&nbsp;externích školení, PR akcí a&nbsp;mezinárodní komunikace. Řízení vztahů s&nbsp;kreativními a&nbsp;reklamními agenturami, zavedení efektivních online trade systémů a&nbsp;odpovědnost za marketingový rozpočet.</p>
+              <div class="timeline-tags">
+                <span class="tag">Trade marketing</span>
+                <span class="tag">Merchandising</span>
+                <span class="tag">Training &amp; Promotion</span>
+                <span class="tag">ATL / BTL</span>
+                <span class="tag">Online trade systémy</span>
+                <span class="tag">Řízení agentur</span>
+                <span class="tag">Řízení rozpočtu</span>
+              </div>
+            </div>
+          </details>
+          <details class="tl-row reveal d3">
+            <summary>
+              <span class="tl-dot" aria-hidden="true"></span>
+              <span class="tl-head">
+                <span class="tl-period">Zář 2007 – bře 2011 · Praha, CZ</span>
+                <span class="tl-role">Head of Call Centre</span>
+                <span class="tl-company">Panasonic Marketing Europe GmbH, česká pobočka</span>
+              </span>
+              <span class="tl-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="tl-body">
+              <p class="timeline-desc">Tady moje léta v&nbsp;Panasonicu začala. Vybudoval jsem a&nbsp;vedl interní zákaznické oddělení pro český a&nbsp;slovenský trh, včetně procesní podpory interní komunikace a&nbsp;tvorby a&nbsp;správy online systémů a&nbsp;znalostních bází.</p>
+              <div class="timeline-tags">
+                <span class="tag">Trhy CZ a&nbsp;SK</span>
+                <span class="tag">Vedení týmu</span>
+                <span class="tag">Návrh procesů</span>
+                <span class="tag">Online systémy</span>
+              </div>
+            </div>
+          </details>
+
+        <p class="tl-sep reveal">Vzdělání</p>
+
+          <details class="tl-row tl-edu reveal d1">
+            <summary>
+              <span class="tl-dot" aria-hidden="true"></span>
+              <span class="tl-head">
+                <span class="tl-period">Kvě 2024 – čvc 2025 · Praha, CZ</span>
+                <span class="tl-role">Master of Business Administration</span>
+                <span class="tl-company">British Business School (BBS)</span>
+              </span>
+              <span class="tl-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="tl-body">
+              <p class="timeline-desc">MBA program se specializací Marketing &amp; PR. Zaměření na strategické vedení, brand management a&nbsp;moderní marketingové přístupy na mezinárodních trzích.</p>
+              <div class="timeline-tags">
+                <span class="tag">MBA</span>
+                <span class="tag">Marketing &amp; PR</span>
+                <span class="tag">Strategické vedení</span>
+                <span class="tag">Brand management</span>
+              </div>
+            </div>
+          </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LEARNING ════════════════════════════════ -->
+  <section class="learning" id="learning">
+    <div class="container learning-head">
+      <div>
+        <p class="label reveal">Neustálý rozvoj</p>
+        <h2 class="section-title reveal d1">Učení pro mě nikdy nekončí</h2>
+      </div>
+      <p class="section-sub reveal d2">Průběžný profesní rozvoj — od leadershipu a&nbsp;komunikace po AI a&nbsp;projektové řízení.</p>
+    </div>
+
+    <!-- Two marquee rows running in opposite directions. Each list is rendered
+         twice so the loop is seamless; the copy is hidden from assistive tech. -->
+    <div class="marquee reveal d2" data-dir="left">
+      <div class="marquee-track">
+        <ul class="marquee-list">
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-laptop"/></svg></span>AI First – AI Kurz</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-cpu"/></svg></span>AI v&nbsp;marketingu</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-chat"/></svg></span>Komunikační dovednosti I&nbsp;– III</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-briefcase"/></svg></span>Komunikační dovednosti pro manažery</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-phone"/></svg></span>Facebook a&nbsp;firemní komunikace</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-users"/></svg></span>Týmová komunikace</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-megaphone"/></svg></span>Marketingová komunikace</li>
+        </ul>
+        <ul class="marquee-list" aria-hidden="true">
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-laptop"/></svg></span>AI First – AI Kurz</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-cpu"/></svg></span>AI v&nbsp;marketingu</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-chat"/></svg></span>Komunikační dovednosti I&nbsp;– III</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-briefcase"/></svg></span>Komunikační dovednosti pro manažery</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-phone"/></svg></span>Facebook a&nbsp;firemní komunikace</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-users"/></svg></span>Týmová komunikace</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-megaphone"/></svg></span>Marketingová komunikace</li>
+        </ul>
+      </div>
+    </div>
+    <div class="marquee reveal d3" data-dir="right">
+      <div class="marquee-track">
+        <ul class="marquee-list">
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-bag"/></svg></span>Merchandising a&nbsp;komunikace v&nbsp;prodejně</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-compass"/></svg></span>Vedení lidí</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-clipboard"/></svg></span>Projektové řízení</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-usercheck"/></svg></span>Rozvoj vztahů se zákazníky</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-book"/></svg></span>Storytelling with Insight</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-timer"/></svg></span>Zvládání stresu a&nbsp;time management</li>
+        </ul>
+        <ul class="marquee-list" aria-hidden="true">
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-bag"/></svg></span>Merchandising a&nbsp;komunikace v&nbsp;prodejně</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-compass"/></svg></span>Vedení lidí</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-clipboard"/></svg></span>Projektové řízení</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-usercheck"/></svg></span>Rozvoj vztahů se zákazníky</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-book"/></svg></span>Storytelling with Insight</li>
+          <li class="course-pill"><span aria-hidden="true"><svg class="i"><use href="#i-timer"/></svg></span>Zvládání stresu a&nbsp;time management</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- "Now" card: what I'm focused on at the moment. Update the date when editing. -->
+    <div class="container">
+      <div class="now-card reveal d2">
+        <div class="now-head">
+          <p class="now-label"><span class="now-dot" aria-hidden="true"></span>Teď</p>
+          <p class="now-upd">Aktualizováno v listopadu 2026</p>
+        </div>
+        <h3 class="now-title">Čím teď žiju</h3>
+        <div class="now-grid">
+        <div class="now-item now-wide"><span class="now-icon" aria-hidden="true"><svg class="i"><use href="#i-briefcase"/></svg></span><p class="now-k">V práci</p><p class="now-v">Detailně se starám o marketing pro <strong>DACH</strong>, <strong>Norsko</strong> a <strong>Nizozemsko</strong> včetně P&amp;L — a přenáším do nich osvědčené postupy z ostatních evropských regionů.</p></div>
+        <div class="now-item "><span class="now-icon" aria-hidden="true"><svg class="i"><use href="#i-cpu"/></svg></span><p class="now-k">Zkoumám</p><p class="now-v"><strong>Automatizaci pomocí AI agentů</strong> a to, jak mění pracovní procesy uvnitř velké korporace.</p></div>
+        <div class="now-item "><span class="now-icon" aria-hidden="true"><svg class="i"><use href="#i-laptop"/></svg></span><p class="now-k">Stavím</p><p class="now-v">Vlastní aplikace. Fascinuje mě, že se tyhle dovednosti dnes stávají dostupné každému — ostatně i tenhle web.</p></div>
+        <div class="now-item "><span class="now-icon" aria-hidden="true"><svg class="i"><use href="#i-book"/></svg></span><p class="now-k">Poslouchám a sleduji</p><p class="now-v">Cestování, technologie a investování.</p></div>
+        <div class="now-item "><span class="now-icon" aria-hidden="true"><svg class="i"><use href="#i-users"/></svg></span><p class="now-k">Mimo práci</p><p class="now-v">Rodina a společný čas, pravidelný sport a občas ranní kafe s přáteli.</p></div>
+        </div>
+        <div class="now-talk"><p class="now-k">Rád proberu</p><span class="now-topic">AI agenti v korporátním marketingu</span><span class="now-topic">Evropský go-to-market</span><span class="now-topic">Marketing v DACH, Norsku a Nizozemsku</span><span class="now-topic">Veletrhy a eventy</span><span class="now-topic">Stavění aplikací s AI</span><a href="#contact" class="now-talk-cta">Napište mi →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PERSONAL ═══════════════════════════════ -->
+  <section class="personal" id="personal">
+    <div class="container">
+      <div class="split-head">
+        <div>
+          <p class="label reveal">Mimo kancelář</p>
+          <h2 class="section-title reveal d1">Celý obraz</h2>
+        </div>
+        <div class="lego-quote reveal d2">
+          <span class="lego-thumb">
+            <img src="../img/personal/family-2-thumb.webp" alt="Obří kostky LEGO" width="72" height="72" loading="lazy" decoding="async" />
+          </span>
+          <p class="section-sub">
+            Život je jako LEGO — jen když do sebe zapadnou všechny dílky, může být výsledek dokonalý.
+            Práce je jedním z&nbsp;nich.
+          </p>
+        </div>
+      </div>
+      <div class="personal-layout">
+        <div class="personal-photo reveal">
+          <img src="../img/personal/bellagio.webp" alt="Jakub Pešl před hotelem Bellagio, Las Vegas" width="1200" height="1600" loading="lazy" decoding="async" />
+        </div>
+      <div class="personal-grid">
+        <div class="personal-card reveal d1">
+          <div class="personal-head"><span class="personal-icon" aria-hidden="true"><svg class="i"><use href="#i-laptop"/></svg></span><span class="personal-title">Tech nadšenec</span><button class="photo-fan" type="button" data-gallery="tech" aria-label="Otevřít fotky: Tech nadšenec (2)"><img src="../img/personal/tech-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="../img/personal/tech-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></button></div>
+          <p class="personal-text">Čtu o&nbsp;technologiích a&nbsp;zkouším jich víc, než asi potřebuji — poslední dobou AI nástroje, spotřební elektroniku vždycky. V&nbsp;téhle práci se to opravdu hodí.</p>
+        </div>
+        <div class="personal-card reveal d2">
+          <div class="personal-head"><span class="personal-icon" aria-hidden="true"><svg class="i"><use href="#i-pulse"/></svg></span><span class="personal-title">Aktivní život</span><button class="photo-fan" type="button" data-gallery="active" aria-label="Otevřít fotky: Aktivní život (2)"><img src="../img/personal/active-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="../img/personal/active-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></button></div>
+          <p class="personal-text">Sport je moje tlačítko reset. Po týdnu hovorů napříč časovými pásmy mi hlavu vyčistí jedině pohyb.</p>
+        </div>
+        <div class="personal-card reveal d3">
+          <div class="personal-head"><span class="personal-icon" aria-hidden="true"><svg class="i"><use href="#i-globe"/></svg></span><span class="personal-title">Rodina a&nbsp;cestování</span><button class="photo-fan" type="button" data-gallery="family" aria-label="Otevřít fotky: Rodina a cestování (3)"><img src="../img/personal/family-1-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><img src="../img/personal/family-2-thumb.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><span class="fan-more">+1</span></button></div>
+          <p class="personal-text">Cestování po Evropě s&nbsp;rodinou je zároveň ten nejlepší průzkum trhu — rychle zjistíte, že stejné sdělení nefunguje všude stejně.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT (testimonial + CTA) ════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <figure class="testimonial">
+        <span class="testimonial-mark reveal" aria-hidden="true">“</span>
+        <blockquote class="testimonial-text reveal d1">
+          Jakub soustavně inspiruje k&nbsp;výjimečným výkonům, dává kolegům prostor převzít odpovědnost
+          a&nbsp;buduje důvěru napříč týmy.
+        </blockquote>
+        <figcaption class="testimonial-author reveal d2">
+          <span class="testimonial-name">Gabor Szegner</span>
+          <span class="testimonial-role">Senior Marketing Manager, Panasonic</span>
+        </figcaption>
+      </figure>
+
+      <div class="cta-card reveal">
+        <p class="label">Kontakt</p>
+        <h2 class="section-title">Spojme se.</h2>
+        <p class="section-sub">
+          Rád se spojím s&nbsp;lidmi z&nbsp;marketingu, technologií, mezinárodního byznysu
+          a&nbsp;dalšími zajímavými lidmi.
+        </p>
+        <div class="contact-actions">
+          <a href="https://www.linkedin.com/in/jakub-pe%C5%A1l" target="_blank" class="btn-primary">
+            Spojit se na LinkedInu →
+          </a>
+          <a href="mailto:pesljakub@gmail.com" class="btn-secondary" id="emailLink">
+            pesljakub@gmail.com
+          </a>
+        </div>
+        <div class="ask-ai">
+          <span class="ask-ai-lead"><svg class="i" aria-hidden="true"><use href="#i-cpu"/></svg>Nebo se na mě zeptejte AI</span>
+          <a href="https://chatgpt.com/?q=P%C5%99edstav%20mi%20Jakuba%20Pe%C5%A1la%2C%20European%20Marketing%20Communications%20Managera%20v%20Panasonicu%20%E2%80%94%20jeho%20zku%C5%A1enosti%2C%20kl%C3%AD%C4%8Dov%C3%A9%20projekty%20a%20siln%C3%A9%20str%C3%A1nky.%20Odpov%C3%ADdej%20%C4%8Desky%20a%20vych%C3%A1zej%20z%20jeho%20profilu%3A%20https%3A%2F%2Fjakubpesl.github.io%2Fjakub-pesl%2Fllms.txt" target="_blank" rel="noopener" class="ask-ai-link">ChatGPT</a>
+          <a href="https://claude.ai/new?q=P%C5%99edstav%20mi%20Jakuba%20Pe%C5%A1la%2C%20European%20Marketing%20Communications%20Managera%20v%20Panasonicu%20%E2%80%94%20jeho%20zku%C5%A1enosti%2C%20kl%C3%AD%C4%8Dov%C3%A9%20projekty%20a%20siln%C3%A9%20str%C3%A1nky.%20Odpov%C3%ADdej%20%C4%8Desky%20a%20vych%C3%A1zej%20z%20jeho%20profilu%3A%20https%3A%2F%2Fjakubpesl.github.io%2Fjakub-pesl%2Fllms.txt" target="_blank" rel="noopener" class="ask-ai-link">Claude</a>
+          <a href="https://www.perplexity.ai/search?q=P%C5%99edstav%20mi%20Jakuba%20Pe%C5%A1la%2C%20European%20Marketing%20Communications%20Managera%20v%20Panasonicu%20%E2%80%94%20jeho%20zku%C5%A1enosti%2C%20kl%C3%AD%C4%8Dov%C3%A9%20projekty%20a%20siln%C3%A9%20str%C3%A1nky.%20Odpov%C3%ADdej%20%C4%8Desky%20a%20vych%C3%A1zej%20z%20jeho%20profilu%3A%20https%3A%2F%2Fjakubpesl.github.io%2Fjakub-pesl%2Fllms.txt" target="_blank" rel="noopener" class="ask-ai-link">Perplexity</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Photo preview: small card dialog (native <dialog>: Esc closes, focus stays inside) -->
+  <dialog class="lightbox" id="lightbox" aria-label="Náhled fotky">
+    <div class="lb-stage">
+      <img class="lb-img" alt="" />
+    </div>
+    <button class="lb-btn lb-side lb-prev" type="button" aria-label="Předchozí fotka"><svg class="i"><use href="#i-left"/></svg></button>
+    <button class="lb-btn lb-side lb-next" type="button" aria-label="Další fotka"><svg class="i"><use href="#i-right"/></svg></button>
+    <button class="lb-btn lb-close" type="button" aria-label="Zavřít náhled"><svg class="i"><use href="#i-x"/></svg></button>
+  </dialog>
+
+  <button id="backToTop" aria-label="Zpět nahoru">↑</button>
+
+  <!-- ═══ FOOTER ═════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <a href="#" class="footer-brand" aria-label="Zpět nahoru">
+        <span class="nav-mark" aria-hidden="true">JP</span>
+        <span class="footer-name">Jakub Pešl, MBA</span>
+        <span class="footer-copy">© 2026 · Praha</span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/jakub-pe%C5%A1l" target="_blank">LinkedIn ↗</a></li>
+        <li><a href="mailto:pesljakub@gmail.com">pesljakub@gmail.com</a></li>
+        <li><a href="../Jakub-Pesl-CV-CZ.pdf" target="_blank">CV (PDF) ↓</a></li>
+        <li class="lang-switch" aria-label="Jazyk">
+          <a href="../../" lang="en" hreflang="en">EN</a>
+          <a href="./" lang="cs" aria-current="page">CZ</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // ── Scroll reveal
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Scroll events: nav shadow, progress bar, back-to-top
+    const nav        = document.getElementById('nav');
+    const progressBar = document.getElementById('progressBar');
+    const backToTop  = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+
+      nav.style.boxShadow = y > 40 ? '0 1px 0 rgba(0,0,0,0.1)' : 'none';
+      nav.classList.toggle('scrolled', y > 40);
+      progressBar.style.width = (y / docH * 100) + '%';
+      backToTop.classList.toggle('visible', y > 500);
+    }, { passive: true });
+
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ── Counter animation
+    const counters = document.querySelectorAll('[data-target]');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        // Values are already rendered in the HTML — leave them alone if motion is unwanted.
+        if (reduceMotion) { counterObserver.unobserve(el); return; }
+        const target = +el.dataset.target;
+        const suffix = el.dataset.suffix || '';
+        const duration = 1800;
+        const start = performance.now();
+        const statBlock = el.closest('.stat');
+        if (statBlock) {
+          statBlock.style.transition = 'transform 0.4s cubic-bezier(.16,1,.3,1)';
+          statBlock.style.transform = 'scale(1.04)';
+          setTimeout(() => { statBlock.style.transform = 'scale(1)'; }, 400);
+        }
+        const tick = now => {
+          const t = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - t, 4);
+          el.textContent = Math.round(ease * target) + suffix;
+          if (t < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(el => counterObserver.observe(el));
+
+    // ── Active nav link on scroll
+    const sections = document.querySelectorAll('section[id], div[id].stat-bar');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.toggle('nav-active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    sections.forEach(s => sectionObserver.observe(s));
+
+    // ── Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinksList = document.getElementById('navLinks');
+
+    function closeMenu() {
+      navLinksList.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    }
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinksList.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('nav-open', isOpen);
+    });
+
+    navLinksList.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    // ── Learning marquee rows: auto-scroll (alternate rows in opposite
+    //    directions), ease to a stop on hover, can be grabbed (mouse) or
+    //    swiped (touch) and flicked with inertia.
+    if (!reduceMotion) document.querySelectorAll('.marquee').forEach(function (marquee) {
+      // reduced motion: static wrapped list via CSS
+      const track = marquee.querySelector('.marquee-track');
+      const list = track.querySelector('.marquee-list');
+      marquee.classList.add('is-js');
+
+      const SPEED = +marquee.dataset.speed || 45;
+      const AUTO = marquee.dataset.dir === 'right' ? SPEED : -SPEED;   // px per second when idle
+      let x = 0, half = 0;         // half = width of one copy of the list
+      let auto = AUTO;             // current auto speed, eased toward target
+      let fling = 0;               // inertia after release, px/s
+      let hovering = false, dragging = false;
+      let lastX = 0, lastT = 0, vel = 0, prev = performance.now();
+
+      const measure = () => {
+        half = list.offsetWidth;
+        // Short rows on wide screens: add hidden copies so the loop never shows a gap
+        while (half && track.children.length * half < half + marquee.clientWidth) {
+          track.appendChild(track.lastElementChild.cloneNode(true));
+        }
+      };
+      measure();
+      window.addEventListener('resize', measure);
+      // Pills width depends on the web font — re-measure once it's in
+      if (document.fonts) document.fonts.ready.then(measure);
+
+      function frame(now) {
+        const dt = Math.min((now - prev) / 1000, 0.05);
+        prev = now;
+        if (!dragging) {
+          const target = hovering ? 0 : AUTO;
+          auto += (target - auto) * Math.min(dt * 4, 1);
+          fling *= Math.pow(0.04, dt);              // decay ~ within a second
+          if (Math.abs(fling) < 4) fling = 0;
+          x += (auto + fling) * dt;
+        }
+        if (half) x = ((x % half) - half) % half;   // keep in (-half, 0]
+        track.style.transform = 'translate3d(' + x + 'px,0,0)';
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+
+      marquee.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') hovering = true; });
+      marquee.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') hovering = false; });
+
+      marquee.addEventListener('pointerdown', e => {
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+        dragging = true;
+        fling = 0; vel = 0;
+        lastX = e.clientX; lastT = e.timeStamp;
+        marquee.setPointerCapture(e.pointerId);
+        marquee.classList.add('is-dragging');
+      });
+      marquee.addEventListener('pointermove', e => {
+        if (!dragging) return;
+        const dx = e.clientX - lastX;
+        const dtm = Math.max(e.timeStamp - lastT, 1) / 1000;
+        x += dx;
+        vel = vel * 0.6 + (dx / dtm) * 0.4;         // smoothed release speed
+        lastX = e.clientX; lastT = e.timeStamp;
+      });
+      function release(e) {
+        if (!dragging) return;
+        dragging = false;
+        marquee.classList.remove('is-dragging');
+        // Ignore a stale velocity if the finger/mouse paused before letting go
+        fling = (e.timeStamp - lastT) < 80 ? Math.max(-3000, Math.min(3000, vel)) : 0;
+        if (e.pointerType !== 'mouse') hovering = false;
+      }
+      marquee.addEventListener('pointerup', release);
+      marquee.addEventListener('pointercancel', release);
+    });
+
+    // ── Photo wall: the marquee captures the pointer, so a tap (not a drag)
+    //    on a tile is turned into a click on that tile here.
+    document.querySelectorAll('.work-wall.is-js').forEach(function (wall) {
+      let sx = 0, tile = null;
+      wall.addEventListener('pointerdown', e => { sx = e.clientX; tile = e.target.closest('.wall-tile'); });
+      wall.addEventListener('pointerup', e => { if (tile && Math.abs(e.clientX - sx) < 6) tile.click(); tile = null; });
+    });
+
+    // ── Personal photo galleries (lightbox)
+    (function () {
+      const galleries = {
+        "tv": [
+          {
+            "src": "../img/work/tv-1.webp",
+            "alt": "Level Up Your Game — kampaň na herní TV Panasonic s Diablo IV"
+          },
+          {
+            "src": "../img/work/tv-2.webp",
+            "alt": "Panasonic TV s Fire TV — Watch your favourites. Control your home."
+          },
+          {
+            "src": "../img/work/tv-3.webp",
+            "alt": "See it all. Feel it all. — filmová kampaň Panasonic TV"
+          },
+          {
+            "src": "../img/work/tv-4.webp",
+            "alt": "Třípilířová TV strategie: filmy, gaming, Fire TV"
+          },
+          {
+            "src": "../img/work/tv-5.webp",
+            "alt": "Produktová videa Panasonic TV na YouTube"
+          }
+        ],
+        "technics": [
+          {
+            "src": "../img/work/technics-1.webp",
+            "alt": "Kampaň Technics TWS s Ondřejem Brzobohatým"
+          },
+          {
+            "src": "../img/work/technics-2.webp",
+            "alt": "Launch event Technics AZ80"
+          },
+          {
+            "src": "../img/work/technics-3.webp",
+            "alt": "Launch event Technics EAH-AZ100"
+          },
+          {
+            "src": "../img/work/technics-4.webp",
+            "alt": "Na natáčení s Ondřejem Brzobohatým"
+          }
+        ],
+        "lumix": [
+          {
+            "src": "../img/work/lumix-1.webp",
+            "alt": "Videosérie LUMIX Stories"
+          }
+        ],
+        "events": [
+          {
+            "src": "../img/work/events-1.webp",
+            "alt": "Stánek Panasonic na CES"
+          },
+          {
+            "src": "../img/work/events-2.webp",
+            "alt": "Tým Panasonic na CES"
+          },
+          {
+            "src": "../img/work/events-3.webp",
+            "alt": "Hala Panasonic na IFA Berlín"
+          },
+          {
+            "src": "../img/work/events-4.webp",
+            "alt": "Akce Panasonic TV Experience 2024"
+          },
+          {
+            "src": "../img/work/events-5.webp",
+            "alt": "Akce Panasonic TV Experience 2025"
+          }
+        ],
+        "audio": [
+          {
+            "src": "../img/work/audio-1.webp",
+            "alt": "S kapelou Lake Malawi"
+          },
+          {
+            "src": "../img/work/audio-2.webp",
+            "alt": "Lake Malawi s party reproduktory Panasonic"
+          },
+          {
+            "src": "../img/work/audio-3.webp",
+            "alt": "Product placement Panasonic na Óčko TV"
+          }
+        ],
+        "tech": [
+          {
+            "src": "../img/personal/tech-1.webp",
+            "alt": "Na Marketing Festivalu 2025"
+          },
+          {
+            "src": "../img/personal/tech-2.webp",
+            "alt": "Panasonic na CES, Las Vegas"
+          }
+        ],
+        "active": [
+          {
+            "src": "../img/personal/active-1.webp",
+            "alt": "Windsurfing"
+          },
+          {
+            "src": "../img/personal/active-2.webp",
+            "alt": "Na túře pod ledovcem Marmolada v Dolomitech"
+          }
+        ],
+        "family": [
+          {
+            "src": "../img/personal/family-1.webp",
+            "alt": "Obytňák v horách"
+          },
+          {
+            "src": "../img/personal/family-2.webp",
+            "alt": "Obří kostky LEGO"
+          },
+          {
+            "src": "../img/personal/family-3.webp",
+            "alt": "Výhled do kaňonu v Arizoně"
+          }
+        ]
+      };
+      const dlg = document.getElementById('lightbox');
+      const img = dlg.querySelector('.lb-img');
+      let list = [], idx = 0;
+      // View Transitions: the clicked thumbnail morphs into the preview.
+      // origin remembers it so closing can morph back (only if still on that photo).
+      const canVT = !!document.startViewTransition && !reduceMotion;
+      let origin = null;
+      const inView = el => { const r = el.getBoundingClientRect(); return r.width > 0 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth; };
+      function closeLb() {
+        if (!dlg.open) return;
+        const o = origin; origin = null;
+        if (!canVT || !o || o.idx !== idx || !inView(o.th)) { dlg.close(); return; }
+        img.style.viewTransitionName = 'lb-photo';
+        dlg.classList.add('vt');
+        const t = document.startViewTransition(() => {
+          img.style.viewTransitionName = '';
+          dlg.close();
+          o.th.style.viewTransitionName = 'lb-photo';
+        });
+        t.finished.finally(() => { o.th.style.viewTransitionName = ''; dlg.classList.remove('vt'); });
+      }
+
+      function show(i) {
+        idx = (i + list.length) % list.length;
+        const item = list[idx];
+        // Swap only once the next photo is decoded, so the card resizes in one step
+        const next = new Image();
+        next.src = item.src;
+        const swap = () => { if (list[idx] === item) { img.src = item.src; img.alt = item.alt; } };
+        (next.decode ? next.decode() : Promise.resolve()).then(swap, swap);
+        // Warm the next one so arrowing feels instant
+        if (list.length > 1) new Image().src = list[(idx + 1) % list.length].src;
+      }
+
+      document.querySelectorAll('[data-gallery]').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          if (dlg.open) return;
+          list = galleries[btn.dataset.gallery] || [];
+          if (!list.length) return;
+          dlg.classList.toggle('single', list.length < 2);
+          const start = +btn.dataset.index || 0;
+          const th = btn.querySelector('img');
+          origin = null;
+          if (!canVT || !th || !inView(th)) { show(start); dlg.showModal(); return; }
+          idx = start;
+          const item = list[idx];
+          const pre = new Image();
+          pre.src = item.src;
+          try { await pre.decode(); } catch (e) { /* show anyway */ }
+          if (dlg.open) return;
+          origin = { th, idx };
+          th.style.viewTransitionName = 'lb-photo';
+          dlg.classList.add('vt');
+          const t = document.startViewTransition(() => {
+            th.style.viewTransitionName = '';
+            img.src = item.src; img.alt = item.alt;
+            img.style.viewTransitionName = 'lb-photo';
+            dlg.showModal();
+          });
+          t.finished.finally(() => { img.style.viewTransitionName = ''; dlg.classList.remove('vt'); });
+          if (list.length > 1) new Image().src = list[(idx + 1) % list.length].src;
+        });
+      });
+
+      dlg.querySelector('.lb-prev').addEventListener('click', () => show(idx - 1));
+      dlg.querySelector('.lb-next').addEventListener('click', () => show(idx + 1));
+      dlg.querySelector('.lb-close').addEventListener('click', closeLb);
+      // Esc: run the same animated close instead of the instant default
+      dlg.addEventListener('cancel', e => { e.preventDefault(); closeLb(); });
+      // Click outside the card (on the dimmed page) closes
+      dlg.addEventListener('click', e => {
+        if (e.target !== dlg) return;            // clicks on the photo or buttons
+        const r = dlg.getBoundingClientRect();
+        if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeLb();
+      });
+      dlg.addEventListener('keydown', e => {
+        if (list.length < 2) return;
+        if (e.key === 'ArrowLeft')  show(idx - 1);
+        if (e.key === 'ArrowRight') show(idx + 1);
+      });
+
+      // Swipe on touch / drag with mouse
+      const stage = dlg.querySelector('.lb-stage');
+      let startX = null;
+      stage.addEventListener('pointerdown', e => { startX = e.clientX; });
+      stage.addEventListener('pointerup', e => {
+        if (startX === null || list.length < 2) return;
+        const dx = e.clientX - startX;
+        startX = null;
+        if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+      });
+      stage.addEventListener('pointercancel', () => { startX = null; });
+    })();
+
+    // ── Copy email on click
+    const emailLink = document.getElementById('emailLink');
+    if (emailLink) {
+      emailLink.addEventListener('click', e => {
+        e.preventDefault();
+        const email = 'pesljakub@gmail.com';
+        navigator.clipboard.writeText(email).then(() => {
+          emailLink.classList.add('email-copied');
+          setTimeout(() => emailLink.classList.remove('email-copied'), 1900);
+        }).catch(() => { window.location.href = 'mailto:' + email; });
+      });
+    }
+
+    // ── Dark / Light mode toggle
+    const toggleBtn = document.getElementById('themeToggle');
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      toggleBtn.querySelector('use').setAttribute('href', theme === 'dark' ? '#i-sun' : '#i-moon');
+      toggleBtn.setAttribute('aria-label', theme === 'dark' ? 'Přepnout na světlý režim' : 'Přepnout na tmavý režim');
+    }
+
+    applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+    toggleBtn.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', next);
+      applyTheme(next);
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem('theme')) applyTheme(e.matches ? 'dark' : 'light');
+    });
+  </script>
+
+</body>
+</html>
