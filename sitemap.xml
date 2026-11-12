@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://jakubpesl.github.io/jakub-pesl/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jakubpesl.github.io/jakub-pesl/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://jakubpesl.github.io/jakub-pesl/cs/" />
+  </url>
+  <url>
+    <loc>https://jakubpesl.github.io/jakub-pesl/cs/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jakubpesl.github.io/jakub-pesl/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://jakubpesl.github.io/jakub-pesl/cs/" />
+  </url>
+  <url><loc>https://jakubpesl.github.io/jakub-pesl/llms.txt</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://jakubpesl.github.io/jakub-pesl/Jakub-Pesl-CV.pdf</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://jakubpesl.github.io/jakub-pesl/Jakub-Pesl-CV-CZ.pdf</loc><lastmod>2026-11-12</lastmod></url>
+</urlset>
