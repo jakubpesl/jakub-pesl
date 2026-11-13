@@ -44,7 +44,7 @@ npm run check:pdf    # read PDFs like an AI agent: metadata, spaced-letter words
 ```
 - Pages are fixed A4 with hidden overflow — the build warns if content runs past a page edge; trim text, don't shrink fonts.
 - Keep heading `letter-spacing` ≤ ~0.05em, otherwise PDF text extraction splits words into letters ("C OR E …").
-- After a new CV: **bump `?v=` on all CV links** (nav + footer) in both `index.html` files (GitHub Pages caches 10 min, browsers longer). Current: `?v=20261112c`.
+- After a new CV: **bump `?v=` on all CV links** (nav + footer) in both `index.html` files (GitHub Pages caches 10 min, browsers longer). Current: `?v=20261113`.
 - New photos: `node tools/make-images.cjs picture2/<file>.jpg img/work/<key>-<n>` (also `--jpeg` for `img/clanek/`).
 
 **WSL Playwright workaround** (no sudo): Playwright 1.56's own Chromium may be missing; use the installed headless shell and fetch missing libs locally:

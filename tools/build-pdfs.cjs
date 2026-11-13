@@ -30,11 +30,11 @@ const JOBS = {
   ],
   article: [
     { src: 'clanek-source-cs.html', out: 'Jakub-Pesl-CV-clanek.pdf', lang: 'cs',
-      title: 'Pešlovinky.cz — Z call centra až na CES: Jakub Pešl řeší marketingovou komunikaci Panasonicu pro celou Evropu',
+      title: 'Pešlovinky.cz — Z call centra až na CES: Jakub Pešl řeší evropskou marketingovou komunikaci spotřební elektroniky Panasonicu',
       subject: 'Životopis Jakuba Pešla, MBA (European Marketing Communications Manager, Panasonic Marketing Europe) ve formě novinového článku. Nejde o skutečné médium.',
       kw: ['Jakub Pešl', 'životopis', 'CV', 'článek', 'marketingová komunikace', 'Panasonic', 'Technics', 'LUMIX', 'CES', 'IFA', 'go-to-market', 'trade marketing', 'P&L', 'DACH', 'Norsko', 'Nizozemsko', 'AI agenti', 'MBA'] },
     { src: 'clanek-source-en.html', out: 'Jakub-Pesl-CV-article.pdf', lang: 'en',
-      title: 'SPešlNews.com — From call centre to CES: Jakub Pešl takes on marketing communications for Panasonic across Europe',
+      title: 'SPešlNews.com — From call centre to CES: Jakub Pešl takes on European marketing communications for Panasonic consumer electronics',
       subject: 'CV of Jakub Pešl, MBA (European Marketing Communications Manager, Panasonic Marketing Europe) written as a news article. Not a real news outlet.',
       kw: ['Jakub Pešl', 'CV', 'resume', 'article', 'marketing communications', 'Panasonic', 'Technics', 'LUMIX', 'CES', 'IFA', 'go-to-market', 'trade marketing', 'P&L', 'DACH', 'Norway', 'Netherlands', 'AI agents', 'MBA'] },
   ],
