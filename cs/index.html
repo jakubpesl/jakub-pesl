@@ -379,7 +379,8 @@
     .hero::after {
       content: '';
       position: absolute;
-      inset: -10% -20%;
+      /* Wide glow, but never past the screen edge — tablets widen the layout viewport otherwise */
+      inset: -10% max(-20%, calc((100% - 100vw) / 2 + 10px));
       background: radial-gradient(ellipse 70% 55% at 62% 32%, rgba(0,113,227,0.07) 0%, transparent 62%);
       pointer-events: none;
       z-index: 0;
@@ -2252,7 +2253,7 @@
           <p class="tl-period">Dub 2021 – dosud · Praha, CZ · hybridně z&nbsp;Wiesbadenu, DE</p>
           <h3 class="timeline-role">European Marketing Communications Manager</h3>
           <p class="timeline-company">Panasonic Marketing Europe</p>
-          <p class="timeline-desc">Centrální evropská role s&nbsp;odpovědností za celý kontinent. Tvorba panevropské master strategie marketingové komunikace a&nbsp;materiálů, na kterých stojí evropské trhy. Kompletní řízení evropských kampaní včetně nastavení P&amp;L, odpovědnosti za rozpočet a&nbsp;vyhodnocení ROI. Přímá koordinace s&nbsp;globálním vedením v&nbsp;Japonsku, metodické vedení a&nbsp;podpora národních obchodních organizací (LSO) v&nbsp;Evropě, globální akce (CES &amp; IFA) a&nbsp;vedení marketingového týmu spolu s&nbsp;externími agenturami a&nbsp;dodavateli. Strategie se předává marketingovým týmům v&nbsp;6 hlavních evropských kancelářích; lokálně 5členný tým v&nbsp;CEEG zaměřený na retail a&nbsp;trade marketing a&nbsp;8–10 specializovaných agentur.</p>
+          <p class="timeline-desc">Centrální evropská role. Tvorba panevropské master strategie marketingové komunikace a&nbsp;materiálů, na kterých stojí evropské trhy. Kompletní řízení evropských kampaní včetně nastavení P&amp;L, odpovědnosti za rozpočet a&nbsp;vyhodnocení ROI. Přímá koordinace s&nbsp;globálním vedením v&nbsp;Japonsku, metodické vedení a&nbsp;podpora národních obchodních organizací (LSO) v&nbsp;Evropě, globální akce (CES &amp; IFA) a&nbsp;vedení marketingového týmu spolu s&nbsp;externími agenturami a&nbsp;dodavateli. Strategie se předává marketingovým týmům v&nbsp;6 hlavních evropských kancelářích; lokálně 5členný tým v&nbsp;CEEG zaměřený na retail a&nbsp;trade marketing a&nbsp;8–10 specializovaných agentur.</p>
           <div class="timeline-tags">
             <span class="tag">Evropský go-to-market</span>
             <span class="tag">Řízení kampaní</span>
