@@ -379,7 +379,8 @@
     .hero::after {
       content: '';
       position: absolute;
-      inset: -10% -20%;
+      /* Wide glow, but never past the screen edge — tablets widen the layout viewport otherwise */
+      inset: -10% max(-20%, calc((100% - 100vw) / 2 + 10px));
       background: radial-gradient(ellipse 70% 55% at 62% 32%, rgba(0,113,227,0.07) 0%, transparent 62%);
       pointer-events: none;
       z-index: 0;
@@ -2252,7 +2253,7 @@
           <p class="tl-period">Apr 2021 – Present · Based in Prague, CZ · Hybrid from Wiesbaden, DE</p>
           <h3 class="timeline-role">European Marketing Communications Manager</h3>
           <p class="timeline-company">Panasonic Marketing Europe</p>
-          <p class="timeline-desc">Central European role with full continental responsibility. Developing the pan-European master strategy for marketing communication and creating the assets European markets run on. End-to-end management of European campaigns, including P&amp;L setup, budget ownership and ROI evaluation. Direct coordination with global HQ in Japan, methodological guidance and support for the national sales organisations (LSOs) across Europe, plus global events (CES &amp; IFA), and leadership of the marketing team alongside external agencies and suppliers. Strategy is cascaded to the marketing teams of the 6 main European offices; locally a team of 5 in CEEG focused on retail and trade marketing, plus 8–10 specialised agencies.</p>
+          <p class="timeline-desc">Central European role. Developing the pan-European master strategy for marketing communication and creating the assets European markets run on. End-to-end management of European campaigns, including P&amp;L setup, budget ownership and ROI evaluation. Direct coordination with global HQ in Japan, methodological guidance and support for the national sales organisations (LSOs) across Europe, plus global events (CES &amp; IFA), and leadership of the marketing team alongside external agencies and suppliers. Strategy is cascaded to the marketing teams of the 6 main European offices; locally a team of 5 in CEEG focused on retail and trade marketing, plus 8–10 specialised agencies.</p>
           <div class="timeline-tags">
             <span class="tag">European Go-to-Market</span>
             <span class="tag">Campaign Management</span>
